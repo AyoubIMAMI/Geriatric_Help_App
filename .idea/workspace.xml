@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,8 +59,23 @@
       <option name="presentableId" value="Default" />
       <updated>1647941290572</updated>
       <workItem from="1647941303929" duration="36000" />
-      <workItem from="1647941349427" duration="313000" />
+      <workItem from="1647941349427" duration="614000" />
     </task>
+    <task id="LOCAL-00001" summary="Removing all">
+      <created>1647941758092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647941758092</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1647941923682</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647941923682</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,5 +91,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removing all" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
