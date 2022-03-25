@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Updating project">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Adding bootstrap library">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
+    <property name="ts.external.directory.path" value="D:\Documents\Web_Projects\web-symfony\front-end\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -64,7 +69,7 @@
       <workItem from="1647941303929" duration="36000" />
       <workItem from="1647941349427" duration="2749000" />
       <workItem from="1647976676966" duration="1227000" />
-      <workItem from="1648244302903" duration="589000" />
+      <workItem from="1648244302903" duration="3276000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -87,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647942204858</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding bootstrap library">
+      <created>1648245214895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1648245214895</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +120,7 @@
     <MESSAGE value="Removing all" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Updating project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating project" />
+    <MESSAGE value="Adding bootstrap library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding bootstrap library" />
   </component>
 </project>
