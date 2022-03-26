@@ -4,12 +4,14 @@ import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { EditQuizComponent } from './quizzes/edit-quiz/edit-quiz.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import {HomeComponent} from "./home/home.component";
+import {ResidentsComponent} from "./residents/residents.component";
 
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'residents', component: ResidentsComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

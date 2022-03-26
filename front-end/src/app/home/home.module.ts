@@ -3,6 +3,7 @@ import {HomeComponent} from "./home.component";
 import {CommonModule} from "@angular/common";
 import {LastQuizCardComponent} from "./last-quiz-card/last-quiz-card.component";
 import {HomeButtonCardComponent} from "./home-button-card/home-button-card.component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -10,6 +11,6 @@ import {HomeButtonCardComponent} from "./home-button-card/home-button-card.compo
     HomeButtonCardComponent,
     LastQuizCardComponent
   ],
-  imports: [CommonModule]
+  imports: [CommonModule, RouterModule]
 })
 export class HomeModule { }

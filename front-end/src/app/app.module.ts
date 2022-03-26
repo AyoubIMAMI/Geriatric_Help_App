@@ -17,6 +17,7 @@ import { UserComponent } from './users/user/user.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { HomeModule } from "./home/home.module";
+import {ResidentsModule} from "./residents/residents.module";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HomeModule } from "./home/home.module";
     UserListComponent,
   ],
   imports: [
+    ResidentsModule,
     HomeModule,
     BrowserModule,
     ReactiveFormsModule,
