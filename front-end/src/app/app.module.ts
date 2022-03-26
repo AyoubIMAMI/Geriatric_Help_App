@@ -18,12 +18,14 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { HomeModule } from "./home/home.module";
 import {ResidentsModule} from "./residents/residents.module";
+import {ResidentModule} from "./resident/resident.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizListComponent,
     QuizComponent,
+
     HeaderComponent,
     QuizFormComponent,
     EditQuizComponent,
@@ -36,7 +38,9 @@ import {ResidentsModule} from "./residents/residents.module";
   ],
   imports: [
     ResidentsModule,
+    ResidentModule,
     HomeModule,
+
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
