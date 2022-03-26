@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
   {path: 'home', component: HomeComponent},
-  { path: '', redirectTo: '/quiz-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
