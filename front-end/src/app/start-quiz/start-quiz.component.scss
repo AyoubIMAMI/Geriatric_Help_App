@@ -1,0 +1,18 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    width: fit-content!important;
+    height: min-content!important;
+    justify-content: space-between;
+}
+
+.answer {
+    margin: 1vw!important;
+}
+
+.answerList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

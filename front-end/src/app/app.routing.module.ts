@@ -6,6 +6,8 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import {HomeComponent} from "./home/home.component";
 import {ResidentsComponent} from "./residents/residents.component";
 import {ResidentComponent} from "./resident/resident.component";
+import {StartQuizComponent} from "./start-quiz/start-quiz.component";
+
 
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
@@ -14,6 +16,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'residents', component: ResidentsComponent},
   {path: 'resident/:id', component: ResidentComponent},
+  {path: 'start-quiz', component: StartQuizComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
