@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Ajout des routerLink sur résidents">
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification-handicap/resident-modification-handicap.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification-handicap/resident-modification-handicap.component.ts" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Début de la modification des handicaps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification-handicap/resident-modification-handicap.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification-handicap/resident-modification-handicap.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +97,7 @@
       <workItem from="1647976676966" duration="1227000" />
       <workItem from="1648244302903" duration="3781000" />
       <workItem from="1648294367101" duration="15946000" />
-      <workItem from="1648378634857" duration="2518000" />
+      <workItem from="1648378634857" duration="2894000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -194,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648379967338</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Début de la modification des handicaps">
+      <created>1648381556552</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648381556552</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +229,7 @@
     <MESSAGE value="Gerstion des résidents + route" />
     <MESSAGE value="Résident et route" />
     <MESSAGE value="Ajout des routerLink sur résidents" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des routerLink sur résidents" />
+    <MESSAGE value="Début de la modification des handicaps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Début de la modification des handicaps" />
   </component>
 </project>
