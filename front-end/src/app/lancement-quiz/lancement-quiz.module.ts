@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {EndQuiz} from "../end-quiz/end-quiz.component";
+import {RechercheQuizDisplayComponent} from "./recherche-quiz-display/recherche-quiz-display.component";
+import {LancementQuizComponent} from "./lancement-quiz.component";
 
 
 @NgModule({
   declarations: [
+    LancementQuizComponent,
+    RechercheQuizDisplayComponent
   ],
 
   imports: [
@@ -13,4 +16,4 @@ import {EndQuiz} from "../end-quiz/end-quiz.component";
     RouterModule
   ]
 })
-export class StartQuizModule {}
+export class LancementQuizModule {}
