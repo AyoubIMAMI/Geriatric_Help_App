@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Début de la modification des handicaps">
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/lancement-quiz/lancement-quiz.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/lancement-quiz/lancement-quiz.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/lancement-quiz/lancement-quiz.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/lancement-quiz/lancement-quiz.module.ts" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Modification graphique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.routing.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +50,7 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\Web_Projects\web-symfony\front-end\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -209,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648381732987</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Modification graphique">
+      <created>1648539586597</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1648539586597</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +244,7 @@
     <MESSAGE value="Résident et route" />
     <MESSAGE value="Ajout des routerLink sur résidents" />
     <MESSAGE value="Début de la modification des handicaps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début de la modification des handicaps" />
+    <MESSAGE value="Modification graphique" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification graphique" />
   </component>
 </project>
