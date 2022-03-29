@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Début de la modification des handicaps">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Removing nav link">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -98,7 +100,7 @@
       <workItem from="1648244302903" duration="3781000" />
       <workItem from="1648294367101" duration="15946000" />
       <workItem from="1648378634857" duration="5855000" />
-      <workItem from="1648533799355" duration="579000" />
+      <workItem from="1648533799355" duration="1109000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -205,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648381732987</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Removing nav link">
+      <created>1648534421990</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1648534421990</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +247,7 @@
     <MESSAGE value="Résident et route" />
     <MESSAGE value="Ajout des routerLink sur résidents" />
     <MESSAGE value="Début de la modification des handicaps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Début de la modification des handicaps" />
+    <MESSAGE value="Removing nav link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing nav link" />
   </component>
 </project>
