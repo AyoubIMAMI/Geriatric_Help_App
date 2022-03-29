@@ -25,6 +25,7 @@ import {
 } from "./gestion-quiz/recherche-quiz-display/recherche-quiz-display.component";
 import {GestionQuizComponent} from "./gestion-quiz/gestion-quiz.component";
 import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
+import {CreateQuizModule} from "./create-quiz/create-quiz.module";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
     HomeModule,
     ResidentModificationModule,
     GestionQuizModule,
-
+    CreateQuizModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="End quiz page">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Gestion des quizz">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.routing.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -51,16 +56,14 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\src\app" />
-      <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\src\app\home" />
-      <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\src\app\start-quiz" />
       <recent name="D:\Documents\Web_Projects\web-symfony\front-end\src\app\resident\resident-modification" />
       <recent name="D:\Documents\Web_Projects\web-symfony\front-end\src\assets\images" />
+      <recent name="D:\Documents\Web_Projects\web-symfony\front-end\src\app\home" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -76,7 +79,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Angular CLI Server" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/front-end/package.json" />
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -100,8 +103,7 @@
       <workItem from="1648244302903" duration="3781000" />
       <workItem from="1648294367101" duration="15946000" />
       <workItem from="1648378634857" duration="5855000" />
-      <workItem from="1648533799355" duration="1109000" />
-      <workItem from="1648535666005" duration="7330000" />
+      <workItem from="1648533799355" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -208,33 +210,33 @@
       <option name="project" value="LOCAL" />
       <updated>1648381732987</updated>
     </task>
-    <task id="LOCAL-00016" summary="Removing nav link">
-      <created>1648534421990</created>
+    <task id="LOCAL-00016" summary="Modification graphique">
+      <created>1648539586597</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1648534421990</updated>
+      <updated>1648539586597</updated>
     </task>
-    <task id="LOCAL-00017" summary="End quiz page">
-      <created>1648539626353</created>
+    <task id="LOCAL-00017" summary="Gestion des quizz">
+      <created>1648545025661</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1648539626353</updated>
+      <updated>1648545025661</updated>
     </task>
-    <task id="LOCAL-00018" summary="End quiz page">
-      <created>1648541292572</created>
+    <task id="LOCAL-00018" summary="Gestion des quizz">
+      <created>1648545949435</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1648541292572</updated>
+      <updated>1648545949435</updated>
     </task>
-    <task id="LOCAL-00019" summary="End quiz page">
-      <created>1648542306048</created>
+    <task id="LOCAL-00019" summary="Gestion des quizz">
+      <created>1648546624088</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1648542306048</updated>
+      <updated>1648546624088</updated>
     </task>
     <option name="localTasksCounter" value="20" />
     <servers />
@@ -269,8 +271,8 @@
     <MESSAGE value="Résident et route" />
     <MESSAGE value="Ajout des routerLink sur résidents" />
     <MESSAGE value="Début de la modification des handicaps" />
-    <MESSAGE value="Removing nav link" />
-    <MESSAGE value="End quiz page" />
-    <option name="LAST_COMMIT_MESSAGE" value="End quiz page" />
+    <MESSAGE value="Modification graphique" />
+    <MESSAGE value="Gestion des quizz" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestion des quizz" />
   </component>
 </project>
