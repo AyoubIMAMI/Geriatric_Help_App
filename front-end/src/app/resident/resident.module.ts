@@ -5,13 +5,16 @@ import {ResidentModificationHandicapComponent} from "./resident-modification/res
 import {RouterModule} from "@angular/router";
 
 @NgModule({
-  declarations: [
-    ResidentComponent,
+    declarations: [
+        ResidentComponent,
+        ResidentModificationHandicapComponent
+    ],
+  exports: [
     ResidentModificationHandicapComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule
+    ]
 })
 export class ResidentModule { }

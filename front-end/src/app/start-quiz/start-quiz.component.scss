@@ -8,6 +8,7 @@
 
 .answer {
     margin: 1vw!important;
+    width: fit-content!important;
 }
 
 .answerList {
@@ -15,4 +16,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hide {
+    background-color: white!important;
+    color: black!important;
+}
+
+.false {
+    background-color: red;
+    color: white;
+}
+
+.true {
+    background-color: green;
+    color: white;
 }

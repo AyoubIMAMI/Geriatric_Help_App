@@ -8,6 +8,8 @@ import {ResidentsComponent} from "./residents/residents.component";
 import {ResidentComponent} from "./resident/resident.component";
 import {StartQuizComponent} from "./start-quiz/start-quiz.component";
 import {LancementQuizComponent} from "./lancement-quiz/lancement-quiz.component";
+import {ResidentModificationComponent} from "./resident/resident-modification/resident-modification.component";
+
 
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
@@ -18,6 +20,7 @@ const routes: Routes = [
   {path: 'resident/:id', component: ResidentComponent},
   {path: 'start-quiz', component: StartQuizComponent},
   {path: 'lancement-quiz', component: LancementQuizComponent},
+  {path: 'resident/:id/modification', component:ResidentModificationComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
