@@ -16,12 +16,12 @@ export class ResidentService {
   /*
    Observable which contains the list of the resident.
    */
-  public resident$: BehaviorSubject<Resident[]>
+  public residents$: BehaviorSubject<Resident[]>
     = new BehaviorSubject([]);
 
   public residentSelected$: Subject<Resident> = new Subject();
 
-  private residentUrl = serverUrl + '/resident';
+  private residentUrl = serverUrl + '/residents';
 
   private httpOptions = httpOptionsBase;
 
@@ -32,7 +32,7 @@ export class ResidentService {
   retrieveResident(): void {
     this.http.get<Resident[]>(this.residentUrl).subscribe((residentList) => {
       this.residents = residentList;
-      this.resident$.next(this.residents);
+      this.residents$.next(this.residents);
     });
   }
 
