@@ -19,6 +19,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { HomeModule } from "./home/home.module";
 import {ResidentsModule} from "./residents/residents.module";
 import {ResidentModule} from "./resident/resident.module";
+import {ResidentModificationModule} from "./resident/resident-modification/resident-modification.module";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {ResidentModule} from "./resident/resident.module";
     ResidentsModule,
     ResidentModule,
     HomeModule,
+    ResidentModificationModule,
 
     BrowserModule,
     ReactiveFormsModule,

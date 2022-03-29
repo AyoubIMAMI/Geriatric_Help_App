@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {ResidentComponent} from "../resident.component";
 import {ResidentModificationComponent} from "./resident-modification.component";
 import {ResidentModule} from "../resident.module";
+import {
+  ResidentModificationHandicapComponent
+} from "./resident-modification-handicap/resident-modification-handicap.component";
 
 @NgModule({
   declarations: [
-    ResidentComponent,
+    ResidentModificationHandicapComponent,
     ResidentModificationComponent
   ],
   imports: [CommonModule, RouterModule, ResidentModule]
