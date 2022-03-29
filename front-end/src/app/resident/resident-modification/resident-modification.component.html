@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="fs-2 mb-3"><i class="bi bi-person-workspace"></i> Modification d'un résident</div>
+  <div class="fs-2 mb-3"><i class="bi bi-pencil"></i> Modification d'un résident</div>
 </div>
 <br>
 <div class="container h-75">
@@ -8,14 +8,26 @@
     <div class="col">
       <div class="container d-flex">
         <img src="assets/images/square.svg" alt="">
-        <div class="container d-flex flex-column justify-content-around">
-          <h2 class="text-primary">TRAN-BLE Paul</h2>
+
+        <div class="container">
+          <form>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" class="form-control" id="nom" placeholder="TRAN-BLE">
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input type="text" class="form-control" id="prenom" placeholder="Paul">
+            </div>
+          </form>
         </div>
+
       </div>
     </div>
 
     <div class="col d-flex flex-column">
       <app-resident-modification-handicap></app-resident-modification-handicap>
+      <br>
       <button class="btn btn-success" [routerLink]="['/resident/$id']">Valider</button>
     </div>
   </div>
