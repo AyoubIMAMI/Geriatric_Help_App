@@ -4,9 +4,9 @@
 
         <div class="col">
             <div class="container d-flex">
-                <img src="assets/images/square.svg" alt="">
+                <img src="{{resident.picture}}" alt="">
                 <div class="container d-flex flex-column justify-content-around">
-                    <h2 class="text-primary">TRAN-BLE Paul</h2>
+                    <h2 class="text-primary">{{resident.nom}} {{resident.prenom}}</h2>
                     <div class="btn-trim">
                         <button class="btn btn-success" [routerLink]="['/start-quiz']">
                           <i class="bi bi-play-fill"></i>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="col d-flex flex-column">
-          <button class="btn btn-primary" [routerLink]="['/resident/$id/modification']">Modifier</button>
+            <button class="btn btn-primary" routerLink="/resident/{{resident.id}}/modification">Modifier</button>
         </div>
     </div>
 </div>
