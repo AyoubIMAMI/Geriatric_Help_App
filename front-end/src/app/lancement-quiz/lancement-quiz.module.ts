@@ -7,9 +7,9 @@ import {RouterModule} from "@angular/router";
   declarations: [
   ],
 
-    imports: [
-        CommonModule,
-        RouterModule
-    ]
+  imports: [
+    CommonModule,
+    RouterModule
+  ]
 })
 export class StartQuizModule {}
