@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
+import {EndQuiz} from "../end-quiz/end-quiz.component";
+
+
 
 
 @NgModule({
@@ -9,7 +12,8 @@ import {RouterModule} from "@angular/router";
 
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        EndQuiz
     ]
 })
 export class StartQuizModule {}
