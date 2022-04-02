@@ -1,24 +1,25 @@
-<div class="bd-example">
-
+<div class="container">
   <h4 class="p-2 bd-highlight mb-3"><i class="bi bi-journal"></i> Creation d'un nouveau quiz</h4>
-    <div class="p-2 bd-highlight mb-3">
-    <form class="quiz-form" [formGroup]="quizForm">
-      <label for="title">
+  <div class="row">
+      <div class="col-4">
         <div class="col fs-5 mb-3">Titre
-        <input class="input-custom" type="text" id="name" [formControlName]="'name'">
+          <div class="col fs-5 mb-3">Theme
+            </div>
+          </div>
         </div>
-      </label>
-      <br>
-      <label for="theme">
-        <div class="col fs-5 mb-3">Theme
-        <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
+      <div class="col">
+        <div class="p-2 bd-highlight mb-3">
+          <form class="quiz-form" [formGroup]="quizForm">
+            <input class="input-custom" type="text" id="name" [formControlName]="'name'">
+            <br>
+            <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
+            <br>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
+            </div>
+          </form>
         </div>
-      </label>
-      <br>
-      <div class="d-flex justify-content-center">
-      <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
       </div>
-    </form>
   </div>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
