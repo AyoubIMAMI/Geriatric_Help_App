@@ -1,9 +1,16 @@
 <div class="card">
   <form class="quiz-form" [formGroup]="questionForm">
     <label for="label">
-      <input class="input-custom" type="text" id="label" [formControlName]="'label'">
+      <div class="row">
+        <h4 class="p-2 bd-highlight mb-3"><i class="bi bi-journal"></i> Question:</h4>
+      </div>
+      <div class="row">
+        <input class="col input-custom" type="text" id="label" [formControlName]="'label'">
+      </div>
     </label>
     <br>
+
+
     <div class="row">
         <div class="col">
          <div *ngFor="let i of [1,2]">
