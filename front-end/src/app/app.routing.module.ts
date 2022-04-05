@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'end-quiz', component: EndQuizComponent},
   {path: 'quiz', component: GestionQuizComponent},
   {path: 'resident/:id/modification', component: ResidentModificationComponent},
-  {path: 'create-quiz', component: CreateQuizComponent},
+  {path: 'quiz/creation', component: CreateQuizComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
