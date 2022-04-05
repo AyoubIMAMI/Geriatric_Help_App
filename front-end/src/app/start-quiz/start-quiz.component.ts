@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-start-quiz',
@@ -7,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartQuizComponent implements OnInit {
 
-
+  public responseIndex: number;
   constructor() {
-  }
+    this.responseIndex = 0;
+}
 
   ngOnInit(): void {}
 
   chooseAnswer(event: Event): void {
     const eventTarget: Element = event.target as Element;
-    const isAnswer: boolean = eventTarget.classList.contains("true");
+    this.revealAnswer(eventTarget);
+  }
+
+  revealAnswer(answer){
+    const isAnswer: boolean = answer.classList.contains("true");
     const resultAnswer: Element = document.getElementById("resultAnswer");
     this.showAnswer()
     if(isAnswer)
@@ -30,4 +35,35 @@ export class StartQuizComponent implements OnInit {
       answerList[i].classList.remove("hide");
     }
   }
+
+  incrementeResponseId(){
+    if(this.responseIndex >= 3) this.responseIndex = 0;
+    else this.responseIndex+=1;
+  }
+
+  updateSelected(){
+    const lastSelected = document.getElementsByClassName("selected")[0];
+    lastSelected.classList.remove('selected');
+    const answerSelected = document.getElementsByClassName("answer")[this.responseIndex];
+    answerSelected.classList.add('selected');
+  }
+
+  leftClick(){
+    const handicap = document.getElementById('modeHandicape') as HTMLInputElement;
+    if(handicap.checked){
+      const answer = document.getElementsByClassName("answer")[this.responseIndex];
+      this.revealAnswer(answer);
+    }
+  }
+  rightClick(event: MouseEvent){
+    const handicap = document.getElementById('modeHandicape') as HTMLInputElement;
+    if(handicap.checked){
+      event.preventDefault();
+      this.incrementeResponseId()
+      this.updateSelected();
+    }
+  }
+
 }
+
+
