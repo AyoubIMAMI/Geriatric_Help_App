@@ -11,9 +11,11 @@ import {EndQuizComponent} from "./end-quiz/end-quiz.component";
 import {GestionQuizComponent} from "./gestion-quiz/gestion-quiz.component";
 import {ResidentModificationComponent} from "./resident/resident-modification/resident-modification.component";
 import {CreateQuizComponent} from "./create-quiz/create-quiz.component";
+import {ResidentCreationComponent} from "./resident/resident-creation/resident-creation.component";
 
 
 const routes: Routes = [
+  {path: 'resident/creation', component: ResidentCreationComponent},
   {path: 'user-list', component: UserListComponent},
   {path: 'quiz-list', component: QuizListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
