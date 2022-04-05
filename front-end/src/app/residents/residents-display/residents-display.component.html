@@ -1,25 +1,8 @@
 <ul class="list-group">
-
-
-    <li class="list-group-item">
-
-      <img src="assets/images/square.svg" class="rounded residents-pic" alt=""/>
-      TRAN-BLE Paul
-      <a class="stretched-link" [routerLink]="['/resident/1']"></a>
-    </li>
-
-
-  <li class="list-group-item">
-    <img src="assets/images/square.svg" class="rounded residents-pic" alt=""/>
-    WARWICK Michel
-    <a class="stretched-link" [routerLink]="['/resident/1']"></a>
-  </li>
-
-  <li class="list-group-item">
-    <img src="assets/images/square.svg" class="rounded residents-pic" alt=""/>
-    LAPORTE Patricia
-    <a class="stretched-link" [routerLink]="['/resident/1']"></a>
-  </li>
+    <div class="resident" *ngFor="let resident of residentList">
+        <li class="list-group-item">
+            <img src="{{resident.picture}}" class="rounded residents-pic" alt="" /> {{resident.nom}} {{resident.prenom}}
+            <a class="stretched-link" routerLink="/resident/{{resident.id}}"></a>
+        </li>
+    </div>
 </ul>
-
-

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { User } from '../models/user.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import { Resident } from 'src/models/resident.model';
 
@@ -17,12 +16,12 @@ export class ResidentService {
   /*
    Observable which contains the list of the resident.
    */
-  public resident$: BehaviorSubject<Resident[]>
+  public residents$: BehaviorSubject<Resident[]>
     = new BehaviorSubject([]);
 
   public residentSelected$: Subject<Resident> = new Subject();
 
-  private residentUrl = serverUrl + '/resident';
+  private residentUrl = serverUrl + '/residents';
 
   private httpOptions = httpOptionsBase;
 
@@ -31,13 +30,13 @@ export class ResidentService {
   }
 
   retrieveResident(): void {
-    this.http.get<Resident[]>(this.residentUrl).subscribe((userList) => {
-      this.residents = userList;
-      this.resident$.next(this.residents);
+    this.http.get<Resident[]>(this.residentUrl).subscribe((residentList) => {
+      this.residents = residentList;
+      this.residents$.next(this.residents);
     });
   }
 
-  addUser(resident: Resident): void {
+  addResident(resident: Resident): void {
     this.http.post<Resident>(this.residentUrl, resident, this.httpOptions).subscribe(() => this.retrieveResident());
   }
 
