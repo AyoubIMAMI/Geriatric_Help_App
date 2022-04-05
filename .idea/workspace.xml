@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Creation d'un quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/creation-of-quiz/creation-of-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/creation-of-quiz/creation-of-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/home/home-button-card/home-button-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/home/home-button-card/home-button-card.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\Web_Projects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -101,7 +100,9 @@
       <workItem from="1648378634857" duration="5855000" />
       <workItem from="1648533799355" duration="579000" />
       <workItem from="1648882947515" duration="4329000" />
-      <workItem from="1648907231448" duration="1485000" />
+      <workItem from="1648907231448" duration="1817000" />
+      <workItem from="1649140271744" duration="8196000" />
+      <workItem from="1649150367822" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -250,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648887306513</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Creation d'un quiz">
+      <created>1648909931466</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1648909931466</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

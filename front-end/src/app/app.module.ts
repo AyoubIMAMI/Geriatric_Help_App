@@ -20,12 +20,9 @@ import { HomeModule } from "./home/home.module";
 import {ResidentsModule} from "./residents/residents.module";
 import {ResidentModule} from "./resident/resident.module";
 import {ResidentModificationModule} from "./resident/resident-modification/resident-modification.module";
-import {
-  RechercheQuizDisplayComponent
-} from "./gestion-quiz/recherche-quiz-display/recherche-quiz-display.component";
-import {GestionQuizComponent} from "./gestion-quiz/gestion-quiz.component";
 import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
 import {CreateQuizModule} from "./create-quiz/create-quiz.module";
+import {ResidentCreationModule} from "./resident/resident-creation/resident-creation.module";
 
 @NgModule({
   declarations: [
@@ -48,6 +45,7 @@ import {CreateQuizModule} from "./create-quiz/create-quiz.module";
     ResidentModule,
     HomeModule,
     ResidentModificationModule,
+    ResidentCreationModule,
     GestionQuizModule,
     CreateQuizModule,
     BrowserModule,
