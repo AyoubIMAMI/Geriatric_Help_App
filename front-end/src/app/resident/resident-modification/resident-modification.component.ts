@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Resident} from "../../../models/resident.model";
+import {ActivatedRoute} from "@angular/router";
+import {ResidentService} from "../../../services/resident.service";
 
 @Component({
   selector: 'app-resident-modification',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResidentModificationComponent implements OnInit {
 
-  constructor() { }
+  public resident: Resident;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, private residentService: ResidentService) {
+    this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
   }
-
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.residentService.setSelectedResident(id);
+  }
 }
