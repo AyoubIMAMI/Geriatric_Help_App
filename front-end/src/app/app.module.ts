@@ -19,6 +19,7 @@ import { HomeModule } from "./home/home.module";
 import {ResidentsModule} from "./residents/residents.module";
 import {QuizzesModule} from "./quizzes/quizzes.module";
 import {ResidentModule} from "./resident/resident.module";
+import {QuizModule} from "./quiz/quiz.module";
 import {ResidentModificationModule} from "./resident/resident-modification/resident-modification.module";
 import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
 import {CreateQuizModule} from "./create-quiz/create-quiz.module";
@@ -42,6 +43,7 @@ import {ResidentCreationModule} from "./resident/resident-creation/resident-crea
     ResidentsModule,
     QuizzesModule,
     ResidentModule,
+    QuizModule,
     HomeModule,
     ResidentModificationModule,
     ResidentCreationModule,

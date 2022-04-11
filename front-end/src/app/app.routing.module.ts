@@ -7,7 +7,8 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import {HomeComponent} from "./home/home.component";
 import {ResidentsComponent} from "./residents/residents.component";
 import {ResidentComponent} from "./resident/resident.component";
-import {StartQuizComponent} from "./start-quiz/start-quiz.component";
+import {QuizComponent} from "./quiz/quiz.component";
+import {StartQuizComponent} from "./quiz/start-quiz/start-quiz.component";
 import {EndQuizComponent} from "./end-quiz/end-quiz.component";
 import {GestionQuizComponent} from "./gestion-quiz/gestion-quiz.component";
 import {ResidentModificationComponent} from "./resident/resident-modification/resident-modification.component";
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'start-quiz', component: StartQuizComponent},
   {path: 'end-quiz', component: EndQuizComponent},
   {path: 'quiz', component: GestionQuizComponent},
+  {path: 'quiz/:id', component: QuizComponent},
   {path: 'quizzes', component: QuizzesComponent},
   {path: 'quizzes-display', component: QuizzesDisplayComponent},
 

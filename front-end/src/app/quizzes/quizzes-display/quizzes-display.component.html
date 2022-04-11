@@ -2,7 +2,7 @@
     <div class="quiz" *ngFor="let quiz of quizList">
         <li class="list-group-item">
             <p>{{quiz.theme}} {{quiz.name}}</p>
-            <a class="stretched-link" routerLink="/start-quiz"></a>
+            <a class="stretched-link" routerLink="/quiz/{{quiz.id}}"></a>
         </li>
     </div>
 </ul>
