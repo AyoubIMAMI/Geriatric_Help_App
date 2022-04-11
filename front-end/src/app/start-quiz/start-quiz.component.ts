@@ -64,6 +64,17 @@ export class StartQuizComponent implements OnInit {
     }
   }
 
+  startHandicape(){
+    if(document.getElementsByClassName("selected").length == 0){
+      const firstAnswer = document.getElementsByClassName("answer")[0];
+      firstAnswer.classList.add("selected");
+    }
+    else{
+      let lastSelected = document.getElementsByClassName("selected")[0];
+      lastSelected.classList.remove("selected");
+    }
+  }
+
 }
 
 
