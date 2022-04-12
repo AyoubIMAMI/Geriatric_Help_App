@@ -1,0 +1,45 @@
+<div class="card">
+  <form class="quiz-form" [formGroup]="questionForm">
+    <label for="label">
+      <div class="row">
+        <h4 class="col p-2 bd-highlight mb-1">Question:</h4>
+        <input class="col input-custom" type="text" id="label" [formControlName]="'label'">
+      </div>
+    </label>
+    <br>
+
+
+    <div class="row">
+        <div class="col">
+         <div *ngFor="let i of [1,2]">
+            <div class="answer-form" [formGroupName]="i">
+              <label>
+               Answer
+               <input type="text" [formControlName]="'value'">
+               <br>
+               Correct
+               <input type="checkbox" [formControlName]="'isCorrect'">
+             </label>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div *ngFor="let i of [3,4]">
+            <div class="answer-form" [formGroupName]="i">
+              <label>
+                Answer
+                <input type="text" [formControlName]="'value'">
+                <br>
+                Correct
+                <input type="checkbox" [formControlName]="'isCorrect'">
+              </label>
+            </div>
+          </div>
+        </div>
+    </div>
+    <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
+  </form>
+</div>
+
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->

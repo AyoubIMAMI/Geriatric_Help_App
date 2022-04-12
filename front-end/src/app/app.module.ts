@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { QuizListComponent } from './quizzes/quiz-list/quiz-list.component';
 import { QuizComponent } from './quizzes/quiz/quiz.component';
 import { HeaderComponent } from './header/header.component';
 import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
@@ -18,7 +17,9 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { HomeModule } from "./home/home.module";
 import {ResidentsModule} from "./residents/residents.module";
+import {QuizzesModule} from "./quizzes/quizzes.module";
 import {ResidentModule} from "./resident/resident.module";
+import {QuizModule} from "./quiz/quiz.module";
 import {ResidentModificationModule} from "./resident/resident-modification/resident-modification.module";
 import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
 import {CreateQuizModule} from "./create-quiz/create-quiz.module";
@@ -27,9 +28,7 @@ import {ResidentCreationModule} from "./resident/resident-creation/resident-crea
 @NgModule({
   declarations: [
     AppComponent,
-    QuizListComponent,
     QuizComponent,
-
     HeaderComponent,
     QuizFormComponent,
     EditQuizComponent,
@@ -42,7 +41,9 @@ import {ResidentCreationModule} from "./resident/resident-creation/resident-crea
   ],
   imports: [
     ResidentsModule,
+    QuizzesModule,
     ResidentModule,
+    QuizModule,
     HomeModule,
     ResidentModificationModule,
     ResidentCreationModule,

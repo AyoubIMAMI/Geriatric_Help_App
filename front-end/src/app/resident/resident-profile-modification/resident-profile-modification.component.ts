@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {Resident} from "../../../models/resident.model";
 
 @Component({
   selector: 'app-resident-profile-modification',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 export class ResidentProfileModificationComponent implements OnInit {
+  @Input() resident : Resident;
+  @Output() nom : string = '';
+  @Output() prenom : string = '';
+
+  oldNom : string = 'Nom';
+  oldPrenom : string = 'Prénom';
 
   constructor() { }
 
   ngOnInit(): void {
+    if(this.resident != null){
+      this.oldNom = this.resident.nom;
+      this.oldPrenom = this.resident.prenom;
+    }
   }
-
 }
 

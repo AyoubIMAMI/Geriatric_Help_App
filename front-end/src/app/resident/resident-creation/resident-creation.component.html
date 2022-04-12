@@ -6,13 +6,13 @@
   <div class="row">
 
     <div class="col">
-      <app-resident-profile-modification></app-resident-profile-modification>
+      <app-resident-profile-modification [resident]="resident"></app-resident-profile-modification>
     </div>
 
     <div class="col d-flex flex-column">
       <app-resident-modification-handicap></app-resident-modification-handicap>
       <br>
-      <button class="btn btn-success" [routerLink]="['/resident/$id']">Valider</button>
+      <button class="btn btn-success" routerLink="/resident">Valider</button>
     </div>
   </div>
 </div>
