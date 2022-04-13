@@ -11,11 +11,12 @@
     width: fit-content!important;
 }
 
-.answerList {
+#quiz {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 4vh;
 }
 
 .hide {
@@ -31,4 +32,18 @@
 .true {
     background-color: green;
     color: white;
+}
+
+.selected {
+    border: 2.5px dashed #cdbf03;
+    animation: spin 1s alternate infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
 }
