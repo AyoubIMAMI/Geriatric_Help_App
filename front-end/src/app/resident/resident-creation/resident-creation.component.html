@@ -6,7 +6,11 @@
   <div class="row">
 
     <div class="col">
-      <app-resident-profile-modification [resident]="resident"></app-resident-profile-modification>
+      <app-resident-profile-modification
+        [resident]="resident"
+        (nom)="newNom"
+        (prenom)="newPrenom">
+      </app-resident-profile-modification>
     </div>
 
     <div class="col d-flex flex-column">

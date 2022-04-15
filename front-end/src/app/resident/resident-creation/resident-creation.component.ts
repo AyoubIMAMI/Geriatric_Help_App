@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Resident} from "../../../models/resident.model";
+import {ResidentService} from "../../../services/resident.service";
 
 @Component({
   selector: 'app-resident-creation',
@@ -8,8 +9,10 @@ import {Resident} from "../../../models/resident.model";
 })
 export class ResidentCreationComponent implements OnInit {
   resident: Resident;
+  newNom : string = '';
+  newPrenom : string = '';
 
-  constructor() { }
+  constructor(public residentService: ResidentService) { }
 
   ngOnInit(): void {
   }
