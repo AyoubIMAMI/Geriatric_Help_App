@@ -2,21 +2,30 @@
   <div class="fs-2 mb-3"><i class="bi bi-pencil"></i> Création d'un résident</div>
 </div>
 <br>
-<div class="container h-75">
+<form class="container h-75" [formGroup]="residentForm">
   <div class="row">
 
     <div class="col">
-      <app-resident-profile-modification
-        [resident]="resident"
-        (nom)="newNom"
-        (prenom)="newPrenom">
-      </app-resident-profile-modification>
+      <div class="container d-flex">
+        <img src="assets/images/square.svg" alt="">
+
+        <div class="container">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" placeholder="Nom" value="{{nom}}" [formControlName]="'nom'">
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Prénom" value="{{prenom}}" [formControlName]="'prenom'">
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="col d-flex flex-column">
       <app-resident-modification-handicap></app-resident-modification-handicap>
       <br>
-      <button class="btn btn-success" routerLink="/resident">Valider</button>
+      <button class="btn btn-success" type="submit" (click)="addResident()">Valider</button>
     </div>
   </div>
-</div>
+</form>
