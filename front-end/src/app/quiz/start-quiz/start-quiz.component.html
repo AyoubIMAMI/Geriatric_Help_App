@@ -2,14 +2,14 @@
 <input (click)="startHandicape()" type="checkbox" id="modeHandicape">
 <label for="modeHandicape">Mode Handicape</label>
 <div (click)="leftClick()" (contextmenu)="rightClick($event)" id="quiz">
-    <div id="question ">Les dates de la 2nd Guerre Mondiale ?</div>
+    <div id="question ">{{currentQuestion.label}}</div>
     <div class="row ">
-        <input (click)="chooseAnswer($event) " type="button " class="answer hide true" id="answer1 " value="1939-1945 " />
-        <input (click)="chooseAnswer($event) " type="button " class="answer hide false " id="answer2 " value="1919-1975 " />
+        <input (click)="chooseAnswer($event)" type="button" class="answer hide {{currentQuestion.answers[0].isCorrect}}" id="answer1 " value={{currentQuestion.answers[0].value}} />
+        <input (click)="chooseAnswer($event) " type="button" class="answer hide {{currentQuestion.answers[1].isCorrect}} " id="answer2 " value={{currentQuestion.answers[1].value}} />
     </div>
     <div class="row ">
-        <input (click)="chooseAnswer($event) " type="button " class="answer hide false" id="answer3 " value="1739-1945 " />
-        <input (click)="chooseAnswer($event) " type="button " class="answer hide false " id="answer4 " value="1979-2945 " />
+        <input (click)="chooseAnswer($event) " type="button" class="answer hide {{currentQuestion.answers[2].isCorrect}}" id="answer3 " value={{currentQuestion.answers[2].value}} />
+        <input (click)="chooseAnswer($event) " type="button" class="answer hide {{currentQuestion.answers[3].isCorrect}} " id="answer4 " value={{currentQuestion.answers[3].value}} />
     </div>
     <p id="resultAnswer"></p>
 </div>

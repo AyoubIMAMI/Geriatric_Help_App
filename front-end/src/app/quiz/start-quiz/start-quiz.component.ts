@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
+import { Question } from 'src/models/question.model';
 
 @Component({
   selector: 'app-start-quiz',
@@ -7,9 +8,12 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 })
 export class StartQuizComponent implements OnInit {
 
+  @Input() currentQuestion: Question;
   public responseIndex: number;
+  public label: String;
   constructor() {
     this.responseIndex = 0;
+    this.label = this.currentQuestion.label;
 }
 
   ngOnInit(): void {}
