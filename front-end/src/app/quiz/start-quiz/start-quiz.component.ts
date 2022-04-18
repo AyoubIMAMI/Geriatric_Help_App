@@ -8,15 +8,20 @@ import { Question } from 'src/models/question.model';
 })
 export class StartQuizComponent implements OnInit {
 
+  @Input() test: string;
   @Input() currentQuestion: Question;
+
+
   public responseIndex: number;
   public label: String;
+
   constructor() {
     this.responseIndex = 0;
-    this.label = this.currentQuestion.label;
-}
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+      console.log('This if the value for user-id: ' + this.test);
+  }
 
   chooseAnswer(event: Event): void {
     const eventTarget: Element = event.target as Element;
