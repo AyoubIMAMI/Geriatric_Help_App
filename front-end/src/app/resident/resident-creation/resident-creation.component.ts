@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Resident} from "../../../models/resident.model";
 import {ResidentService} from "../../../services/resident.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-resident-creation',
@@ -15,7 +16,7 @@ export class ResidentCreationComponent implements OnInit {
   residentForm: FormGroup;
 
 
-  constructor(public formBuilder: FormBuilder, public residentService: ResidentService) {
+  constructor(public router : Router , public formBuilder: FormBuilder, public residentService: ResidentService) {
     this.residentForm = this.formBuilder.group({
       nom: [''],
       prenom: [''],
@@ -31,5 +32,6 @@ export class ResidentCreationComponent implements OnInit {
     const residentToAdd: Resident = this.residentForm.getRawValue() as Resident;
     console.log("addResident", residentToAdd)
     this.residentService.addResident(residentToAdd);
+    this.router.navigate(['./residents']);
   }
 }
