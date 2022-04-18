@@ -38,13 +38,24 @@ export class QuizComponent implements OnInit {
 
   public quiz: Quiz;
   public currentQuestion: Question;
+  public currentQuizIndex: number;
+
 
   constructor(private route: ActivatedRoute, private quizService: QuizService) {
     this.quiz = this.quizService.getCurrentQuiz();
     this.currentQuestion = this.quiz.questions[0];
+    this.currentQuizIndex=0;
   }
   ngOnInit(): void {
     
+  }
+  previousQuiz(){
+    if(this.currentQuizIndex>0)
+      this.currentQuizIndex--;
+  }
+
+  nextQuiz(){
+    this.currentQuizIndex++;
   }
   
 }
