@@ -13,7 +13,6 @@ export class QuizComponent implements OnInit {
 
   public quiz: Quiz;
   public currentQuizIndex: number;
-  public label: String;
 
   constructor(private route: ActivatedRoute, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
@@ -22,7 +21,6 @@ export class QuizComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
-    this.label= this.quiz.questions[0].label;
   }
 
   previousQuiz(){
