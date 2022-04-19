@@ -13,6 +13,7 @@ export class ResidentCreationComponent implements OnInit {
   resident: Resident;
   nom : string = '';
   prenom : string = '';
+  handicap : string = 'aucun';
   residentForm: FormGroup;
 
 
@@ -21,7 +22,7 @@ export class ResidentCreationComponent implements OnInit {
       nom: [''],
       prenom: [''],
       picture: ['assets/images/square.svg'],
-      handicap: [0]
+      handicap: ['Aucun']
     });
   }
 
@@ -33,5 +34,11 @@ export class ResidentCreationComponent implements OnInit {
     console.log("addResident", residentToAdd)
     this.residentService.addResident(residentToAdd);
     this.router.navigate(['./residents']);
+  }
+
+  outHandicapHandler(handicap : string){
+    this.residentForm.patchValue({
+      handicap:handicap
+    })
   }
 }
