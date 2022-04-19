@@ -9,6 +9,7 @@ import { serverUrl, httpOptionsBase } from '../configs/server.config';
   providedIn: 'root'
 })
 export class QuizService {
+
   /*
    Services Documentation:
    https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
@@ -19,6 +20,8 @@ export class QuizService {
    The list is retrieved from the mock.
    */
   private quizzes: Quiz[] = [];
+  private currentQuiz: Quiz;
+
 
   /*
    Observable which contains the list of the quiz.
@@ -69,6 +72,13 @@ export class QuizService {
   deleteQuestion(quiz: Quiz, question: Question): void {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath + '/' + question.id;
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
+  }
+
+  setCurrentQuiz(quiz: Quiz): void {
+    this.currentQuiz = quiz;
+  }
+  getCurrentQuiz(): Quiz {
+    return this.currentQuiz;
   }
 
   /*

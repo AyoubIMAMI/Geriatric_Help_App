@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Resident} from "../../../models/resident.model";
 
 @Component({
@@ -8,18 +8,17 @@ import {Resident} from "../../../models/resident.model";
 })
 export class ResidentProfileModificationComponent implements OnInit {
   @Input() resident : Resident;
-  @Output() nom : string = '';
-  @Output() prenom : string = '';
-
-  oldNom : string = 'Nom';
-  oldPrenom : string = 'Prénom';
+  @Output() nomValueEvent = new EventEmitter<string>();
+  @Output() prenomValueEvent = new EventEmitter<string>();
+  nomValue : String = '';
+  prenomValue : String = '';
 
   constructor() { }
 
   ngOnInit(): void {
     if(this.resident != null){
-      this.oldNom = this.resident.nom;
-      this.oldPrenom = this.resident.prenom;
+      this.nomValue = this.resident.nom;
+      this.prenomValue = this.resident.prenom;
     }
   }
 }

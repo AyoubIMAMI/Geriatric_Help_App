@@ -1,19 +1,15 @@
-<h1>QuizIndex: {{currentQuizIndex}}</h1>
-<h1>QuizId: {{quiz.id}}</h1>
-<h1>name: {{quiz.name}}</h1>
-
-<app-start-quiz></app-start-quiz>
+<app-start-quiz [currentQuestion]="currentQuestion" [test]="'Blue32'"></app-start-quiz>
 <div id="navigation">
     <div class="card-body d-flex justify-content-center flex-wrap ">
         <div class="p-2">
-            <a (click)="previousQuiz()" class="btn btn-secondary">
+            <a (click)="previousQuiz()" class="btn btn-secondary navButton">
                 question précédente
             </a>
         </div>
     </div>
     <div class="card-body d-flex justify-content-center flex-wrap ">
         <div class="p-2">
-            <a (click)="nextQuiz()" class="btn btn-secondary">
+            <a (click)="nextQuiz()" class="btn btn-secondary navButton">
                 question suivante
             </a>
         </div>
