@@ -81,6 +81,10 @@ export class QuizService {
     return this.currentQuiz;
   }
 
+  getLastQuizIdAdded(): string{
+    return this.quizzes[this.quizzes.length-1].id;
+  }
+
   /*
   Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
   addQuestion(quiz: Quiz, question: Question) {

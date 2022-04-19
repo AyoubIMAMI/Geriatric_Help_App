@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
 import { Question } from 'src/models/question.model';
@@ -11,7 +11,15 @@ import { Question } from 'src/models/question.model';
 })
 export class createNewQuestionComponent implements OnInit {
 
-  @Input()
+  userName; 
+  formdata;
+  ngOnInit() { 
+      this.formdata = new FormGroup({ 
+        userName: new FormControl("Tutorialspoint")
+      }); 
+  } 
+  onClickSubmit(data) {this.userName = data.userName;}
+  /*@Input()
   quiz: Quiz;
 
   public questionForm: FormGroup;
@@ -53,5 +61,5 @@ export class createNewQuestionComponent implements OnInit {
       this.quizService.addQuestion(this.quiz, question);
       this.initializeQuestionForm();
     }
-  }
+  }*/
 }

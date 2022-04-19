@@ -1,8 +1,10 @@
 <div class="container">
-  <div class="row">
-    <div class="col"><app-creation-of-quiz></app-creation-of-quiz></div>
-    <div class="col"><app-adding-questions></app-adding-questions></div>
-  </div>
+    <div class="row">
+        <div class="col">
+            <app-creation-of-quiz (newItemEvent)="unlockQuestion($event)"></app-creation-of-quiz>
+            <app-adding-questions *ngIf="quizIsCreated"></app-adding-questions>
+        </div>
+    </div>
 </div>
 
 <!-- Uncomment below to see your form structure and how it changes-->
