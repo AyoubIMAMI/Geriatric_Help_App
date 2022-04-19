@@ -8,19 +8,23 @@ import { Question } from 'src/models/question.model';
 })
 export class StartQuizComponent implements OnInit {
 
-  @Input() test: string;
+  @Input() indexOfQuestion: string;
   @Input() currentQuestion: Question;
 
 
   public responseIndex: number;
-  public label: String;
+  public label: string;
+  public currentIndex: number;
 
   constructor() {
-    this.responseIndex = 0;
+    this.responseIndex = +this.indexOfQuestion;
   }
 
   ngOnInit() {
-      console.log('This if the value for user-id: ' + this.test);
+      console.log('This if the value for user-id: ' + this.indexOfQuestion);
+  }
+  ngOnChanges(): void{
+    if(+this.indexOfQuestion != this.responseIndex) this.hideAnswer();
   }
 
   chooseAnswer(event: Event): void {
@@ -45,6 +49,15 @@ export class StartQuizComponent implements OnInit {
     const answerList = document.getElementsByClassName("answer");
     for(let i = 0 ; i < answerList.length ; i++){
       answerList[i].classList.remove("hide");
+    }
+  }
+
+  hideAnswer(){
+    const answerList = document.getElementsByClassName("answer");
+    const resultAnswer: Element = document.getElementById("resultAnswer");
+    resultAnswer.innerHTML = "";
+    for(let i = 0 ; i < answerList.length ; i++){
+      answerList[i].classList.add("hide");
     }
   }
 

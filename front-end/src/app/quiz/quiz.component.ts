@@ -39,6 +39,7 @@ export class QuizComponent implements OnInit {
   public quiz: Quiz;
   public currentQuestion: Question;
   public currentQuizIndex: number;
+  public msg: number
 
 
   constructor(private route: ActivatedRoute, private quizService: QuizService) {
@@ -52,10 +53,12 @@ export class QuizComponent implements OnInit {
   previousQuiz(){
     if(this.currentQuizIndex>0)
       this.currentQuizIndex--;
+    this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
   }
 
   nextQuiz(){
     this.currentQuizIndex++;
+    this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
   }
   
 }
