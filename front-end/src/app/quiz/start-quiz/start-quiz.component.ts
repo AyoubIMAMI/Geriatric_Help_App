@@ -14,10 +14,9 @@ export class StartQuizComponent implements OnInit {
 
   public responseIndex: number;
   public label: string;
-  public currentIndex: number;
 
   constructor() {
-    this.responseIndex = +this.indexOfQuestion;
+    this.responseIndex = 0;
   }
 
   ngOnInit() {
