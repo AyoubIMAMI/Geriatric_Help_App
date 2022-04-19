@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from 'src/models/question.model';
 import { Quiz } from 'src/models/quiz.model';
 import { QuizService } from 'src/services/quiz.service';
@@ -42,7 +42,8 @@ export class QuizComponent implements OnInit {
   public msg: number
 
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
+
+  constructor(private quizService: QuizService,   public router : Router) {
     this.quiz = this.quizService.getCurrentQuiz();
     this.currentQuestion = this.quiz.questions[0];
     this.currentQuizIndex=0;
@@ -57,8 +58,13 @@ export class QuizComponent implements OnInit {
   }
 
   nextQuiz(){
-    this.currentQuizIndex++;
-    this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
+    if(this.currentQuizIndex >= this.quiz.questions.length-1)
+      this.router.navigate(['./end-quiz']);
+    else{
+      this.currentQuizIndex++;
+      this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
+    }
+    console.log("currenIndex="+this.currentQuizIndex+" and maxIndex="+this.quiz.questions.length);
   }
   
 }
