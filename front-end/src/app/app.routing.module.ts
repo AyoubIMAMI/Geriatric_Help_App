@@ -17,6 +17,7 @@ import {ResidentCreationComponent} from "./resident/resident-creation/resident-c
 
 
 const routes: Routes = [
+  {path: 'quiz/creation', component: CreateQuizComponent},
   {path: 'resident/creation', component: ResidentCreationComponent},
   {path: 'user-list', component: UserListComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},
@@ -31,7 +32,6 @@ const routes: Routes = [
   {path: 'quizzes-display', component: QuizzesDisplayComponent},
 
   {path: 'resident/:id/modification', component: ResidentModificationComponent},
-  {path: 'quiz/creation', component: CreateQuizComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
