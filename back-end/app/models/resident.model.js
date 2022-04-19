@@ -5,5 +5,5 @@ module.exports = new BaseModel('Resident', {
     nom: Joi.string().required(),
     prenom: Joi.string().required(),
     picture: Joi.string().required(),
-    handicap: Joi.number().required()
+    handicap: Joi.string().required()
 })

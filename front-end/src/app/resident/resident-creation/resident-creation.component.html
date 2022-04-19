@@ -23,7 +23,10 @@
     </div>
 
     <div class="col d-flex flex-column">
-      <app-resident-modification-handicap></app-resident-modification-handicap>
+      <app-resident-modification-handicap
+        [formControlName]="handicap"
+        (outHandicap)="outHandicapHandler($event)">
+      </app-resident-modification-handicap>
       <br>
       <button class="btn btn-success" type="submit" (click)="addResident()">Valider</button>
     </div>
