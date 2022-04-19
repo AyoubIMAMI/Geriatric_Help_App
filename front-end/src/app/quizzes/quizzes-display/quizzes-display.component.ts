@@ -32,4 +32,8 @@ export class QuizzesDisplayComponent implements OnInit {
   deleteQuiz(quiz: Quiz): void {
     this.quizService.deleteQuiz(quiz);
   }
+
+  defineSelectedQuiz(quiz: Quiz): void{
+    this.quizService.setCurrentQuiz(quiz);
+  }
 }

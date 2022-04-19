@@ -1,15 +1,50 @@
-<h1>START QUIZ</h1>
-<input (click)="startHandicape()" type="checkbox" id="modeHandicape">
-<label for="modeHandicape">Mode Handicape</label>
+<div id="controlPanel" (click)="updateMode()">
+    <div>
+        <input type="radio" name="mode" value="none" id="noMode">
+        <label for="noMode">none</label>
+    </div>
+    <div>
+        <input (click)="startMouseControlMode()" type="radio" name="mode" value="mouseControle" id="mouseControl">
+        <label for="mouseControl">mouseControl</label>
+    </div>
+    <div>
+        <input (click)="startMissClick()" type="radio" name="mode" value="missClick" id="missClick">
+        <label for="missClick">missClick</label>
+    </div>
+    <div>
+        <input (click)="startMissClickVisible()" type="radio" name="mode" value="missClickVisible" id="missClickVisible">
+        <label for="missClickVisible">missClickVisible</label>
+    </div>
+</div>
+
+
+
 <div (click)="leftClick()" (contextmenu)="rightClick($event)" id="quiz">
-    <div id="question ">{{currentQuestion.label}}</div>
+    <div id="question" class="zoomText">La date à laquelle il est née ?</div>
     <div class="row ">
-        <input (click)="chooseAnswer($event)" type="button" class="answer hide {{currentQuestion.answers[0].isCorrect}}" id="answer1 " value={{currentQuestion.answers[0].value}} />
-        <input (click)="chooseAnswer($event) " type="button" class="answer hide {{currentQuestion.answers[1].isCorrect}} " id="answer2 " value={{currentQuestion.answers[1].value}} />
+        <div class="missClickRange" (click)="chooseAnswer($event)">
+            <a id="answer1" class="btn btn-secondary answer hide true">
+                1999
+            </a>
+        </div>
+        <div class="missClickRange" (click)="chooseAnswer($event)">
+            <a id="answer2" class="btn btn-secondary answer hide false">
+                1899
+            </a>
+        </div>
+
     </div>
     <div class="row ">
-        <input (click)="chooseAnswer($event) " type="button" class="answer hide {{currentQuestion.answers[2].isCorrect}}" id="answer3 " value={{currentQuestion.answers[2].value}} />
-        <input (click)="chooseAnswer($event) " type="button" class="answer hide {{currentQuestion.answers[3].isCorrect}} " id="answer4 " value={{currentQuestion.answers[3].value}} />
+        <div class="missClickRange" (click)="chooseAnswer($event)">
+            <a id="answer3" class="btn btn-secondary answer hide false">
+                 1699
+            </a>
+        </div>
+        <div class="missClickRange" (click)="chooseAnswer($event)">
+            <a id="answer4" class="btn btn-secondary answer hide false">
+                1699
+            </a>
+        </div>
     </div>
-    <p id="resultAnswer"></p>
+    <p id="resultAnswer" class="zoomText"></p>
 </div>
