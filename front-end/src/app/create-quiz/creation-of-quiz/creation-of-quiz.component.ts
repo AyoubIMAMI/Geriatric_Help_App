@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {QuizService} from "../../../services/quiz.service";
 import {Quiz} from "../../../models/quiz.model";
@@ -17,8 +17,12 @@ export class CreationOfQuizComponent implements OnInit{
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance
    */
   public quizForm: FormGroup;
+  @Output() newItemEvent = new EventEmitter<string>();
+  public quizIsNotCreated: Boolean;
+
 
   constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+    this.quizIsNotCreated = true;
     this.quizForm = this.formBuilder.group({
       name: [''],
       theme: ['']
@@ -34,8 +38,11 @@ export class CreationOfQuizComponent implements OnInit{
   addQuiz(): void {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
-
+    console.log(quizToCreate);
     this.quizService.addQuiz(quizToCreate);
+    let quizId = this.quizService.getLastQuizIdAdded();
+    this.newItemEvent.emit(quizId);
+    this.quizIsNotCreated = false;
   }
 
 }
