@@ -18,7 +18,11 @@
         </div>
 
         <div class="col d-flex flex-column">
-            <button class="btn btn-primary" routerLink="/resident/{{resident.id}}/modification">Modifier</button>
+          <app-resident-handicap
+            [handicap]="resident.handicap">
+          </app-resident-handicap>
+
+          <button class="btn btn-primary my-2" routerLink="/resident/{{resident.id}}/modification">Modifier</button>
         </div>
     </div>
 </div>
