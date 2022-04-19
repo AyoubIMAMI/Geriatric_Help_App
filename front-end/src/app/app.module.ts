@@ -24,6 +24,10 @@ import {ResidentModificationModule} from "./resident/resident-modification/resid
 import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
 import {CreateQuizModule} from "./create-quiz/create-quiz.module";
 import {ResidentCreationModule} from "./resident/resident-creation/resident-creation.module";
+import {ResultatsDisplayComponent} from "./end-quiz/resultats-display/resultats-display.component";
+import {ProchainQuizComponent} from "./end-quiz/prochain-quiz/prochain-quiz.component";
+import {EndQuizComponent} from "./end-quiz/end-quiz.component";
+import {EndQuizModule} from "./end-quiz/end-quiz.module";
 
 @NgModule({
   declarations: [
@@ -53,6 +57,7 @@ import {ResidentCreationModule} from "./resident/resident-creation/resident-crea
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    EndQuizModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
