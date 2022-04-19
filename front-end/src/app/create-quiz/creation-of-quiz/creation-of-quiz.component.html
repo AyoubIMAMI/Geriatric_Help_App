@@ -10,9 +10,9 @@
         <div class="col">
             <div class="p-2 bd-highlight mb-3">
                 <form class="quiz-form" [formGroup]="quizForm">
-                    <input class="input-custom" type="text" id="name" [formControlName]="'name'">
+                    <input class="input-custom" type="text" id="name" [formControlName]="'name'" required>
                     <br>
-                    <input class="input-custom" type="text" id="theme" [formControlName]="'theme'">
+                    <input class="input-custom" type="text" id="theme" [formControlName]="'theme'" required>
                     <br>
                     <div *ngIf="quizIsNotCreated" iclass="d-flex justify-content-center">
                         <button type="submit" class="button-card" (click)="addQuiz()">Create</button>

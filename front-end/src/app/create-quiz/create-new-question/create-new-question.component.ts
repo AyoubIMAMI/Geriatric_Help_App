@@ -10,23 +10,32 @@ import { Question } from 'src/models/question.model';
   styleUrls: ['./create-new-question.component.scss']
 })
 export class createNewQuestionComponent implements OnInit {
-
-  userName; 
-  formdata;
-  ngOnInit() { 
-      this.formdata = new FormGroup({ 
-        userName: new FormControl("Tutorialspoint")
-      }); 
-  } 
-  onClickSubmit(data) {this.userName = data.userName;}
-  /*@Input()
+  @Input()
   quiz: Quiz;
+  
 
   public questionForm: FormGroup;
+  isCorrectTab: any = [
+    {name:'isCorrect', id:1, selected: true}, 
+    {name:'isCorrect', id:2, selected: false},
+    {name:'isCorrect', id:3, selected: false},  
+    {name:'isCorrect', id:4, selected: false}
+  ]
 
-  constructor(public formBuilder: FormBuilder, private quizService: QuizService) {
-    // Form creation
-    this.initializeQuestionForm();
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+    this.questionForm = this.formBuilder.group({
+      question:'',
+      answer: [''],
+      isCorrectTab: this.createCorrectTab(this.isCorrectTab)
+    });
+  }
+
+  // Create form array
+  createCorrectTab(comboBoxList): FormArray{
+    const arr = comboBoxList.map(isCorrect => {
+      return new FormControl(isCorrect.selected)
+    });
+    return new FormArray(arr);
   }
 
   private initializeQuestionForm(): void {
@@ -61,5 +70,5 @@ export class createNewQuestionComponent implements OnInit {
       this.quizService.addQuestion(this.quiz, question);
       this.initializeQuestionForm();
     }
-  }*/
+  }
 }
