@@ -2,13 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
-import { Question } from '../models/question.model';
+import { Answer, Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
+  addAnswers(quiz: Quiz, question: Question, answers: Answer[]): void {
+    for(let  i = 0 ; i < 4 ; i++){
+      const answerUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath+ '/' +question.id+ '/' +this.answersPath;
+      this.http.post<Question>(answerUrl, answers[i], this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
+    }
+  }
 
   /*
    Services Documentation:
@@ -34,6 +40,9 @@ export class QuizService {
 
   private quizUrl = serverUrl + '/quizzes';
   private questionsPath = 'questions';
+  private answersPath = 'answers';
+
+
 
   private httpOptions = httpOptionsBase;
 

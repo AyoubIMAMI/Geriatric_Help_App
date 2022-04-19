@@ -5,18 +5,20 @@
             Question <br>
             <input class="input-custom" type="text" id="question" [formControlName]="'question'">
         </label>
-        <div *ngFor="let i of [1,2,3,4]">
+    </form>
+
+    <div *ngFor="let i of [1,2,3,4]">
+        <form class="quiz-form" [formGroup]="answerForm[i]">
             <label for="answer">
                 Réponse <br>
                 <input class="input-custom" type="text" id="answer" [formControlName]="'answer'">
             </label>
             <br>
-            <input name="isCorrect" type="checkbox" [formControlName]="'isCorrect'">
+            <input name="isCorrect" type="checkbox">
             <label for="isCorrect">Correct</label>
-
-        </div>
-        <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
-    </form>
+        </form>
+    </div>
+    <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->

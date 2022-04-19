@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
-import { Question } from 'src/models/question.model';
+import { Answer, Question } from 'src/models/question.model';
 
 @Component({
   selector: 'app-create-new-question',
@@ -15,19 +15,21 @@ export class createNewQuestionComponent implements OnInit {
   
 
   public questionForm: FormGroup;
-  isCorrectTab: any = [
-    {name:'isCorrect', id:1, selected: true}, 
-    {name:'isCorrect', id:2, selected: false},
-    {name:'isCorrect', id:3, selected: false},  
-    {name:'isCorrect', id:4, selected: false}
-  ]
+  public answersForm:FormGroup[] = new Array(4) 
+
+
 
   constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
     this.questionForm = this.formBuilder.group({
       question:'',
-      answer: [''],
-      isCorrectTab: this.createCorrectTab(this.isCorrectTab)
     });
+    for(let i = 0 ; i < 4 ; i++){
+      this.answersForm.push(this.formBuilder.group({
+        answer:'',
+        isCorrect: false
+      }));
+    }
+
   }
 
   // Create form array
@@ -65,10 +67,43 @@ export class createNewQuestionComponent implements OnInit {
   }
 
   addQuestion(): void {
-    if (this.questionForm.valid) {
+    if (this.questionForm.valid && this.allAnswerFormValid()) {
       const question = this.questionForm.getRawValue() as Question;
+      const answers = this.formToAnswers();
+
+      let idTrueAnswer = this.getIdTrueAnswer();
+      answers[idTrueAnswer].isCorrect=true;
       this.quizService.addQuestion(this.quiz, question);
-      this.initializeQuestionForm();
+      this.quizService.addAnswers(this.quiz, question, answers);
     }
   }
+  allAnswerFormValid(): Boolean{
+    for(let i = 0 ; i < 4 ; i++){
+      if(this.answersForm[i].invalid) return false;
+    }
+    return true;
+  }
+
+  formToAnswers(): Answer[]{
+    let answers:  Answer[];
+    for(let i = 0 ; i < 4 ; i++){
+      const answer = this.answersForm[i].getRawValue() as Answer;
+      answers.push(answer);
+    }
+    return answers;
+  }
+
+  getIdTrueAnswer(): number {
+    let allRadio = document.querySelectorAll('input[name="isCorrect"]');
+    for (let i = 0 ; i < allRadio.length ; i++) {
+      let currentButton = allRadio[i] as HTMLInputElement;
+      if (currentButton.checked) {
+        return i;
+      }
+    }
+    return -1
+  }
+
 }
+
+
