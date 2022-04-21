@@ -39,11 +39,9 @@
             </a>
         </div>
         <div class="missClickRange" (click)="chooseAnswer($event)">
-          <div class="answerContainer">
             <a id="answer4" class="btn btn-secondary answer hide {{currentQuestion.answers[3].isCorrect}}">
                 {{currentQuestion.answers[3].value}}
             </a>
-          </div>
         </div>
     </div>
     <p id="resultAnswer" class="zoomText"></p>

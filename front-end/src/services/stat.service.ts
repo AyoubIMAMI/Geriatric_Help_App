@@ -50,8 +50,4 @@ export class StatService {
     });
   }
 
-  deleteStat(stat: Stat): void {
-    const urlWithId = this.statUrl + '/' + stat.id;
-    this.http.delete<Stat>(urlWithId, this.httpOptions).subscribe(() => this.retrieveStat());
-  }
 }
