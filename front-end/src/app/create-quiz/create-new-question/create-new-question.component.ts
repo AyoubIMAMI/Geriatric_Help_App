@@ -12,10 +12,14 @@ import { Answer, Question } from 'src/models/question.model';
 export class createNewQuestionComponent implements OnInit {
   @Input()
   quiz: Quiz;
-  
+
 
   public questionForm: FormGroup;
-  public answersForm:FormGroup[] = new Array(4) 
+
+  public answersForm0:FormGroup;
+  public answersForm1:FormGroup;
+  public answersForm2:FormGroup;
+  public answersForm3:FormGroup;
 
 
 
@@ -23,13 +27,22 @@ export class createNewQuestionComponent implements OnInit {
     this.questionForm = this.formBuilder.group({
       question:'',
     });
-    for(let i = 0 ; i < 4 ; i++){
-      this.answersForm.push(this.formBuilder.group({
-        answer:'',
-        isCorrect: false
-      }));
-    }
-
+    this.answersForm0 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+    this.answersForm1 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+    this.answersForm2 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+    this.answersForm3 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
   }
 
   // Create form array
@@ -78,18 +91,16 @@ export class createNewQuestionComponent implements OnInit {
     }
   }
   allAnswerFormValid(): Boolean{
-    for(let i = 0 ; i < 4 ; i++){
-      if(this.answersForm[i].invalid) return false;
-    }
+    if(this.answersForm0.invalid || this.answersForm1.invalid || this.answersForm2.invalid || this.answersForm3.invalid) return false;
     return true;
   }
 
   formToAnswers(): Answer[]{
     let answers:  Answer[];
-    for(let i = 0 ; i < 4 ; i++){
-      const answer = this.answersForm[i].getRawValue() as Answer;
-      answers.push(answer);
-    }
+    answers.push(this.answersForm0.getRawValue() as Answer);
+    answers.push(this.answersForm1.getRawValue() as Answer);
+    answers.push(this.answersForm2.getRawValue() as Answer);
+    answers.push(this.answersForm3.getRawValue() as Answer);
     return answers;
   }
 
