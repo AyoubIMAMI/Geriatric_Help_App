@@ -1,9 +1,24 @@
-<div>
-    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-        <input type="text" name="userName " placeholder="userName " formControlName="userName ">
-        <br/>
-        <br/>
-        <input type="submit" value="Click here ">
+<div class="card">
+    <h2>Create a new Question</h2>
+    <form class="quiz-form" [formGroup]="questionForm">
+        <label for="question">
+            Question <br>
+            <input class="input-custom" type="text" id="question" [formControlName]="'question'">
+        </label>
     </form>
+
+    <div *ngFor="let i of [1,2,3,4]">
+        <form class="quiz-form" [formGroup]="answerForm[i]">
+            <label for="answer">
+                Réponse <br>
+                <input class="input-custom" type="text" id="answer" [formControlName]="'answer'">
+            </label>
+            <br>
+            <input name="isCorrect" type="checkbox">
+            <label for="isCorrect">Correct</label>
+        </form>
+    </div>
+    <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
 </div>
-<p> Textbox result is: {{userName}} </p>
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->
