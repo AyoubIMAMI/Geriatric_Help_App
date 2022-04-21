@@ -17,6 +17,7 @@ export class StartQuizComponent implements OnInit {
 
   constructor() {
     this.responseIndex = 0;
+    //this.fixFontSize();
   }
 
   ngOnInit() {
@@ -111,7 +112,7 @@ export class StartQuizComponent implements OnInit {
     else if(currentMode == "missClickVisible")this.startMissClickVisible();
 
   }
-  
+
 
   startMouseControlMode(){
     if(document.getElementsByClassName("selected").length == 0){
@@ -160,6 +161,17 @@ export class StartQuizComponent implements OnInit {
       currentMissClickDiv.classList.remove("missClickModeVisible");
     }
   }
+
+  /*
+  fixFontSize() {
+    let listAnswer = document.getElementsByClassName("answer");
+    for(let i = 0; i < 4; i++) {
+      let currentAnswer = listAnswer[i] as HTMLElement;
+      if(currentAnswer.innerText.length > 50) {
+
+      }
+    }
+  }*/
 
 }
 
