@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="End quiz page">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="home update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/app/models/stat.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/stat.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/models/stat.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/models/stat.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/services/stat.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/stat.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <workItem from="1650348115499" duration="6468000" />
       <workItem from="1650355847420" duration="5863000" />
       <workItem from="1650526841929" duration="1319000" />
-      <workItem from="1650528275915" duration="15275000" />
+      <workItem from="1650528275915" duration="18518000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -334,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650544470917</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="home update">
+      <created>1650549163972</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1650549163972</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +374,7 @@
     <MESSAGE value="Début de la modification des handicaps" />
     <MESSAGE value="Removing nav link" />
     <MESSAGE value="End quiz page" />
-    <option name="LAST_COMMIT_MESSAGE" value="End quiz page" />
+    <MESSAGE value="home update" />
+    <option name="LAST_COMMIT_MESSAGE" value="home update" />
   </component>
 </project>
