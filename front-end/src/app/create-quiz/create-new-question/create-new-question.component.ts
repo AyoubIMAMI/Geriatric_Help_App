@@ -90,7 +90,8 @@ export class createNewQuestionComponent implements OnInit {
       let idTrueAnswer = this.getIdTrueAnswer();
       answers[idTrueAnswer].isCorrect=true;
       this.quizService.addQuestion(this.quiz, question);
-      this.quizService.addAnswers(this.quiz, question, answers);
+      let questionId: number = +this.quizService.getLastQuestionIdAdded();
+      this.quizService.addAnswers(this.quiz, questionId, answers);
       console.log(question);
       console.log(answers);
     }
