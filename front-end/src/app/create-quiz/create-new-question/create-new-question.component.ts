@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
-import { Question } from 'src/models/question.model';
+import { Answer, Question } from 'src/models/question.model';
 
 @Component({
   selector: 'app-create-new-question',
@@ -10,23 +10,50 @@ import { Question } from 'src/models/question.model';
   styleUrls: ['./create-new-question.component.scss']
 })
 export class createNewQuestionComponent implements OnInit {
+  public quiz: Quiz;
 
-  userName; 
-  formdata;
-  ngOnInit() { 
-      this.formdata = new FormGroup({ 
-        userName: new FormControl("Tutorialspoint")
-      }); 
-  } 
-  onClickSubmit(data) {this.userName = data.userName;}
-  /*@Input()
-  quiz: Quiz;
 
   public questionForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, private quizService: QuizService) {
-    // Form creation
-    this.initializeQuestionForm();
+  public answersForm0:FormGroup;
+  public answersForm1:FormGroup;
+  public answersForm2:FormGroup;
+  public answersForm3:FormGroup;
+  //public listName: string[] = ['answersForm0', 'answersForm1', 'answersForm2', 'answersForm3'];
+  //public answersForms: FormGroup[] = new Array(4);
+
+
+
+
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+    this.quiz = quizService.getCurrentQuiz()
+    this.questionForm = this.formBuilder.group({
+      question:'',
+    });
+    this.answersForm0 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+    this.answersForm1 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+    this.answersForm2 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+    this.answersForm3 = this.formBuilder.group({
+      answer:'',
+      isCorrect: false
+    });
+  }
+
+  // Create form array
+  createCorrectTab(comboBoxList): FormArray{
+    const arr = comboBoxList.map(isCorrect => {
+      return new FormControl(isCorrect.selected)
+    });
+    return new FormArray(arr);
   }
 
   private initializeQuestionForm(): void {
@@ -56,10 +83,43 @@ export class createNewQuestionComponent implements OnInit {
   }
 
   addQuestion(): void {
-    if (this.questionForm.valid) {
+    if (this.questionForm.valid && this.allAnswerFormValid()) {
       const question = this.questionForm.getRawValue() as Question;
+      const answers = this.formToAnswers();
+
+      let idTrueAnswer = this.getIdTrueAnswer();
+      answers[idTrueAnswer].isCorrect=true;
       this.quizService.addQuestion(this.quiz, question);
-      this.initializeQuestionForm();
+      this.quizService.addAnswers(this.quiz, question, answers);
+      console.log(question);
+      console.log(answers);
     }
-  }*/
+  }
+  allAnswerFormValid(): Boolean{
+    if(this.answersForm0.invalid || this.answersForm1.invalid || this.answersForm2.invalid || this.answersForm3.invalid) return false;
+    return true;
+  }
+
+  formToAnswers(): Answer[]{
+    let answers:  Answer[] = new Array();
+    answers.push(this.answersForm0.getRawValue() as Answer);
+    answers.push(this.answersForm1.getRawValue() as Answer);
+    answers.push(this.answersForm2.getRawValue() as Answer);
+    answers.push(this.answersForm3.getRawValue() as Answer);
+    return answers;
+  }
+
+  getIdTrueAnswer(): number {
+    let allRadio = document.querySelectorAll('input[name="isCorrect"]');
+    for (let i = 0 ; i < allRadio.length ; i++) {
+      let currentButton = allRadio[i] as HTMLInputElement;
+      if (currentButton.checked) {
+        return i;
+      }
+    }
+    return -1
+  }
+
 }
+
+

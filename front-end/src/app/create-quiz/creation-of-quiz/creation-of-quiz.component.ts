@@ -37,12 +37,18 @@ export class CreationOfQuizComponent implements OnInit{
 
   addQuiz(): void {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
-    const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
-    console.log(quizToCreate);
-    this.quizService.addQuiz(quizToCreate);
-    let quizId = this.quizService.getLastQuizIdAdded();
-    this.newItemEvent.emit(quizId);
-    this.quizIsNotCreated = false;
+    let name = document.getElementById('name') as HTMLInputElement;
+    let theme = document.getElementById('theme') as HTMLInputElement;
+    if(theme.value != "" && name.value != ""){
+      const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
+      console.log(quizToCreate);
+      this.quizService.addQuiz(quizToCreate);
+      let quizId = this.quizService.getLastQuizIdAdded();
+      this.newItemEvent.emit(quizId);
+      this.quizIsNotCreated = false;
+      quizToCreate.id = quizId;
+      this.quizService.setCurrentQuiz(quizToCreate);
+    }
   }
 
 }

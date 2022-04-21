@@ -1,0 +1,24 @@
+<div class="col">
+
+  <br>
+  <br>
+  <div  class="d-flex justify-content-center">
+    <div class="fs-2 mb-3"><i class="bi bi-question-circle-fill"></i> Que voulez-vous faire ?</div>
+  </div>
+  <br>
+  <br>
+
+  <div class="quiz" *ngFor="let quiz of quizList">
+    <div class="card-body d-flex justify-content-center flex-wrap ">
+      <a href="#" class="btn btn-secondary">
+        <div  class="d-flex justify-content-center">
+          <div >{{quiz.name}}</div>
+          <a (click)="defineSelectedQuiz(quiz)" class="stretched-link" routerLink="/quiz/{{residentid}}/{{quiz.id}}"></a>
+        </div>
+      </a>
+    </div>
+    <br>
+  </div>
+
+
+</div>

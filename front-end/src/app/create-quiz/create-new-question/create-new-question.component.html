@@ -1,9 +1,49 @@
-<div>
-    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-        <input type="text" name="userName " placeholder="userName " formControlName="userName ">
-        <br/>
-        <br/>
-        <input type="submit" value="Click here ">
+<div class="card">
+    <h2>Create a new Question</h2>
+    <form class="quiz-form" [formGroup]="questionForm">
+        <label for="question">
+            Question <br>
+            <input class="input-custom" type="text" id="question" [formControlName]="'question'">
+        </label>
     </form>
+
+  <form class="quiz-form" [formGroup]="answersForm0">
+    <label for="answer0">
+      Réponse <br>
+      <input class="input-custom" type="text" id="answer0" [formControlName]="'answer'">
+    </label>
+    <br>
+    <input id="isCorrect0" name="isCorrect" type="checkbox">
+    <label for="isCorrect0">Correct</label>
+  </form>
+  <form class="quiz-form" [formGroup]="answersForm1">
+    <label for="answer">
+      Réponse <br>
+      <input class="input-custom" type="text" id="answer1" [formControlName]="'answer'">
+    </label>
+    <br>
+    <input id="isCorrect1" name="isCorrect1" type="checkbox">
+    <label for="isCorrect1">Correct</label>
+  </form>
+  <form class="quiz-form" [formGroup]="answersForm2">
+    <label for="answer2">
+      Réponse <br>
+      <input class="input-custom" type="text" id="answer2" [formControlName]="'answer'">
+    </label>
+    <br>
+    <input id="isCorrect2" name="isCorrect" type="checkbox">
+    <label for="isCorrect2">Correct</label>
+  </form>
+  <form class="quiz-form" [formGroup]="answersForm3">
+    <label for="answer3">
+      Réponse <br>
+      <input class="input-custom" type="text" id="answer3" [formControlName]="'answer'">
+    </label>
+    <br>
+    <input id="isCorrect3" name="isCorrect" type="checkbox">
+    <label for="isCorrect3">Correct</label>
+  </form>
+    <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
 </div>
-<p> Textbox result is: {{userName}} </p>
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->
