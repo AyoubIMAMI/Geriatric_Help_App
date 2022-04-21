@@ -1,25 +1,25 @@
 <div class="card">
     <h2>Create a new Question</h2>
     <form class="quiz-form" [formGroup]="questionForm">
-        <label for="question">
+        <label for="label">
             Question <br>
-            <input class="input-custom" type="text" id="question" [formControlName]="'question'">
+            <input class="input-custom" type="text" id="label" [formControlName]="'label'">
         </label>
     </form>
 
   <form class="quiz-form" [formGroup]="answersForm0">
     <label for="answer0">
       Réponse <br>
-      <input class="input-custom" type="text" id="answer0" [formControlName]="'answer'">
+      <input class="input-custom" type="text" id="answer0" [formControlName]="'value'">
     </label>
     <br>
     <input id="isCorrect0" name="isCorrect" type="checkbox">
     <label for="isCorrect0">Correct</label>
   </form>
   <form class="quiz-form" [formGroup]="answersForm1">
-    <label for="answer">
+    <label for="answer1">
       Réponse <br>
-      <input class="input-custom" type="text" id="answer1" [formControlName]="'answer'">
+      <input class="input-custom" type="text" id="answer1" [formControlName]="'value'">
     </label>
     <br>
     <input id="isCorrect1" name="isCorrect1" type="checkbox">
@@ -28,7 +28,7 @@
   <form class="quiz-form" [formGroup]="answersForm2">
     <label for="answer2">
       Réponse <br>
-      <input class="input-custom" type="text" id="answer2" [formControlName]="'answer'">
+      <input class="input-custom" type="text" id="answer2" [formControlName]="'value'">
     </label>
     <br>
     <input id="isCorrect2" name="isCorrect" type="checkbox">
@@ -37,7 +37,7 @@
   <form class="quiz-form" [formGroup]="answersForm3">
     <label for="answer3">
       Réponse <br>
-      <input class="input-custom" type="text" id="answer3" [formControlName]="'answer'">
+      <input class="input-custom" type="text" id="answer3" [formControlName]="'value'">
     </label>
     <br>
     <input id="isCorrect3" name="isCorrect" type="checkbox">

@@ -8,12 +8,17 @@
         <h5 class="card-title">Dernier quiz effectué</h5>
 
         <div class="card-text">
-          <div><b>Nom : </b> Paul</div>
-          <div><b>Prénom : </b> Tran-blé</div>
-          <div><b>Quiz : </b> La musique</div>
+            <div *ngIf="resident; else elseBlock1"><b>Nom : </b> {{resident.nom}}</div>
+            <ng-template #elseBlock1><div><b>Nom : </b> Aucun</div></ng-template>
+
+          <div *ngIf="resident; else elseBlock2"><b>Prénom : </b> {{resident.prenom}}</div>
+          <ng-template #elseBlock2><div><b>Prénom : </b> Aucun</div></ng-template>
+
+          <div *ngIf="quiz; else elseBlock3"><b>Quiz : </b> {{quiz.name}}</div>
+          <ng-template #elseBlock3><div><b>Quiz : </b> Aucun</div></ng-template>
         </div>
 
-        <p class="card-text text-end"><small class="text-muted">le 08/03/2022</small></p>
+        <p class="card-text text-end"><small class="text-muted">26/04/2022</small></p>
       </div>
     </div>
   </div>

@@ -1,11 +1,37 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <app-creation-of-quiz (newItemEvent)="unlockQuestion($event)"></app-creation-of-quiz>
-            <app-adding-questions *ngIf="quizIsCreated"></app-adding-questions>
+  <h4 class="p-2 bd-highlight mb-3"><i class="bi bi-journal"></i> Creation d'un nouveau quiz</h4>
+  <div class="row">
+    <div class="col-4">
+      <div class="col fs-5 mb-3">Titre
+        <div class="col fs-5 mb-3">Theme
         </div>
+      </div>
     </div>
+    <div class="col">
+      <div class="p-2 bd-highlight mb-3">
+        <form class="quiz-form" [formGroup]="quizForm">
+          <input class="input-custom" type="text" id="name" [formControlName]="'name'" required>
+          <br>
+          <input class="input-custom" type="text" id="theme" [formControlName]="'theme'" required>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="container">
+  <p>Mes questions créés:</p>
+  <div *ngFor="let question of listQuestion" class="question">
+    <p>{{question.label}}</p>
+    <p *ngFor="let answer of question.answers">{{answer.value}}</p>
+  </div>
+  <app-create-new-question (newQuestionEvent)="addQuestionToList($event)"></app-create-new-question>
+</div>
+
+
+<button class="btn btn-success" (click)="addQuiz()">Valider</button>
+
 
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->

@@ -9,9 +9,9 @@ import { serverUrl, httpOptionsBase } from '../configs/server.config';
   providedIn: 'root'
 })
 export class QuizService {
-  addAnswers(quiz: Quiz, question: Question, answers: Answer[]): void {
+  addAnswers(quiz: Quiz, questionId: number, answers: Answer[]): void {
     for(let  i = 0 ; i < 4 ; i++){
-      const answerUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath+ '/' +question.id+ '/' +this.answersPath;
+      const answerUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath+ '/' +questionId +'/' +this.answersPath;
       this.http.post<Question>(answerUrl, answers[i], this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
     }
   }
@@ -28,6 +28,7 @@ export class QuizService {
   private quizzes: Quiz[] = [];
   private questions: Question[] = [];
   private currentQuiz: Quiz;
+  private lastQuestionAdded: Question;
 
 
   /*
@@ -86,6 +87,7 @@ export class QuizService {
   addQuestion(quiz: Quiz, question: Question): void {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath;
     this.http.post<Question>(questionUrl, question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
+    this.lastQuestionAdded = question;
   }
 
   deleteQuestion(quiz: Quiz, question: Question): void {
@@ -103,6 +105,10 @@ export class QuizService {
 
   getLastQuizIdAdded(): string{
     return this.quizzes[this.quizzes.length-1].id;
+  }
+
+  getLastQuestionIdAdded(): string{
+    return this.lastQuestionAdded.id;
   }
 
   /*
