@@ -26,6 +26,7 @@ export class QuizService {
    The list is retrieved from the mock.
    */
   private quizzes: Quiz[] = [];
+  private questions: Question[] = [];
   private currentQuiz: Quiz;
   private lastQuestionAdded: Question;
 
@@ -38,6 +39,7 @@ export class QuizService {
     = new BehaviorSubject(this.quizzes);
 
   public quizSelected$: Subject<Quiz> = new Subject();
+  public questionSelected$: Subject<Question[]> = new Subject();
 
   private quizUrl = serverUrl + '/quizzes';
   private questionsPath = 'questions';
@@ -62,6 +64,13 @@ export class QuizService {
     this.http.post<Quiz>(this.quizUrl, quiz, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
+  setSelectedQuestion(quizId: string): void {
+    const urlWithId = this.quizUrl + '/' + quizId +'/questions/';
+    this.http.get<Question[]>(urlWithId).subscribe((question) => {
+      this.questionSelected$.next(question);
+    });
+  }
+
   setSelectedQuiz(quizId: string): void {
     const urlWithId = this.quizUrl + '/' + quizId;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
@@ -73,6 +82,7 @@ export class QuizService {
     const urlWithId = this.quizUrl + '/' + quiz.id;
     this.http.delete<Quiz>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
+
 
   addQuestion(quiz: Quiz, question: Question): void {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath;
@@ -91,6 +101,7 @@ export class QuizService {
   getCurrentQuiz(): Quiz {
     return this.currentQuiz;
   }
+
 
   getLastQuizIdAdded(): string{
     return this.quizzes[this.quizzes.length-1].id;
