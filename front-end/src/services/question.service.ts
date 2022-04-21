@@ -72,10 +72,10 @@ export class QuestionService {
     this.http.post<Question>(questionUrl, question, this.httpOptions).subscribe(() => this.setSelectedQuestion(question.id));
   }
 
-  deleteAnswer(question: Question, answer: Answer): void {
+  /*deleteAnswer(question: Question, answer: Answer): void {
     const questionUrl = this.questionUrl + '/' + question.id + '/' + this.answersPath + '/' + answer.id;
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuestion(question.id));
-  }
+  }*/
 
   setCurrentQuestion(question: Question): void {
     this.currentQuestion = question;
