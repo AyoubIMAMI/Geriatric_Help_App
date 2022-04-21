@@ -83,6 +83,10 @@ export class QuizService {
     this.http.delete<Quiz>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
+  addQuizComplet(quiz: Quiz): void {
+    const questionUrl = this.quizUrl + '/quizzes/questions/';
+    this.http.post<Quiz>(questionUrl,quiz);
+  }
 
   addQuestion(quiz: Quiz, question: Question): void {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath;
