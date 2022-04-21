@@ -3,23 +3,28 @@
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    width: fit-content!important;
-    height: min-content!important;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: fit-content!important;
+  height: min-content!important;
+  justify-content: space-between;
 }
+
 .answer {
   height: 14vh;
   width: 40vw;
 }
 
+.answerContainer {
+
+}
+
 #quiz {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4vh;
 }
 
 .hide {
