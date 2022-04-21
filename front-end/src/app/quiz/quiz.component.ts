@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from 'src/models/question.model';
 import { Quiz } from 'src/models/quiz.model';
 import { QuizService } from 'src/services/quiz.service';
+import {ResidentService} from "../../services/resident.service";
+import {Resident} from "../../models/resident.model";
 
 
 @Component({
@@ -40,31 +42,48 @@ export class QuizComponent implements OnInit {
   public currentQuestion: Question;
   public currentQuizIndex: number;
   public msg: number
-  public residentid: string
+  public resident: Resident;
+  public questionList: Question[];
 
 
-  constructor(private route:ActivatedRoute,private quizService: QuizService,   public router : Router) {
-    this.quiz = this.quizService.getCurrentQuiz();
-    this.currentQuestion = this.quiz.questions[0];
+  constructor(private route:ActivatedRoute,private quizService: QuizService,private residentService: ResidentService,   public router : Router) {
+    this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      this.quiz = quiz;
+      this.questionList=quiz.questions;
+      this.currentQuestion=this.questionList[0];
+      console.log(this.quiz.name);
+    });
+
     this.currentQuizIndex=0;
   }
+
   ngOnInit(): void {
-    this.residentid = this.route.snapshot.paramMap.get('residentid');
+    const residentid = this.route.snapshot.paramMap.get('residentid');
+    this.residentService.setSelectedResident(residentid);
+
+    const id = this.route.snapshot.paramMap.get('id');
+    this.quizService.setSelectedQuiz(id);
   }
+
   previousQuiz(){
     if(this.currentQuizIndex>0)
       this.currentQuizIndex--;
-    this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
+    this.currentQuestion = this.questionList[this.currentQuizIndex];
   }
 
   nextQuiz(){
-    if(this.currentQuizIndex >= this.quiz.questions.length-1)
-      this.router.navigate(['./end-quiz/'+this.residentid+'/'+this.quiz.id]);
+    if(this.currentQuizIndex >= this.questionList.length-1)
+      this.router.navigate(['./end-quiz/'+this.resident.id+'/'+this.quiz.id]);
     else{
       this.currentQuizIndex++;
-      this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
+      this.currentQuestion = this.questionList[this.currentQuizIndex];
     }
-    console.log("currenIndex="+this.currentQuizIndex+" and maxIndex="+this.quiz.questions.length);
+    console.log("currenIndex="+this.currentQuizIndex+" and maxIndex="+this.questionList.length);
+  }
+  getCurrentQuestion(){
+
+    return this.questionList[this.currentQuizIndex];
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
 import { Question } from 'src/models/question.model';
+import {Resident} from "../../../models/resident.model";
 
 @Component({
   selector: 'app-start-quiz',
@@ -10,6 +11,7 @@ export class StartQuizComponent implements OnInit {
 
   @Input() indexOfQuestion: string;
   @Input() currentQuestion: Question;
+  @Input() currentResident: Resident;
 
 
   public responseIndex: number;

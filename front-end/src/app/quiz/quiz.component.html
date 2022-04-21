@@ -1,4 +1,6 @@
-<app-start-quiz [currentQuestion]="currentQuestion" [indexOfQuestion]="currentQuizIndex"></app-start-quiz>
+<div *ngIf="questionList">
+  <app-start-quiz [currentQuestion]="getCurrentQuestion()" [indexOfQuestion]="currentQuizIndex" [currentResident]="resident" ]></app-start-quiz>
+</div>
 <div id="navigation">
     <div class="card-body d-flex justify-content-center flex-wrap ">
         <div class="p-2">
