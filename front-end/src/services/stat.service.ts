@@ -39,7 +39,7 @@ export class StatService {
     });
   }
 
-  addResident(stat: Stat): void {
+  addStat(stat: Stat): void {
     this.http.post<Stat>(this.statUrl, stat, this.httpOptions).subscribe(() => this.retrieveStat());
   }
 
