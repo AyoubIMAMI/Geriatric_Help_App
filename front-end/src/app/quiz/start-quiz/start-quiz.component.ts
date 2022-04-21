@@ -24,9 +24,17 @@ export class StartQuizComponent implements OnInit {
 
   ngOnInit() {
       console.log('This if the value for user-id: ' + this.indexOfQuestion);
+      this.defineModeByResident(this.currentResident);
   }
   ngOnChanges(): void{
     if(+this.indexOfQuestion != this.responseIndex) this.hideAnswer();
+  }
+
+  defineModeByResident(resident: Resident){
+    let residentHandicap = resident.handicap;
+    if(residentHandicap == "Tremblement essentiel") {}
+    else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
+    else if(residentHandicap == "Tremblement attitude") this.startMissClick();
   }
 
   chooseAnswer(event: Event): void {
