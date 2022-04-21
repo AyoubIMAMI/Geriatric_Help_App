@@ -10,8 +10,7 @@ import { Answer, Question } from 'src/models/question.model';
   styleUrls: ['./create-new-question.component.scss']
 })
 export class createNewQuestionComponent implements OnInit {
-  @Input()
-  quiz: Quiz;
+  public quiz: Quiz;
 
 
   public questionForm: FormGroup;
@@ -20,10 +19,14 @@ export class createNewQuestionComponent implements OnInit {
   public answersForm1:FormGroup;
   public answersForm2:FormGroup;
   public answersForm3:FormGroup;
+  //public listName: string[] = ['answersForm0', 'answersForm1', 'answersForm2', 'answersForm3'];
+  //public answersForms: FormGroup[] = new Array(4);
+
 
 
 
   constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+    this.quiz = quizService.getCurrentQuiz()
     this.questionForm = this.formBuilder.group({
       question:'',
     });
@@ -88,6 +91,8 @@ export class createNewQuestionComponent implements OnInit {
       answers[idTrueAnswer].isCorrect=true;
       this.quizService.addQuestion(this.quiz, question);
       this.quizService.addAnswers(this.quiz, question, answers);
+      console.log(question);
+      console.log(answers);
     }
   }
   allAnswerFormValid(): Boolean{
@@ -96,7 +101,7 @@ export class createNewQuestionComponent implements OnInit {
   }
 
   formToAnswers(): Answer[]{
-    let answers:  Answer[];
+    let answers:  Answer[] = new Array();
     answers.push(this.answersForm0.getRawValue() as Answer);
     answers.push(this.answersForm1.getRawValue() as Answer);
     answers.push(this.answersForm2.getRawValue() as Answer);

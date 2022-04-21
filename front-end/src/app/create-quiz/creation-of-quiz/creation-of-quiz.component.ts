@@ -46,6 +46,8 @@ export class CreationOfQuizComponent implements OnInit{
       let quizId = this.quizService.getLastQuizIdAdded();
       this.newItemEvent.emit(quizId);
       this.quizIsNotCreated = false;
+      quizToCreate.id = quizId;
+      this.quizService.setCurrentQuiz(quizToCreate);
     }
   }
 
