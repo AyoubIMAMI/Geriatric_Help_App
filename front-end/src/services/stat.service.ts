@@ -40,14 +40,14 @@ export class StatService {
     this.http.post<Stat>(this.statUrl, stat, this.httpOptions).subscribe(() => this.retrieveStat());
   }
 
-  setSelectedResident(statId: string): void {
+  setSelectedStat(statId: string): void {
     const urlWithId = this.statUrl + '/' + statId;
     this.http.get<Stat>(urlWithId).subscribe((stat) => {
       this.statSelected$.next(stat);
     });
   }
 
-  deleteResident(stat: Stat): void {
+  deleteStat(stat: Stat): void {
     const urlWithId = this.statUrl + '/' + stat.id;
     this.http.delete<Stat>(urlWithId, this.httpOptions).subscribe(() => this.retrieveStat());
   }
