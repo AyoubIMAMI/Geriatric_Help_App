@@ -10,6 +10,7 @@ import {ResidentComponent} from "./resident/resident.component";
 import {QuizComponent} from "./quiz/quiz.component";
 import {StartQuizComponent} from "./quiz/start-quiz/start-quiz.component";
 import {EndQuizComponent} from "./end-quiz/end-quiz.component";
+import {TutorialComponent} from "./tutorial/tutorial.component";
 import {GestionQuizComponent} from "./gestion-quiz/gestion-quiz.component";
 import {ResidentModificationComponent} from "./resident/resident-modification/resident-modification.component";
 import {CreateQuizComponent} from "./create-quiz/create-quiz.component";
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'resident/:id', component: ResidentComponent},
   {path: 'start-quiz', component: StartQuizComponent},
   {path: 'end-quiz', component: EndQuizComponent},
+  {path: 'tutorial', component: TutorialComponent},
   {path: 'quiz', component: GestionQuizComponent},
   {path: 'quiz/:id', component: QuizComponent},
   {path: 'quizzes', component: QuizzesComponent},
