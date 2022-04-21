@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="End quiz page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/models/stat.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/stat.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/home/last-quiz-card/last-quiz-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/models/stat.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/models/stat.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/stat.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/stat.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front-end/src/app/end-quiz" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end/database" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
@@ -58,6 +60,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\src\app\end-quiz" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -112,7 +115,7 @@
       <workItem from="1650348115499" duration="6468000" />
       <workItem from="1650355847420" duration="5863000" />
       <workItem from="1650526841929" duration="1319000" />
-      <workItem from="1650528275915" duration="10639000" />
+      <workItem from="1650528275915" duration="15275000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -324,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650537230843</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="End quiz page">
+      <created>1650544470917</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1650544470917</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

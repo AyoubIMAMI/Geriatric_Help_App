@@ -17,7 +17,9 @@ export class StatService {
    Observable which contains the list of the resident.
    */
   public stats$: BehaviorSubject<Stat[]>
-    = new BehaviorSubject([]);
+    = new BehaviorSubject(this.stats);
+
+
 
   public statSelected$: Subject<Stat> = new Subject();
 
@@ -33,6 +35,7 @@ export class StatService {
     this.http.get<Stat[]>(this.statUrl).subscribe((statList) => {
       this.stats = statList;
       this.stats$.next(this.stats);
+      console.log("service", this.stats);
     });
   }
 
