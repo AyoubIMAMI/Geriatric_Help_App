@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
@@ -11,6 +11,7 @@ import { Answer, Question } from 'src/models/question.model';
 })
 export class createNewQuestionComponent implements OnInit {
   public quiz: Quiz;
+  @Output() newQuestionEvent = new EventEmitter<Question>();
 
 
   public questionForm: FormGroup;
@@ -28,22 +29,22 @@ export class createNewQuestionComponent implements OnInit {
   constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
     this.quiz = quizService.getCurrentQuiz()
     this.questionForm = this.formBuilder.group({
-      question:'',
+      label:'',
     });
     this.answersForm0 = this.formBuilder.group({
-      answer:'',
+      value:'',
       isCorrect: false
     });
     this.answersForm1 = this.formBuilder.group({
-      answer:'',
+      value:'',
       isCorrect: false
     });
     this.answersForm2 = this.formBuilder.group({
-      answer:'',
+      value:'',
       isCorrect: false
     });
     this.answersForm3 = this.formBuilder.group({
-      answer:'',
+      value:'',
       isCorrect: false
     });
   }
@@ -88,12 +89,11 @@ export class createNewQuestionComponent implements OnInit {
       const answers = this.formToAnswers();
 
       let idTrueAnswer = this.getIdTrueAnswer();
-      answers[idTrueAnswer].isCorrect=true;
-      this.quizService.addQuestion(this.quiz, question);
-      let questionId: number = +this.quizService.getLastQuestionIdAdded();
-      this.quizService.addAnswers(this.quiz, questionId, answers);
+      answers[idTrueAnswer].isCorrect=true
+      question.answers = answers;
+      this.newQuestionEvent.emit(question);
+      //this.quizService.addQuestion(this.quiz, question);
       console.log(question);
-      console.log(answers);
     }
   }
   allAnswerFormValid(): Boolean{
