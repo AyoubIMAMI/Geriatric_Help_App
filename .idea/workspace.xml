@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="creation of question service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/app/models/quiz.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/quiz.model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +109,7 @@
       <workItem from="1650355847420" duration="1125000" />
       <workItem from="1650527563785" duration="6934000" />
       <workItem from="1650537236427" duration="11763000" />
+      <workItem from="1650552871083" duration="1024000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
