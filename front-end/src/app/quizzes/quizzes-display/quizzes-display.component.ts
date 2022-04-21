@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { Quiz } from '../../../models/quiz.model';
 import { QuizService } from '../../../services/quiz.service';
 
@@ -11,14 +11,16 @@ import { QuizService } from '../../../services/quiz.service';
 export class QuizzesDisplayComponent implements OnInit {
 
   public quizList: Quiz[] = [];
+  public id:string;
 
-  constructor(private router: Router, public quizService: QuizService) {
+  constructor(private route: ActivatedRoute,private router: Router, public quizService: QuizService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
     });
   }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('residentid');
   }
 
   quizSelected(selected: boolean): void {
