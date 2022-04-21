@@ -24,7 +24,7 @@ export class QuizComponent implements OnInit {
     this.actualQuestion = this.quiz.questions[this.currentQuizIndex];
   }
   ngOnInit(): void {
-    
+
   }
 
   previousQuiz(){
@@ -40,16 +40,16 @@ export class QuizComponent implements OnInit {
   public currentQuestion: Question;
   public currentQuizIndex: number;
   public msg: number
+  public residentid: string
 
 
-
-  constructor(private quizService: QuizService,   public router : Router) {
+  constructor(private route:ActivatedRoute,private quizService: QuizService,   public router : Router) {
     this.quiz = this.quizService.getCurrentQuiz();
     this.currentQuestion = this.quiz.questions[0];
     this.currentQuizIndex=0;
   }
   ngOnInit(): void {
-    
+    this.residentid = this.route.snapshot.paramMap.get('residentid');
   }
   previousQuiz(){
     if(this.currentQuizIndex>0)
@@ -59,12 +59,12 @@ export class QuizComponent implements OnInit {
 
   nextQuiz(){
     if(this.currentQuizIndex >= this.quiz.questions.length-1)
-      this.router.navigate(['./end-quiz']);
+      this.router.navigate(['./end-quiz/'+this.residentid+'/'+this.quiz.id]);
     else{
       this.currentQuizIndex++;
       this.currentQuestion = this.quiz.questions[this.currentQuizIndex];
     }
     console.log("currenIndex="+this.currentQuizIndex+" and maxIndex="+this.quiz.questions.length);
   }
-  
+
 }
