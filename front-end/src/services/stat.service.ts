@@ -9,9 +9,9 @@ import { Stat } from 'src/models/stat.model';
 })
 export class StatService {
   /*
-   The list of resident.
+   The list of stats.
    */
-  private residents: Stat[] = [];
+  private stats: Stat[] = [];
 
   /*
    Observable which contains the list of the resident.
@@ -19,36 +19,36 @@ export class StatService {
   public stats$: BehaviorSubject<Stat[]>
     = new BehaviorSubject([]);
 
-  public residentSelected$: Subject<Stat> = new Subject();
+  public statSelected$: Subject<Stat> = new Subject();
 
-  private residentUrl = serverUrl + '/residents';
+  private statUrl = serverUrl + '/stats';
 
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
-    this.retrieveResident();
+    this.retrieveStat();
   }
 
-  retrieveResident(): void {
-    this.http.get<Stat[]>(this.residentUrl).subscribe((statList) => {
-      this.residents = statList;
-      this.stats$.next(this.residents);
+  retrieveStat(): void {
+    this.http.get<Stat[]>(this.statUrl).subscribe((statList) => {
+      this.stats = statList;
+      this.stats$.next(this.stats);
     });
   }
 
   addResident(stat: Stat): void {
-    this.http.post<Stat>(this.residentUrl, stat, this.httpOptions).subscribe(() => this.retrieveResident());
+    this.http.post<Stat>(this.statUrl, stat, this.httpOptions).subscribe(() => this.retrieveStat());
   }
 
   setSelectedResident(statId: string): void {
-    const urlWithId = this.residentUrl + '/' + statId;
-    this.http.get<Stat>(urlWithId).subscribe((resident) => {
-      this.residentSelected$.next(resident);
+    const urlWithId = this.statUrl + '/' + statId;
+    this.http.get<Stat>(urlWithId).subscribe((stat) => {
+      this.statSelected$.next(stat);
     });
   }
 
   deleteResident(stat: Stat): void {
-    const urlWithId = this.residentUrl + '/' + stat.id;
-    this.http.delete<Stat>(urlWithId, this.httpOptions).subscribe(() => this.retrieveResident());
+    const urlWithId = this.statUrl + '/' + stat.id;
+    this.http.delete<Stat>(urlWithId, this.httpOptions).subscribe(() => this.retrieveStat());
   }
 }
