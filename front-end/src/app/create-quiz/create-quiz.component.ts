@@ -42,9 +42,7 @@ export class CreateQuizComponent implements OnInit {
       const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
       console.log(quizToCreate);
       quizToCreate.questions = this.listQuestion;
-      let quizId = this.quizService.getLastQuizIdAdded();
       this.quizIsNotCreated = false;
-      quizToCreate.id = quizId;
       this.quizService.addQuizComplet(quizToCreate);
       this.quizService.setCurrentQuiz(quizToCreate);
     }
