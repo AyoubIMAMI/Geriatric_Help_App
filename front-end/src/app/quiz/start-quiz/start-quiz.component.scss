@@ -65,3 +65,8 @@
 .missClickModeVisible {
     background-color: yellowgreen;
 }
+
+@keyframes fill {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
