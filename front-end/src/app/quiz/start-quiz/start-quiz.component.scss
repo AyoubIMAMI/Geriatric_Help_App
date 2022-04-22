@@ -11,16 +11,18 @@
 }
 
 .answer {
-  height: 14vh;
-  width: 40vw;
 }
 
 .textAnswer {
+  height: fit-content;
 }
 
 .answerContainer {
+  height: 14vh;
+  width: 40vw;
   display: flex;
-
+  justify-content: center;
+  align-items: center;
 }
 
 #quiz {

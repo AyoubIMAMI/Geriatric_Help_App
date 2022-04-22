@@ -51,11 +51,9 @@
         </div>
 
         <div class="missClickRange" (click)="chooseAnswer($event)">
-            <div class="textAnswer btn btn-secondary answer hide {{currentQuestion.answers[3].isCorrect}}">
-              <div class="answerContainer">
+          <div class="answerContainer btn btn-secondary answer hide {{currentQuestion.answers[3].isCorrect}}">
                 {{currentQuestion.answers[3].value}}
-              </div>
-            </div>
+          </div>
         </div>
 
     </div>
