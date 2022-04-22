@@ -20,30 +20,42 @@
 
 
 <div (click)="leftClick()" (contextmenu)="rightClick($event)" id="quiz">
-    <div id="question" class="zoomText">{{currentQuestion.label}}</div>
+    <div id="question" class="zoomText">
+      {{currentQuestion.label}}
+    </div>
+
     <div class="row ">
+
         <div class="missClickRange" (click)="chooseAnswer($event)">
-            <a id="answer1" class="btn btn-secondary answer hide {{currentQuestion.answers[0].isCorrect}}">
-                {{currentQuestion.answers[0].value}}            </a>
+          <div class="answerContainer btn btn-secondary answer hide {{currentQuestion.answers[0].isCorrect}}">
+                {{currentQuestion.answers[0].value}}
+          </div>
         </div>
+
         <div class="missClickRange" (click)="chooseAnswer($event)">
-            <a id="answer2" class="btn btn-secondary answer hide {{currentQuestion.answers[1].isCorrect}}">
-                {{currentQuestion.answers[1].value}}            </a>
+          <div class="answerContainer btn btn-secondary answer hide {{currentQuestion.answers[1].isCorrect}}">
+                {{currentQuestion.answers[1].value}}
+          </div>
         </div>
 
     </div>
+
     <div class="row ">
+
         <div class="missClickRange" (click)="chooseAnswer($event)">
-            <a id="answer3" class="btn btn-secondary answer hide {{currentQuestion.answers[2].isCorrect}}">
+          <div class="answerContainer btn btn-secondary answer hide {{currentQuestion.answers[2].isCorrect}}">
                 {{currentQuestion.answers[2].value}}
-            </a>
+          </div>
         </div>
+
         <div class="missClickRange" (click)="chooseAnswer($event)">
-            <a id="answer4" class="btn btn-secondary answer hide {{currentQuestion.answers[3].isCorrect}}">
+          <div class="answerContainer btn btn-secondary answer hide {{currentQuestion.answers[3].isCorrect}}">
                 {{currentQuestion.answers[3].value}}
-            </a>
+          </div>
         </div>
+
     </div>
+
     <p id="resultAnswer" class="zoomText"></p>
 </div>
 

@@ -1,5 +1,6 @@
 .zoomText {
-    font-size: 2vw;
+    font-size: 1.6vw;
+  width: 85vw;
 }
 
 .row {
@@ -10,9 +11,12 @@
   justify-content: space-between;
 }
 
-.answer {
+.answerContainer {
   height: 14vh;
   width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #quiz {

@@ -1,4 +1,13 @@
-import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  Input,
+  AfterContentInit,
+  AfterViewInit,
+  AfterViewChecked
+} from '@angular/core';
 import { Question } from 'src/models/question.model';
 import {Resident} from "../../../models/resident.model";
 
@@ -7,7 +16,7 @@ import {Resident} from "../../../models/resident.model";
   templateUrl: './start-quiz.component.html',
   styleUrls: ['./start-quiz.component.scss']
 })
-export class StartQuizComponent implements OnInit {
+export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   @Input() indexOfQuestion: string;
   @Input() currentQuestion: Question;
@@ -16,9 +25,15 @@ export class StartQuizComponent implements OnInit {
 
   public responseIndex: number;
   public label: string;
+  public mouseControlModeActivated: Boolean;
+  public missClickModeActivated: Boolean;
+
 
   constructor() {
     this.responseIndex = 0;
+    this.mouseControlModeActivated = false;
+    this.missClickModeActivated = false;
+
     //this.fixFontSize();
   }
 
@@ -27,6 +42,17 @@ export class StartQuizComponent implements OnInit {
   }
   ngOnChanges(): void{
     if(+this.indexOfQuestion != this.responseIndex) this.hideAnswer();
+  }
+
+  ngAfterViewChecked(): void{
+    this.defineModeByResident(this.currentResident);
+  }
+
+  defineModeByResident(resident: Resident){
+    let residentHandicap = resident.handicap;
+    if(residentHandicap == "Tremblement essentiel") {}
+    else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
+    else if(residentHandicap == "Tremblement attitude") this.startMissClick();
   }
 
   chooseAnswer(event: Event): void {
@@ -77,14 +103,14 @@ export class StartQuizComponent implements OnInit {
 
   leftClick(){
     const handicap = document.getElementById('mouseControl') as HTMLInputElement;
-    if(handicap.checked){
+    if(handicap.checked || this.mouseControlModeActivated){
       const answer = document.getElementsByClassName("answer")[this.responseIndex];
       this.revealAnswer(answer);
     }
   }
   rightClick(event: MouseEvent){
     const handicap = document.getElementById('mouseControl') as HTMLInputElement;
-    if(handicap.checked){
+    if(handicap.checked || this.mouseControlModeActivated){
       event.preventDefault();
       this.incrementeResponseId()
       this.updateSelected();
@@ -117,6 +143,7 @@ export class StartQuizComponent implements OnInit {
 
 
   startMouseControlMode(){
+    this.mouseControlModeActivated = true;
     if(document.getElementsByClassName("selected").length == 0){
       const firstAnswer = document.getElementsByClassName("answer")[0];
       firstAnswer.classList.add("selected");
@@ -124,6 +151,7 @@ export class StartQuizComponent implements OnInit {
   }
 
   downMouseControlMode(){
+    this.mouseControlModeActivated = false;
     if(document.getElementsByClassName("selected").length > 0){
       const firstAnswer = document.getElementsByClassName("answer")[0];
       firstAnswer.classList.remove("selected");
@@ -131,6 +159,7 @@ export class StartQuizComponent implements OnInit {
   }
 
   startMissClick(){
+    this.missClickModeActivated = true;
     let allMissClickDiv = document.getElementsByClassName("missClickRange");
     for (let i = 0 ; i < allMissClickDiv.length ; i++) {
       const currentMissClickDiv = allMissClickDiv[i];
@@ -139,6 +168,7 @@ export class StartQuizComponent implements OnInit {
   }
 
   downMissClick(){
+    this.missClickModeActivated = false;
     let allMissClickDiv = document.getElementsByClassName("missClickRange");
     for (let i = 0 ; i < allMissClickDiv.length ; i++) {
       const currentMissClickDiv = allMissClickDiv[i];

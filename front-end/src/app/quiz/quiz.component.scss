@@ -9,7 +9,10 @@
 }
 
 .navButton {
-    font-size: 2vw;
-    min-width: 40vw;
-    min-height: 14vh;
+  height: 14vh;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
 }
