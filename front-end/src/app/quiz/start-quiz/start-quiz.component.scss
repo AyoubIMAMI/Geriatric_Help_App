@@ -11,6 +11,14 @@
 }
 
 .answer {
+}
+
+.textAnswer {
+  height: fit-content;
+}
+
+.answerContainer {
+  display: flex;
   height: 14vh;
   width: 40vw;
 }
