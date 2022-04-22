@@ -84,8 +84,11 @@ export class QuizService {
   }
 
   addQuizComplet(quiz: Quiz): void {
-    const questionUrl = this.quizUrl + '/quizzes/questions/';
-    this.http.post<Quiz>(questionUrl,quiz);
+    const questionUrl = this.quizUrl +'/';
+    console.log(quiz.id);
+    this.http.post<Quiz>(questionUrl,quiz,this.httpOptions).subscribe(() => this.retrieveQuizzes());
+    console.log(questionUrl)
+    console.log(quiz)
   }
 
   addQuestion(quiz: Quiz, question: Question): void {
