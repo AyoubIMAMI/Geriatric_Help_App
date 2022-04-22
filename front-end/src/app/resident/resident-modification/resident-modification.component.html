@@ -23,7 +23,7 @@
     </div>
 
     <div class="col d-flex flex-column">
-      <app-resident-modification-handicap></app-resident-modification-handicap>
+      <app-resident-modification-handicap *ngIf="resident.handicap" [inHandicap]=resident.handicap></app-resident-modification-handicap>
       <button class="btn btn-success my-2" type="submit">Valider</button>
       <button class="btn btn-danger" (click)="deleteResident()"  type="submit">Supprimer</button>
     </div>

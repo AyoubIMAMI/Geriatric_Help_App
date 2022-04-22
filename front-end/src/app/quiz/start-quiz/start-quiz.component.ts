@@ -46,6 +46,14 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked(): void{
     this.defineModeByResident(this.currentResident);
+    let answer = document.getElementsByClassName("answer")[0];
+    answer.addEventListener("mouseover", event => {
+      console.log("Mouse in");
+    });
+
+    answer.addEventListener("mouseout", event => {
+      console.log("Mouse out");
+    });
   }
 
   defineModeByResident(resident: Resident){

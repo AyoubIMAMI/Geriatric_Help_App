@@ -22,7 +22,7 @@ export class ResidentModificationComponent implements OnInit {
       nom: [''],
       prenom: [''],
       picture: ['assets/images/square.svg'],
-      handicap: [0]
+      handicap: ['']
     });
   }
 
