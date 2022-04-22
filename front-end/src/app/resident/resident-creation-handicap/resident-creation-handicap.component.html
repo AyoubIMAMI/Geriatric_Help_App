@@ -3,12 +3,13 @@
   <div class="container">
     <h5>Moteur</h5>
 
+    <div class="container">
+
       <div class="form-check">
         <input (click)="updateHandicap('Tremblement d\'attitude')"
                class="form-check-input"
                type="radio"
-               name="handicap"
-               [checked]="isHandicap('Tremblement d\'attitude')">
+               name="handicap">
         Tremblement d'attitude
       </div>
 
@@ -16,8 +17,7 @@
         <input (click)="updateHandicap('Tremblement intentionnel')"
                class="form-check-input"
                type="radio"
-               name="handicap"
-               [checked]="isHandicap('Tremblement intentionnel')">
+               name="handicap">
         Tremblement intentionnel
       </div>
 
@@ -25,8 +25,7 @@
         <input (click)="updateHandicap('Tremblement essenciel')"
                class="form-check-input"
                type="radio"
-               name="handicap"
-               [checked]="isHandicap('Tremblement essenciel')">
+               name="handicap">
         Tremblement essenciel
       </div>
 
@@ -35,10 +34,11 @@
                class="form-check-input"
                type="radio"
                name="handicap"
-               [checked]="isHandicap('Aucun')">
+               checked>
         Aucun
       </div>
       <br>
 
     </div>
   </div>
+</div>

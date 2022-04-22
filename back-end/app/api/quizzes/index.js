@@ -1,9 +1,10 @@
 const { Router } = require('express')
 
-const { Quiz } = require('../../models')
+const { Quiz, Question, Answer} = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
 const QuestionsRouter = require('./questions')
 const { buildQuizz, buildQuizzes } = require('./manager')
+const Joi = require("joi");
 
 const router = new Router()
 
@@ -29,13 +30,27 @@ router.get('/:quizId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const quiz = Quiz.create({ ...req.body })
-    console.log(req.body)
+    let quiz= Quiz.create({theme: req.body.theme, name: req.body.name})
+    //console.log(quiz)
+    if (req.body.questions && req.body.questions.length > 0) {
+      const questions = req.body.questions.map((question) => {
+        const currentQuest=Question.create({ label: question.label, quizId: quiz.id })
+        if (question.answers && question.answers.length > 0) {
+          //console.log(question)
+          const answers = question.answers.map((answer) => Answer.create({ value: answer.value,isCorrect: answer.isCorrect, questionId: currentQuest.id }))
+          question = { ...question, answers }
+        }
+      })
+      quiz = { ...quiz, questions }
+    }
     res.status(201).json(quiz)
   } catch (err) {
     manageAllErrors(res, err)
   }
 })
+
+
+
 
 router.put('/:quizId', (req, res) => {
   try {

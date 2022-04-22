@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: []
 })
 export class ResidentModificationHandicapComponent implements OnInit {
-  @Input() inHandicap : string = 'Aucun';
+  @Input() inHandicap : string;
   @Output() outHandicap = new EventEmitter<string>();
 
   constructor() { }
@@ -17,6 +17,11 @@ export class ResidentModificationHandicapComponent implements OnInit {
   updateHandicap(handicap : string) : void {
     console.log("updateHandicap", handicap);
     this.outHandicap.emit(handicap);
+  }
+  isHandicap(handicap : string) : boolean {
+    console.log(this.inHandicap)
+    return(this.inHandicap==handicap);
+
   }
 
 }

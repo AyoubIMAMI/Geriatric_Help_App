@@ -6,16 +6,19 @@ import {
   ResidentModificationHandicapComponent
 } from "./resident-modification-handicap/resident-modification-handicap.component";
 import { ResidentHandicapComponent } from './resident-handicap/resident-handicap.component';
+import { ResidentCreationHandicapComponent } from './resident-creation-handicap/resident-creation-handicap.component';
 
 @NgModule({
   declarations: [
     ResidentComponent,
     ResidentModificationHandicapComponent,
-    ResidentHandicapComponent
+    ResidentHandicapComponent,
+    ResidentCreationHandicapComponent
   ],
-  exports: [
-    ResidentModificationHandicapComponent
-  ],
+    exports: [
+        ResidentModificationHandicapComponent,
+        ResidentCreationHandicapComponent
+    ],
     imports: [
         CommonModule,
         RouterModule
