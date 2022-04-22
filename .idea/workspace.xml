@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="home update">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Creation d'un quiz">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-creation-handicap/resident-creation-handicap.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-creation-handicap/resident-creation-handicap.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/services/stat.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/stat.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/api/quizzes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/quizzes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/models/answer.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/answer.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/models/question.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/question.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/models/quiz.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/quiz.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/utils/base-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/utils/base-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-new-question/create-new-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-new-question/create-new-question.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-creation/resident-creation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-creation/resident-creation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification-handicap/resident-modification-handicap.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification-handicap/resident-modification-handicap.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification-handicap/resident-modification-handicap.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification-handicap/resident-modification-handicap.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-modification/resident-modification.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +64,7 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -115,6 +125,8 @@
       <workItem from="1650355847420" duration="5863000" />
       <workItem from="1650526841929" duration="1319000" />
       <workItem from="1650528275915" duration="22463000" />
+      <workItem from="1650569142354" duration="1915000" />
+      <workItem from="1650613288977" duration="5344000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
