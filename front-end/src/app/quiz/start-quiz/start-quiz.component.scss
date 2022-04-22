@@ -18,9 +18,11 @@
 }
 
 .answerContainer {
-  display: flex;
   height: 14vh;
   width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #quiz {
