@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix quiz size">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="add css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +43,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
@@ -365,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650615950877</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="add css">
+      <created>1650618845268</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1650618845268</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +411,7 @@
     <MESSAGE value="End quiz page" />
     <MESSAGE value="home update" />
     <MESSAGE value="fix quiz size" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix quiz size" />
+    <MESSAGE value="add css" />
+    <option name="LAST_COMMIT_MESSAGE" value="add css" />
   </component>
 </project>

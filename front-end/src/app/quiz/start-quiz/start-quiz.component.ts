@@ -27,14 +27,20 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
   public label: string;
   public mouseControlModeActivated: Boolean;
   public missClickModeActivated: Boolean;
+  public loadingModeActivated: Boolean;
+  public
 
 
-  constructor() {
+
+
+    constructor() {
     this.responseIndex = 0;
     this.mouseControlModeActivated = false;
     this.missClickModeActivated = false;
+    this.loadingModeActivated = false;
 
-    //this.fixFontSize();
+
+        //this.fixFontSize();
   }
 
   ngOnInit() {
@@ -58,7 +64,7 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   defineModeByResident(resident: Resident){
     let residentHandicap = resident.handicap;
-    if(residentHandicap == "Tremblement essentiel") {}
+    if(residentHandicap == "Tremblement essentiel") this.startLoadingMode()
     else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
     else if(residentHandicap == "Tremblement attitude") this.startMissClick();
   }
@@ -149,6 +155,22 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   }
 
+  startLoadingMode(){
+      this.loadingModeActivated = true;
+      let radioButtons = document.querySelectorAll('input[name="mode"]');
+
+      for (let i = 0 ; i < radioButtons.length ; i++) {
+          let answer = radioButtons[i] as HTMLInputElement;
+          answer.addEventListener("mouseover", event => {
+              console.log("Mouse in");
+              this.loadQuestion();
+          });
+      }
+  }
+
+    loadQuestion(){
+
+    }
 
   startMouseControlMode(){
     this.mouseControlModeActivated = true;

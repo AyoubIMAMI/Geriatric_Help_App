@@ -65,8 +65,25 @@
 .missClickModeVisible {
     background-color: yellowgreen;
 }
+.loadAnswer{
+  z-index: 1;
+  height: 14vh;
+  width: 0vw;
+  position: absolute;
+  animation-name: fill;
+  animation-duration: 14s;
+  background-color: yellow;
+}
+
+.textAnswer{
+  z-index: 2;
+}
 
 @keyframes fill {
-  from {background-color: red;}
-  to {background-color: yellow;}
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40vw;
+  }
 }
