@@ -6,21 +6,27 @@ import {
   Input,
   AfterContentInit,
   AfterViewInit,
-  AfterViewChecked
+  AfterViewChecked,
+  ViewEncapsulation
 } from '@angular/core';
 import { Question } from 'src/models/question.model';
 import {Resident} from "../../../models/resident.model";
+import { HandicapMode } from "../handicapMode";
+
 
 @Component({
   selector: 'app-start-quiz',
   templateUrl: './start-quiz.component.html',
-  styleUrls: ['./start-quiz.component.scss']
+  styleUrls: ['./start-quiz.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   @Input() indexOfQuestion: string;
   @Input() currentQuestion: Question;
   @Input() currentResident: Resident;
+
+  public handicapMode = new HandicapMode();
 
 
   public responseIndex: number;
@@ -62,14 +68,6 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked(): void{
     this.defineModeByResident(this.currentResident);
-    let answer = document.getElementsByClassName("answer")[0];
-    /*answer.addEventListener("mouseover", event => {
-      console.log("Mouse in");
-    });
-
-    answer.addEventListener("mouseout", event => {
-      console.log("Mouse out");
-    });*/
   }
 
   defineModeByResident(resident: Resident){
@@ -90,7 +88,11 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
   revealAnswer(answer){
     const isAnswer: boolean = answer.classList.contains("true");
     const resultAnswer: Element = document.getElementById("resultAnswer");
-    this.showAnswer()
+    //this.showAnswer();
+    const answerList = document.getElementsByClassName("answer");
+    for(let i = 0 ; i < answerList.length ; i++){
+      answerList[i].classList.remove("hide");
+    }
     if(isAnswer)
       resultAnswer.innerHTML = "Félicitation! Tu as trouvé la bonne réponse !";
     else
@@ -143,8 +145,8 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   clearModes() {
       this.downMouseControlMode();
-      this.downMissClick();
-      this.downMissClickVisible();
+      this.handicapMode.downMissClick();
+      this.handicapMode.downMissClickVisible();
       this.downLoadingMod();
   }
 
@@ -172,34 +174,8 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
       for (let i = 0 ; i < allAnswerContainers.length ; i++) {
           let answerContainer = allAnswerContainers[i] as HTMLElement;
-        answerContainer.addEventListener("mouseenter", event => {
-          if(!this.answerisCurrentlyLoading && !this.mouseIn){
-            console.log("mouseenter, answerisCurrentlyLoading:"+ this.answerisCurrentlyLoading+" mouseIn:"+this.mouseIn+" mouseOut:"+this.mouseOut);
-            if(this.answerisCurrentlyLoading != this.mouseIn)   console.log("--------answerisCurrentlyLoading != mouseIn--------")
-            if(this.mouseOut == this.mouseIn)   console.log("--------mouseOut == mouseIn--------")
-
-            this.answerisCurrentlyLoading = true;
-            this.mouseIn=true;
-            this.mouseOut = false;
-            const questionLoaded: Boolean = this.loadQuestion(answerContainer);
-          }
-
-        });
-        answerContainer.addEventListener("mouseleave", event => {
-          if(this.answerisCurrentlyLoading && !this.mouseOut) {
-            console.log("mouseleave, answerisCurrentlyLoading:"+ this.answerisCurrentlyLoading+" mouseIn:"+this.mouseIn+" mouseOut:"+this.mouseOut);
-            this.answerisCurrentlyLoading = false;
-            this.mouseOut = true;
-            this.mouseIn = false;
-
-            this.animationAsBeenInterupt = true;
-            const answerButton = answerContainer.firstChild as HTMLElement;
-            //answerButton.classList.add("endLoadAnimation");
-            answerButton.classList.remove("loadAnimation");
-          }
-        });
+          this.handicapMode.startLoadingMode(answerContainer, this.revealAnswer);
       }
-      let nextQuestion = document.getElementById("");
   }
 
   /*loadMouseInEvent(answerContainer: HTMLElement, ev: Event){
@@ -254,11 +230,12 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
 
   startMouseControlMode(){
-    this.mouseControlModeActivated = true;
-    if(document.getElementsByClassName("selected").length == 0){
-      const firstAnswer = document.getElementsByClassName("answer")[0];
-      firstAnswer.classList.add("selected");
-    }
+      let allAnswer = document.getElementsByClassName("answer");
+      let map = new Map();
+      for(let i = 0 ; i < allAnswer.length ; i++ ){
+        map.set(allAnswer[i], this.revealAnswer);
+      }
+    this.handicapMode.startMouseControlMode(map);
   }
 
   downMouseControlMode(){
@@ -273,11 +250,28 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
     this.missClickModeActivated = true;
     let allMissClickDiv = document.getElementsByClassName("missClickRange");
     for (let i = 0 ; i < allMissClickDiv.length ; i++) {
-      const currentMissClickDiv = allMissClickDiv[i];
-      currentMissClickDiv.classList.add("missClickMode");
+     this.handicapMode.startMissClick(allMissClickDiv[i] as HTMLElement)
     }
   }
 
+
+
+  startMissClickVisible(){
+    this.startMissClick()
+    let allMissClickDiv = document.getElementsByClassName("missClickRange");
+    for (let i = 0 ; i < allMissClickDiv.length ; i++) {
+      this.handicapMode.startMissClickVisible(allMissClickDiv[i] as HTMLElement)
+    }
+  }
+  /*
+    downMissClickVisible(){
+      this.downMissClick()
+      let allMissClickDiv = document.getElementsByClassName("missClickRange");
+      for (let i = 0 ; i < allMissClickDiv.length ; i++) {
+        const currentMissClickDiv = allMissClickDiv[i];
+        currentMissClickDiv.classList.remove("missClickModeVisible");
+      }
+    }
   downMissClick(){
     this.missClickModeActivated = false;
     let allMissClickDiv = document.getElementsByClassName("missClickRange");
@@ -286,24 +280,7 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
       currentMissClickDiv.classList.remove("missClickMode");
     }
   }
-
-  startMissClickVisible(){
-    this.startMissClick()
-    let allMissClickDiv = document.getElementsByClassName("missClickRange");
-    for (let i = 0 ; i < allMissClickDiv.length ; i++) {
-      const currentMissClickDiv = allMissClickDiv[i];
-      currentMissClickDiv.classList.add("missClickModeVisible");
-    }
-  }
-
-  downMissClickVisible(){
-    this.downMissClick()
-    let allMissClickDiv = document.getElementsByClassName("missClickRange");
-    for (let i = 0 ; i < allMissClickDiv.length ; i++) {
-      const currentMissClickDiv = allMissClickDiv[i];
-      currentMissClickDiv.classList.remove("missClickModeVisible");
-    }
-  }
+    */
 
   /*
   fixFontSize() {

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from 'src/models/question.model';
 import { Quiz } from 'src/models/quiz.model';
 import { QuizService } from 'src/services/quiz.service';
 import {ResidentService} from "../../services/resident.service";
 import {Resident} from "../../models/resident.model";
+//import { HandicapMode } from "../handicapMode";
 
 
 @Component({
@@ -12,38 +13,14 @@ import {Resident} from "../../models/resident.model";
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.scss']
 })
-export class QuizComponent implements OnInit {
-
-  /*public quiz: Quiz;
-  public currentQuizIndex: number;
-  public actualQuestion: Question;
-
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
-    this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
-    this.currentQuizIndex=0;
-    this.actualQuestion = this.quiz.questions[this.currentQuizIndex];
-  }
-  ngOnInit(): void {
-
-  }
-
-  previousQuiz(){
-    if(this.currentQuizIndex>0)
-      this.currentQuizIndex--;
-  }
-
-  nextQuiz(){
-    this.currentQuizIndex++;
-  }*/
+export class QuizComponent implements OnInit, AfterViewChecked {
 
   public quiz: Quiz;
   public currentQuestion: Question;
   public currentQuizIndex: number;
-  public msg: number
   public resident: Resident;
   public questionList: Question[];
+ // public handicapMode = new HandicapMode();
 
 
   constructor(private route:ActivatedRoute,private quizService: QuizService,private residentService: ResidentService,   public router : Router) {
@@ -58,18 +35,16 @@ export class QuizComponent implements OnInit {
     this.currentQuizIndex=0;
   }
 
+  ngAfterViewChecked(): void {
+        const nextQuestion = document.getElementById("nextQuestion");
+    }
+
   ngOnInit(): void {
     const residentid = this.route.snapshot.paramMap.get('residentid');
     this.residentService.setSelectedResident(residentid);
 
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
-  }
-
-  previousQuiz(){
-    if(this.currentQuizIndex>0)
-      this.currentQuizIndex--;
-    this.currentQuestion = this.questionList[this.currentQuizIndex];
   }
 
   nextQuiz(){
