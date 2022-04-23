@@ -2,29 +2,29 @@
   <div class="fs-2 mb-3"><i class="bi bi-pencil"></i> Modification d'un résident</div>
 </div>
 <br>
-<form class="container h-75">
+<form class="container h-75" [formGroup]="residentForm" *ngIf="resident">
   <div class="row">
 
     <div class="col">
       <div class="container d-flex">
         <img src="assets/images/square.svg" alt="">
 
-        <div class="container">
-          <div class="form-group">
+        <div class="container" >
+          <div class="form-group" >
             <label for="nom">Nom</label>
-            <input type="text" class="form-control" id="nom" placeholder="Nom" value="{{resident.nom}}">
+            <input type="text" id="nom" class="form-control"  placeholder="Nom" [formControlName]="'nom'">
           </div>
           <div class="form-group">
             <label for="prenom">Prénom</label>
-            <input type="text" class="form-control" id="prenom" placeholder="Prénom" value="{{resident.prenom}}">
+            <input type="text" id="prenom" class="form-control"  placeholder="Prénom" [formControlName]="'prenom'">
           </div>
         </div>
       </div>
     </div>
 
     <div class="col d-flex flex-column">
-      <app-resident-modification-handicap *ngIf="resident.handicap" [inHandicap]=resident.handicap></app-resident-modification-handicap>
-      <button class="btn btn-success my-2" type="submit">Valider</button>
+      <app-resident-modification-handicap *ngIf="resident" [inHandicap]=resident.handicap (outHandicap)="updateHandicap($event)"></app-resident-modification-handicap>
+      <button class="btn btn-success my-2" type="submit" (click)="updateResident()">Valider</button>
       <button class="btn btn-danger" (click)="deleteResident()"  type="submit">Supprimer</button>
     </div>
   </div>
