@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="add css">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="loading mod work but lag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-creation-handicap/resident-creation-handicap.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-creation-handicap/resident-creation-handicap.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +45,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
@@ -107,6 +112,7 @@
       <workItem from="1650526841929" duration="1319000" />
       <workItem from="1650528275915" duration="25298000" />
       <workItem from="1650611292559" duration="3814000" />
+      <workItem from="1650716115118" duration="7966000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -374,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650618845268</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add css">
+      <created>1650621485326</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1650621485326</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,6 +425,7 @@
     <MESSAGE value="home update" />
     <MESSAGE value="fix quiz size" />
     <MESSAGE value="add css" />
-    <option name="LAST_COMMIT_MESSAGE" value="add css" />
+    <MESSAGE value="loading mod work but lag" />
+    <option name="LAST_COMMIT_MESSAGE" value="loading mod work but lag" />
   </component>
 </project>

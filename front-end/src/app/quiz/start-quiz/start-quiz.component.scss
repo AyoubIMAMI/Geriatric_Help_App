@@ -71,9 +71,16 @@
   height: 14vh;
   width: 0vw;
   position: absolute;
+}
+
+.loadAnimation{
   animation-name: fill;
-  animation-duration: 14s;
+  animation-duration: 4s;
   background-color: yellow;
+}
+
+endLoadAnimation{
+  animation: 0;
 }
 
 .textAnswer{
@@ -88,3 +95,5 @@
     width: 40vw;
   }
 }
+
+

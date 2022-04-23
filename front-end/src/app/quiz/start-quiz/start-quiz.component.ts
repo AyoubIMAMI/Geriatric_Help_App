@@ -28,19 +28,29 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
   public mouseControlModeActivated: Boolean;
   public missClickModeActivated: Boolean;
   public loadingModeActivated: Boolean;
-  public
+  public animationAsBeenInterupt: Boolean;
+  public answerisCurrentlyLoading: Boolean;
+  public mouseIn: Boolean;
+  public mouseOut: Boolean;
 
 
 
 
-    constructor() {
+
+
+
+  constructor() {
     this.responseIndex = 0;
     this.mouseControlModeActivated = false;
     this.missClickModeActivated = false;
     this.loadingModeActivated = false;
+    this.animationAsBeenInterupt = false;
+    this.answerisCurrentlyLoading = false;
+    this.mouseIn = false;
+    this.mouseOut = false;
 
 
-        //this.fixFontSize();
+    //this.fixFontSize();
   }
 
   ngOnInit() {
@@ -53,13 +63,13 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
   ngAfterViewChecked(): void{
     this.defineModeByResident(this.currentResident);
     let answer = document.getElementsByClassName("answer")[0];
-    answer.addEventListener("mouseover", event => {
+    /*answer.addEventListener("mouseover", event => {
       console.log("Mouse in");
     });
 
     answer.addEventListener("mouseout", event => {
       console.log("Mouse out");
-    });
+    });*/
   }
 
   defineModeByResident(resident: Resident){
@@ -135,6 +145,7 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
       this.downMouseControlMode();
       this.downMissClick();
       this.downMissClickVisible();
+      this.downLoadingMod();
   }
 
   updateMode(){
@@ -152,25 +163,95 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
     if(currentMode == "mouseControle")this.startMouseControlMode();
     else if(currentMode == "missClick")this.startMissClick();
     else if(currentMode == "missClickVisible")this.startMissClickVisible();
-
+    else if(currentMode == "loadingMode")this.startLoadingMode();
   }
 
   startLoadingMode(){
       this.loadingModeActivated = true;
-      let radioButtons = document.querySelectorAll('input[name="mode"]');
+      let allAnswerContainers = document.getElementsByClassName('answerContainer');
 
-      for (let i = 0 ; i < radioButtons.length ; i++) {
-          let answer = radioButtons[i] as HTMLInputElement;
-          answer.addEventListener("mouseover", event => {
-              console.log("Mouse in");
-              this.loadQuestion();
-          });
+      for (let i = 0 ; i < allAnswerContainers.length ; i++) {
+          let answerContainer = allAnswerContainers[i] as HTMLElement;
+        answerContainer.addEventListener("mouseenter", event => {
+          if(!this.answerisCurrentlyLoading && !this.mouseIn){
+            console.log("mouseenter, answerisCurrentlyLoading:"+ this.answerisCurrentlyLoading+" mouseIn:"+this.mouseIn+" mouseOut:"+this.mouseOut);
+            if(this.answerisCurrentlyLoading != this.mouseIn)   console.log("--------answerisCurrentlyLoading != mouseIn--------")
+            if(this.mouseOut == this.mouseIn)   console.log("--------mouseOut == mouseIn--------")
+
+            this.answerisCurrentlyLoading = true;
+            this.mouseIn=true;
+            this.mouseOut = false;
+            const questionLoaded: Boolean = this.loadQuestion(answerContainer);
+          }
+
+        });
+        answerContainer.addEventListener("mouseleave", event => {
+          if(this.answerisCurrentlyLoading && !this.mouseOut) {
+            console.log("mouseleave, answerisCurrentlyLoading:"+ this.answerisCurrentlyLoading+" mouseIn:"+this.mouseIn+" mouseOut:"+this.mouseOut);
+            this.answerisCurrentlyLoading = false;
+            this.mouseOut = true;
+            this.mouseIn = false;
+
+            this.animationAsBeenInterupt = true;
+            const answerButton = answerContainer.firstChild as HTMLElement;
+            //answerButton.classList.add("endLoadAnimation");
+            answerButton.classList.remove("loadAnimation");
+          }
+        });
       }
+      let nextQuestion = document.getElementById("");
   }
 
-    loadQuestion(){
+  /*loadMouseInEvent(answerContainer: HTMLElement, ev: Event){
+    console.log("Mouse in");
+    const questionLoaded: Boolean = this.loadQuestion(this as HTMLElement);
+    if(questionLoaded)this.revealAnswer(this);
+  }
+  loadMouseOutEvent(answerContainer: HTMLElement) { console.log("Mouse out");
+    this.animationAsBeenInterupt = true;
+    const answerButton = answerContainer.firstChild as HTMLElement;
+    //answerButton.classList.add("endLoadAnimation");
+    answerButton.classList.remove("loadAnimation");
 
+  }*/
+
+    downLoadingMod(){
+      //myDIV.removeEventListener("mousemove", myFunction);
+    this.loadingModeActivated = false;
+    let allAnswerContainers = document.getElementsByClassName('answerContainer');
+
+    for (let i = 0 ; i < allAnswerContainers.length ; i++) {
+      let answerContainer = allAnswerContainers[i] as HTMLElement;
+      answerContainer.removeEventListener("mousemove", event => {
+        console.log("Mouse in");
+        const questionLoaded: Boolean = this.loadQuestion(answerContainer);
+        if(questionLoaded)this.revealAnswer(answerContainer);
+      });
+      answerContainer.removeEventListener("mouseout", event => {
+        console.log("Mouse out");
+        this.animationAsBeenInterupt = true;
+        const answerButton = answerContainer.firstChild as HTMLElement;
+        //answerButton.classList.add("endLoadAnimation");
+        answerButton.classList.remove("loadAnimation");
+      });
     }
+
+  }
+
+    loadQuestion(answerContainer: HTMLElement): Boolean{
+        //Je lance l'animation
+        //A la fin si l'animation a été cancel alors return false
+        //sinon return true
+      let transitionEvent = whichTransitionEvent();
+      const answerButton = answerContainer.firstChild as HTMLElement;
+      let actionIsEnded: Boolean =  false;
+      answerButton.classList.add("loadAnimation")
+      answerButton.addEventListener("animationend", event => {
+        this.revealAnswer(answerContainer);
+      });
+      return true;
+    }
+
 
   startMouseControlMode(){
     this.mouseControlModeActivated = true;
@@ -236,5 +317,21 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
   }*/
 
 }
+function whichTransitionEvent(){
+  var t,
+    el = document.createElement("fakeelement");
 
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
 

@@ -86,4 +86,6 @@ export class QuizComponent implements OnInit {
     return this.questionList[this.currentQuizIndex];
   }
 
+
+
 }
