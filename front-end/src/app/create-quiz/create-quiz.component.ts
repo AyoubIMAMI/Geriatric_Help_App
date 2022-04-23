@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {QuizService} from "../../services/quiz.service";
 import {Quiz} from "../../models/quiz.model";
 import {Question} from "../../models/question.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-quiz',
@@ -19,7 +20,7 @@ export class CreateQuizComponent implements OnInit {
   public listQuestion: Question[];
 
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+  constructor(public router : Router, public formBuilder: FormBuilder, public quizService: QuizService) {
     this.listQuestion= new Array();
     this.quizIsNotCreated = true;
     this.quizForm = this.formBuilder.group({
@@ -45,6 +46,7 @@ export class CreateQuizComponent implements OnInit {
       this.quizIsNotCreated = false;
       this.quizService.addQuizComplet(quizToCreate);
       this.quizService.setCurrentQuiz(quizToCreate);
+      this.router.navigate(['./quiz']);
     }
 
   }
