@@ -1,0 +1,27 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-custom{
+  max-width: 300px;
+}
+
+.card-header-container{
+  height: 100%;
+}
+
+.card-body-container{
+  height: inherit;
+  overflow: auto;
+  max-height: 500px;
+}
+
+.question{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 5px 15px 5px 15px;
+}
+
+.custom-button{
+  width: 100%;
+}

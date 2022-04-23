@@ -1,49 +1,61 @@
-<div class="card">
-    <h2>Create a new Question</h2>
-    <form class="quiz-form" [formGroup]="questionForm">
-        <label for="label">
-            Question <br>
-            <input class="input-custom" type="text" id="label" [formControlName]="'label'">
-        </label>
-    </form>
+<div>
+  <h5>Nouvelle question</h5>
 
-  <form class="quiz-form" [formGroup]="answersForm0">
-    <label for="answer0">
-      Réponse <br>
-      <input class="input-custom" type="text" id="answer0" [formControlName]="'value'">
-    </label>
-    <br>
-    <input id="isCorrect0" name="isCorrect" type="checkbox">
-    <label for="isCorrect0">Correct</label>
+  <form class="question-input" [formGroup]="questionForm">
+    <label for="label">Question</label>
+    <input class="input-custom-2" type="text" id="label" placeholder="Votre question" [formControlName]="'label'">
   </form>
-  <form class="quiz-form" [formGroup]="answersForm1">
-    <label for="answer1">
-      Réponse <br>
-      <input class="input-custom" type="text" id="answer1" [formControlName]="'value'">
-    </label>
-    <br>
-    <input id="isCorrect1" name="isCorrect" type="checkbox">
-    <label for="isCorrect1">Correct</label>
-  </form>
-  <form class="quiz-form" [formGroup]="answersForm2">
-    <label for="answer2">
-      Réponse <br>
-      <input class="input-custom" type="text" id="answer2" [formControlName]="'value'">
-    </label>
-    <br>
-    <input id="isCorrect2" name="isCorrect" type="checkbox">
-    <label for="isCorrect2">Correct</label>
-  </form>
-  <form class="quiz-form" [formGroup]="answersForm3">
-    <label for="answer3">
-      Réponse <br>
-      <input class="input-custom" type="text" id="answer3" [formControlName]="'value'">
-    </label>
-    <br>
-    <input id="isCorrect3" name="isCorrect" type="checkbox">
-    <label for="isCorrect3">Correct</label>
-  </form>
-    <button type="submit" class="button-card" (click)="addQuestion()">Create</button>
+
+  <div class="answers-4">
+    <div class="answers-2">
+      <form class="quiz-form" [formGroup]="answersForm0">
+        <label for="answer0">
+          Réponse 1
+          <input class="input-custom" type="text" id="answer0" placeholder="Votre réponse" [formControlName]="'value'">
+        </label>
+        <br>
+        <input id="isCorrect0" name="isCorrect" type="checkbox">
+        <label for="isCorrect0">Correcte</label>
+      </form>
+
+      <form class="quiz-form" [formGroup]="answersForm1">
+        <label for="answer1">
+          Réponse 2
+          <input class="input-custom" type="text" id="answer1" placeholder="Votre réponse" [formControlName]="'value'">
+        </label>
+        <br>
+        <input id="isCorrect1" name="isCorrect" type="checkbox">
+        <label for="isCorrect1">Correcte</label>
+      </form>
+
+    </div>
+
+    <div class="answers-2">
+      <form class="quiz-form" [formGroup]="answersForm2">
+        <label for="answer2">
+          Réponse 3
+          <input class="input-custom" type="text" id="answer2" placeholder="Votre réponse" [formControlName]="'value'">
+        </label>
+        <br>
+        <input id="isCorrect2" name="isCorrect" type="checkbox">
+        <label for="isCorrect2">Correcte</label>
+      </form>
+      <form class="quiz-form" [formGroup]="answersForm3">
+        <label for="answer3">
+          Réponse 4
+          <input class="input-custom" type="text" id="answer3" placeholder="Votre réponse" [formControlName]="'value'">
+        </label>
+        <br>
+        <input id="isCorrect3" name="isCorrect" type="checkbox">
+        <label for="isCorrect3">Correcte</label>
+      </form>
+    </div>
+  </div>
+  <br>
+  <button type="submit" class="button-card" (click)="addQuestion()">Ajouter une question</button>
 </div>
+
+
+
 <!-- Uncomment below to see your form structure and how it changes-->
 <!-- <br><br>{{quizForm.getRawValue() | json}} -->
