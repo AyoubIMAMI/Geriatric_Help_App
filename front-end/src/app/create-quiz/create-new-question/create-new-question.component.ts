@@ -7,7 +7,7 @@ import { Answer, Question } from 'src/models/question.model';
 @Component({
   selector: 'app-create-new-question',
   templateUrl: './create-new-question.component.html',
-  styleUrls: ['./create-new-question.component.scss']
+  styleUrls: ['./create-new-question.component.scss', '../create-quiz.component.scss']
 })
 export class createNewQuestionComponent implements OnInit {
   public quiz: Quiz;

@@ -4,3 +4,13 @@
   margin-top: 0.3em;
   margin-bottom: 0.3em;
 }
+
+.answers-2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.question-input{
+  display: flex;
+  flex-direction: column;
+}
