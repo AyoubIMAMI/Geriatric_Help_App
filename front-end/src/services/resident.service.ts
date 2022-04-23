@@ -51,4 +51,9 @@ export class ResidentService {
     const urlWithId = this.residentUrl + '/' + resident.id;
     this.http.delete<Resident>(urlWithId, this.httpOptions).subscribe(() => this.retrieveResident());
   }
+
+  updateResident(resident: Resident): void{
+    const urlWithId = this.residentUrl + '/' + resident.id;
+    this.http.put(urlWithId,resident, this.httpOptions).subscribe(() => this.retrieveResident());
+  }
 }
