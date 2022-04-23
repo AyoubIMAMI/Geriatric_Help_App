@@ -18,6 +18,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #6c757d;
+  border-radius: 0.25rem;
 }
 
 #quiz {
@@ -68,9 +70,11 @@
 }
 .loadAnswer{
   z-index: 1;
-  height: 14vh;
+  height: 13.8vh;
   width: 0vw;
   position: absolute;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
 }
 
 .loadAnimation{
@@ -92,7 +96,7 @@ endLoadAnimation{
     width: 0;
   }
   100% {
-    width: 40vw;
+    width: 39.8vw;
   }
 }
 

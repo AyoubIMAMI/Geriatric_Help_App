@@ -20,13 +20,13 @@ import { HandicapMode } from "../handicapMode";
   styleUrls: ['./start-quiz.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class StartQuizComponent implements OnInit, AfterViewChecked {
+export class StartQuizComponent implements OnInit, AfterViewInit {
 
   @Input() indexOfQuestion: string;
   @Input() currentQuestion: Question;
   @Input() currentResident: Resident;
 
-  public handicapMode = new HandicapMode();
+  public handicapMode: HandicapMode;
 
 
   public responseIndex: number;
@@ -60,22 +60,33 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {
-      console.log('This if the value for user-id: ' + this.indexOfQuestion);
+    console.log('This if the value for user-id: ' + this.indexOfQuestion);
+
   }
   ngOnChanges(): void{
     if(+this.indexOfQuestion != this.responseIndex) this.hideAnswer();
   }
 
-  ngAfterViewChecked(): void{
-    this.defineModeByResident(this.currentResident);
+  ngAfterViewInit(): void{
+    //this.defineModeByResident(this.currentResident);
+    this.handicapMode = new HandicapMode(this.currentResident, this.getMapAnswersrevealAnswer())
+
+  }
+  private getMapAnswersrevealAnswer() {
+    let allAnswer = document.getElementsByClassName("answer");
+    let map = new Map();
+    for(let i = 0 ; i < allAnswer.length ; i++ ){
+      map.set(allAnswer[i], this.revealAnswer);
+    }
+    return map;
   }
 
-  defineModeByResident(resident: Resident){
+  /*defineModeByResident(resident: Resident){
     let residentHandicap = resident.handicap;
     if(residentHandicap == "Tremblement essentiel") this.startLoadingMode()
     else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
     else if(residentHandicap == "Tremblement attitude") this.startMissClick();
-  }
+  }*/
 
   chooseAnswer(event: Event): void {
     const eventTarget: Element = event.target as Element;
@@ -143,14 +154,14 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  clearModes() {
+  /*clearModes() {
       this.downMouseControlMode();
       this.handicapMode.downMissClick();
       this.handicapMode.downMissClickVisible();
       this.downLoadingMod();
-  }
+  }*/
 
-  updateMode(){
+  /*updateMode(){
     let currentMode = "none";
     let radioButtons = document.querySelectorAll('input[name="mode"]');
     this.clearModes();
@@ -166,9 +177,9 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
     else if(currentMode == "missClick")this.startMissClick();
     else if(currentMode == "missClickVisible")this.startMissClickVisible();
     else if(currentMode == "loadingMode")this.startLoadingMode();
-  }
+  }*/
 
-  startLoadingMode(){
+  /*startLoadingMode(){
       this.loadingModeActivated = true;
       let allAnswerContainers = document.getElementsByClassName('answerContainer');
 
@@ -176,7 +187,7 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
           let answerContainer = allAnswerContainers[i] as HTMLElement;
           this.handicapMode.startLoadingMode(answerContainer, this.revealAnswer);
       }
-  }
+  }*/
 
   /*loadMouseInEvent(answerContainer: HTMLElement, ev: Event){
     console.log("Mouse in");
@@ -191,7 +202,7 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
 
   }*/
 
-    downLoadingMod(){
+    /*downLoadingMod(){
       //myDIV.removeEventListener("mousemove", myFunction);
     this.loadingModeActivated = false;
     let allAnswerContainers = document.getElementsByClassName('answerContainer');
@@ -212,9 +223,9 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
       });
     }
 
-  }
+  }*/
 
-    loadQuestion(answerContainer: HTMLElement): Boolean{
+    /*loadQuestion(answerContainer: HTMLElement): Boolean{
         //Je lance l'animation
         //A la fin si l'animation a été cancel alors return false
         //sinon return true
@@ -292,6 +303,7 @@ export class StartQuizComponent implements OnInit, AfterViewChecked {
       }
     }
   }*/
+
 
 }
 function whichTransitionEvent(){

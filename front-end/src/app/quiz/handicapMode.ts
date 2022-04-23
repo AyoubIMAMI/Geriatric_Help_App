@@ -7,35 +7,39 @@ import {Resident} from "../../models/resident.model";
 export class HandicapMode {
   public loadingModeActivated: Boolean = false;
   public missClickModeActivated: Boolean = false;
-  public mouseControlModeActivated = false;
+  public mouseControlModeActivated: Boolean = false;
+  public answerisCurrentlyLoading: Boolean = false;
+
 
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
 
 
 
-  public answerisCurrentlyLoading: Boolean = false;
-  public mouseIn: Boolean = false;
-  public mouseOut: Boolean = false;
 
-
-  /*constructor(resident: Resident) {
-    //this.defineModeByResident(resident);
+  constructor(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
+    this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
+    this.defineModeByResident(resident);
   }
 
-  defineModeByResident(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>){
+  defineModeByResident(resident: Resident){
     let residentHandicap = resident.handicap;
     if(residentHandicap == "Tremblement essentiel") this.startLoadingMode()
     else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
     else if(residentHandicap == "Tremblement attitude") this.startMissClick();
   }
-*/
+
   //Loading Mode
   //----------------------------------------
-  //startLoadingMode(listOfAllElementToNavigateIn: Map<HTMLElement, Function>){}
+  startLoadingMode(){
+    for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size; i++){
+      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[i];
+      let callBack = this.listOfAllElementToNavigateIn.get(element);
+      this.addElementToLoadingMode(element, callBack)
+    }
+  }
 
-  addElementToLoadingMode(element: HTMLElement, callback: Function){}
-    startLoadingMode(element: HTMLElement, callback: Function){
+  addElementToLoadingMode(element: HTMLElement, callback: Function){
     this.loadingModeActivated = true;
 
     element.addEventListener("mouseenter", event => {
@@ -82,23 +86,19 @@ export class HandicapMode {
 
   //Mouse control Mode
   //----------------------------------------
-  startMouseControlMode(listOfAllElementToNavigateIn: Map<HTMLElement, Function>){
+  startMouseControlMode(){
     this.mouseControlModeActivated = true;
-    this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
-    this.setupListenerLeftAndRightClick(Array.from(listOfAllElementToNavigateIn.keys()));
+    this.setupListenerLeftAndRightClick(Array.from(this.listOfAllElementToNavigateIn.keys()));
 
     if(document.getElementsByClassName("selected").length == 0){
-      const firstElement: HTMLElement = Array.from(listOfAllElementToNavigateIn.keys())[0];
+      const firstElement: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
       firstElement.classList.add("selected");
     }
   }
 
   private setupListenerLeftAndRightClick(htmlElements: HTMLElement[]) {
-    for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size ;i++ ){
-      const currenElement = htmlElements[i] as HTMLElement;
-      currenElement.addEventListener("click", this.leftClick);
-      currenElement.addEventListener("contextmenu", this.rightClick);
-    }
+      document.body.addEventListener("click", e => {this.leftClick()});
+      document.body.addEventListener("contextmenu", e => {this.rightClick(e)});
   }
 
   leftClick(){
@@ -109,8 +109,7 @@ export class HandicapMode {
     }
   }
   rightClick(event: MouseEvent){
-    const handicap = document.getElementById('mouseControl') as HTMLInputElement;
-    if(handicap.checked || this.mouseControlModeActivated){
+    if(this.mouseControlModeActivated){
       event.preventDefault();
       this.incrementeCurrentElement()
       this.updateSelected();
@@ -132,15 +131,20 @@ export class HandicapMode {
 
   //Miss click Mode
   //----------------------------------------
-  startMissClick(element: HTMLElement){
+  startMissClick(){
     this.missClickModeActivated = true;
-    element.classList.add("missClickMode");
+    for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size; i++) {
+      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
+      element.classList.add("missClickMode");
+    }
   }
 
-  startMissClickVisible(element: HTMLElement){
-    console.log("aaaaaaaaaaaaaa");
-    this.startMissClick(element)
-    element.classList.add("missClickModeVisible");
+  startMissClickVisible(){
+    this.startMissClick()
+    for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size; i++) {
+      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
+      element.classList.add("missClickModeVisible");
+    }
   }
 
   downMissClick(){
