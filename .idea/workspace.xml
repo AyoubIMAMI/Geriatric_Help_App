@@ -43,11 +43,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;
-  }
-}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
