@@ -15,6 +15,8 @@ import {GestionQuizComponent} from "./gestion-quiz/gestion-quiz.component";
 import {ResidentModificationComponent} from "./resident/resident-modification/resident-modification.component";
 import {CreateQuizComponent} from "./create-quiz/create-quiz.component";
 import {ResidentCreationComponent} from "./resident/resident-creation/resident-creation.component";
+import {ModificationQuizModule} from "./modification-quiz/modification-quiz.module";
+import {ModificationQuizComponent} from "./modification-quiz/modification-quiz.component";
 
 
 const routes: Routes = [
@@ -32,7 +34,7 @@ const routes: Routes = [
   {path: 'quiz/:residentid/:id', component: QuizComponent},
   {path: 'quizzes/:residentid', component: QuizzesComponent},
   {path: 'quizzes-display', component: QuizzesDisplayComponent},
-
+  {path: 'quizzes/:id/modification', component: ModificationQuizComponent},
   {path: 'resident/:id/modification', component: ResidentModificationComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 

@@ -1,0 +1,52 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <h4 class="p-2 bd-highlight mb-3"><i class="bi bi-journal"></i> Creation d'un quiz</h4>
+
+  <div class="row">
+
+    <div class="col container">
+      <div class="card">
+        <form class="quiz-form card-header" [formGroup]="quizForm">
+          <h3>Mon quiz</h3>
+          <div class="form-input">
+            <label for="name">Nom</label>
+            <input class="input-custom" type="text" id="name" placeholder="Nom du quiz" [formControlName]="'name'" required>
+          </div>
+          <div class="form-input">
+            <label for="theme">Thème</label>
+            <input class="input-custom" type="text" id="theme" placeholder="Thème du quiz" [formControlName]="'theme'" required>
+          </div>
+        </form>
+        <div class="card-body">
+          <app-create-new-question (newQuestionEvent)="addQuestionToList($event)"></app-create-new-question>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col container">
+      <div class="card card-header-container">
+        <div class="card-header">
+          <h3>Mes questions</h3>
+        </div>
+
+        <div class="card-body-container">
+          <div *ngFor="let question of listQuestion" class="question">
+            <h5>{{question.label}}</h5>
+            <div class="container">
+              <li *ngFor="let answer of question.answers">
+                {{answer.value}}
+              </li>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-success custom-button" (click)="updateQuiz()">Modifier le quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->

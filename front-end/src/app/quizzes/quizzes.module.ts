@@ -4,11 +4,10 @@ import {QuizzesDisplayComponent} from "./quizzes-display/quizzes-display.compone
 import {QuizzesComponent} from "./quizzes.component";
 import {RouterModule} from "@angular/router";
 
-
 @NgModule({
   declarations: [
     QuizzesComponent,
-    QuizzesDisplayComponent
+    QuizzesDisplayComponent,
   ],
 
     imports: [
