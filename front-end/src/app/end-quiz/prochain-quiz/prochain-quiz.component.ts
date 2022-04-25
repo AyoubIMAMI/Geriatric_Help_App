@@ -22,7 +22,6 @@ export class ProchainQuizComponent implements OnInit {
     this.residentService.residentSelected$.subscribe((resident) =>
     {this.resident = resident
     console.log(this.resident)});
-
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;

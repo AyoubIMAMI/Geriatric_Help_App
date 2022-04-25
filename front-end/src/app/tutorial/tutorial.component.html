@@ -3,11 +3,11 @@
   <div class="container">
 
     <br>
-    <div class="quiz-list">
+    <div class="tutoList" *ngIf="tutoList">
       <div class="quiz" *ngFor="let tutoriel of tutoList">
         <li class="list-group-item">
-          <div class="col fs-4 mb-3">{{tutoriel.question}}</div>
-          <div class="col fs-4 mb-3">{{tutoriel.reponse}}</div>
+          <div class="fs-4 mb-3">{{tutoriel.question}}</div>
+          <div class="fs-4 mb-3">{{tutoriel.reponse}}</div>
         </li>
       </div>
     </div>

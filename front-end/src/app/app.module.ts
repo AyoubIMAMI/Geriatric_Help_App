@@ -24,11 +24,9 @@ import {ResidentModificationModule} from "./resident/resident-modification/resid
 import {GestionQuizModule} from "./gestion-quiz/gestion-quiz.module";
 import {CreateQuizModule} from "./create-quiz/create-quiz.module";
 import {ResidentCreationModule} from "./resident/resident-creation/resident-creation.module";
-import {ResultatsDisplayComponent} from "./end-quiz/resultats-display/resultats-display.component";
-import {ProchainQuizComponent} from "./end-quiz/prochain-quiz/prochain-quiz.component";
-import {EndQuizComponent} from "./end-quiz/end-quiz.component";
 import {EndQuizModule} from "./end-quiz/end-quiz.module";
 import {ModificationQuizModule} from "./modification-quiz/modification-quiz.module";
+import {TutorialModule} from "./tutorial/tutorial.module";
 
 @NgModule({
   declarations: [
@@ -42,7 +40,7 @@ import {ModificationQuizModule} from "./modification-quiz/modification-quiz.modu
     QuestionComponent,
     UserComponent,
     UserFormComponent,
-    UserListComponent,
+    UserListComponent
   ],
   imports: [
     ResidentsModule,
@@ -60,6 +58,7 @@ import {ModificationQuizModule} from "./modification-quiz/modification-quiz.modu
     AppRoutingModule,
     HttpClientModule,
     EndQuizModule,
+    TutorialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
