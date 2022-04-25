@@ -1,0 +1,26 @@
+<div class="container">
+    <h4 class="p-2 bd-highlight mb-3"><i class="bi bi-journal"></i> Creation d'un nouveau quiz</h4>
+    <div class="row">
+        <div class="col-4">
+            <div class="col fs-5 mb-3">Titre
+                <div class="col fs-5 mb-3">Theme
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-2 bd-highlight mb-3">
+                <form class="quiz-form" [formGroup]="quizForm">
+                    <input class="input-custom" type="text" id="name" [formControlName]="'name'" required>
+                    <br>
+                    <input class="input-custom" type="text" id="theme" [formControlName]="'theme'" required>
+                    <br>
+                    <div *ngIf="quizIsNotCreated" iclass="d-flex justify-content-center">
+                        <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->

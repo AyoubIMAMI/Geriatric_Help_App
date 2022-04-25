@@ -1,27 +1,27 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {QuizService} from "../../services/quiz.service";
-import {Quiz} from "../../models/quiz.model";
-import {Question} from "../../models/question.model";
-import {Router} from "@angular/router";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {QuizService} from "../../../services/quiz.service";
+import {Quiz} from "../../../models/quiz.model";
 
 @Component({
-  selector: 'app-create-quiz',
-  templateUrl: './create-quiz.component.html',
-  styleUrls: ['./create-quiz.component.scss']
+  selector: 'app-creation-of-quiz',
+  templateUrl: './modification-of-quiz.component.html',
+  styleUrls: ['./modification-of-quiz.component.scss']
 })
-export class CreateQuizComponent implements OnInit {
+export class ModificationOfQuizComponent implements OnInit{
+  // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
+  // avoid TemplateDrivenForm (another type of form)
+
   /**
    * QuizForm: Object which manages the form in our component.
    * More information about Reactive Forms: https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance
    */
   public quizForm: FormGroup;
+  @Output() newItemEvent = new EventEmitter<string>();
   public quizIsNotCreated: Boolean;
-  public listQuestion: Question[];
 
 
-  constructor(public router : Router, public formBuilder: FormBuilder, public quizService: QuizService) {
-    this.listQuestion= new Array();
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
     this.quizIsNotCreated = true;
     this.quizForm = this.formBuilder.group({
       name: [''],
@@ -39,20 +39,16 @@ export class CreateQuizComponent implements OnInit {
     // We retrieve here the quiz object from the quizForm and we cast the type "as Quiz".
     let name = document.getElementById('name') as HTMLInputElement;
     let theme = document.getElementById('theme') as HTMLInputElement;
-    if (theme.value != "" && name.value != "") {
+    if(theme.value != "" && name.value != ""){
       const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
       console.log(quizToCreate);
-      quizToCreate.questions = this.listQuestion;
+      this.quizService.addQuiz(quizToCreate);
+      let quizId = this.quizService.getLastQuizIdAdded();
+      this.newItemEvent.emit(quizId);
       this.quizIsNotCreated = false;
-      this.quizService.addQuizComplet(quizToCreate);
+      quizToCreate.id = quizId;
       this.quizService.setCurrentQuiz(quizToCreate);
-      this.router.navigate(['./quiz']);
     }
-
-  }
-  addQuestionToList(question: Question){
-    this.listQuestion.push(question);
-    console.log(this.listQuestion);
   }
 
 }

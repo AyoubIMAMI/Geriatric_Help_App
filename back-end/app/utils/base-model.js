@@ -56,13 +56,15 @@ module.exports = class BaseModel {
   update(id, obj) {
     if (typeof id === 'string') id = parseInt(id, 10)
     const prevObjIndex = this.items.findIndex((item) => item.id === id)
-    if (prevObjIndex === -1) throw new NotFoundError(`Cannot update ${this.name} id=${id} : not found`)
-    const updatedItem = { ...this.items[prevObjIndex], ...obj }
+    if (prevObjIndex === -1) return(this.create(obj))
+    else{
+      const updatedItem = { ...this.items[prevObjIndex], ...obj }
     const { error } = Joi.validate(updatedItem, this.schema)
     if (error) throw new ValidationError(`Update Error : Object ${JSON.stringify(obj)} does not match schema of model ${this.name}`, error)
     this.items[prevObjIndex] = updatedItem
     this.save()
     return updatedItem
+    }
   }
 
   delete(id) {

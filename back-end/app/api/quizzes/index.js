@@ -54,7 +54,20 @@ router.post('/', (req, res) => {
 
 router.put('/:quizId', (req, res) => {
   try {
-    res.status(200).json(Quiz.update(req.params.quizId, req.body))
+    let quiz= Quiz.update(req.params.quizId,{theme: req.body.theme, name: req.body.name})
+    //console.log(quiz)
+    if (req.body.questions && req.body.questions.length > 0) {
+      const questions = req.body.questions.map((question) => {
+        const currentQuest=Question.update(question.id ,{label: question.label, quizId: quiz.id })
+        if (question.answers && question.answers.length > 0) {
+          //console.log(question)
+          const answers = question.answers.map((answer) => Answer.update(answer.id,{ value: answer.value,isCorrect: answer.isCorrect, questionId: currentQuest.id }))
+          question = { ...question, answers }
+        }
+      })
+      quiz = { ...quiz, questions }
+    }
+    res.status(200).json(quiz)
   } catch (err) {
     manageAllErrors(res, err)
   }

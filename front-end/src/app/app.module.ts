@@ -28,6 +28,7 @@ import {ResultatsDisplayComponent} from "./end-quiz/resultats-display/resultats-
 import {ProchainQuizComponent} from "./end-quiz/prochain-quiz/prochain-quiz.component";
 import {EndQuizComponent} from "./end-quiz/end-quiz.component";
 import {EndQuizModule} from "./end-quiz/end-quiz.module";
+import {ModificationQuizModule} from "./modification-quiz/modification-quiz.module";
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {EndQuizModule} from "./end-quiz/end-quiz.module";
     ResidentCreationModule,
     GestionQuizModule,
     CreateQuizModule,
+    ModificationQuizModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,

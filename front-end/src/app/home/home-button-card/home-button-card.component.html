@@ -1,26 +1,23 @@
 <div class="card">
-  <h4 class="card-header">Que voulez-vous faire ?</h4>
+  <h4 class="card-header py-3">Que voulez-vous faire ?</h4>
 
-  <div class="card-body d-flex justify-content-center flex-wrap ">
-    <div class="p-2">
-      <a [routerLink]="['/quiz/creation']" class="btn btn-secondary">
-        <i class="bi bi-plus-lg"></i>
-        Créer un quiz
-      </a>
+  <div class="custom-card-body">
+
+
+    <div class="custom-button secondary" [routerLink]="['/quiz/creation']">
+      <i class="bi bi-plus-lg"></i>
+      Créer un quiz
     </div>
 
-    <div class="p-2">
-      <a class="btn btn-secondary" [routerLink]="['/quiz']">
-        <i class="bi bi-pencil-square"></i>
-        Gérer les quiz
-      </a>
+    <div class="custom-button secondary"  [routerLink]="['/quiz']">
+      <i class="bi bi-pencil-square"></i>
+      Gérer les quiz
     </div>
 
-    <div class="p-2">
-      <a class="btn btn-primary" [routerLink]="['/residents']">
-        <i class="bi bi-person-lines-fill"></i>
-        Choisir un résident
-      </a>
+    <div class="custom-button primary" [routerLink]="['/residents']">
+      <i class="bi bi-person-lines-fill"></i>
+      Choisir un résident
     </div>
   </div>
+
 </div>

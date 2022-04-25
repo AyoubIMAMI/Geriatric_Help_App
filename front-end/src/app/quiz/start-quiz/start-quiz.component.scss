@@ -18,6 +18,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #6c757d;
+  border-radius: 0.25rem;
 }
 
 #quiz {
@@ -66,8 +68,36 @@
 .missClickModeVisible {
     background-color: yellowgreen;
 }
+.loadAnswer{
+  z-index: 1;
+  height: 13.8vh;
+  width: 0vw;
+  position: absolute;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.loadAnimation{
+  animation-name: fill;
+  animation-duration: 4s;
+  background-color: yellow;
+}
+
+endLoadAnimation{
+  animation: 0;
+}
+
+.textAnswer{
+  z-index: 2;
+}
 
 @keyframes fill {
-  from {background-color: red;}
-  to {background-color: yellow;}
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 39.8vw;
+  }
 }
+
+

@@ -1,7 +1,10 @@
 <ul class="list-group">
     <div class="quiz" *ngFor="let quiz of quizList">
         <li class="list-group-item">
-            <p>{{quiz.theme}} {{quiz.name}}</p>
+          <div class="row justify-content-start">
+            <div class="col fs-4 mb-3 "><i class="bi bi-journal"></i> {{quiz.name}} </div>
+            <div class="col fs-4 mb-3">{{quiz.theme}}</div>
+          </div>
             <a (click)="defineSelectedQuiz(quiz)" class="stretched-link" routerLink="/quiz/{{id}}/{{quiz.id}}"></a>
         </li>
     </div>
