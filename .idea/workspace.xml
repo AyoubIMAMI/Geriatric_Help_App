@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Creation d'un quiz">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix bug intentionel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/handicapMode.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,13 +108,6 @@
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="4410000" />
-    </task>
-    <task id="LOCAL-00002" summary="Initial commit">
-      <created>1647941923682</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1647941923682</updated>
     </task>
     <task id="LOCAL-00003" summary="Updating project">
       <created>1647942204858</created>
@@ -454,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650903433149</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix bug intentionel">
+      <created>1650905009268</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1650905009268</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,6 +492,7 @@
     <MESSAGE value="caracters limit" />
     <MESSAGE value="fix on add and create quiz" />
     <MESSAGE value="Creation d'un quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation d'un quiz" />
+    <MESSAGE value="fix bug intentionel" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug intentionel" />
   </component>
 </project>
