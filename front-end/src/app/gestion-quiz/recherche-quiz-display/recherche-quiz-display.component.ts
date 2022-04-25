@@ -19,6 +19,7 @@ export class RechercheQuizDisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.quizService.retrieveQuizzes();
   }
 
   quizSelected(selected: boolean): void {

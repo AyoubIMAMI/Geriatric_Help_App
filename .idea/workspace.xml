@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix bug ngif resident">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix on add and create quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/gestion-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/gestion-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/recherche-quiz-display/recherche-quiz-display.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/recherche-quiz-display/recherche-quiz-display.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/quiz.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/quiz.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +45,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />

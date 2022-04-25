@@ -84,6 +84,11 @@ export class QuizService {
     this.http.delete<Quiz>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
+  deleteAllQuiz(quiz: Quiz): void {
+    const urlWithId = this.quizUrl + '/' + quiz.id+ '/all';
+    this.http.delete<Quiz>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
+  }
+
   addQuizComplet(quiz: Quiz): void {
     const questionUrl = this.quizUrl +'/';
     console.log(quiz.id);
