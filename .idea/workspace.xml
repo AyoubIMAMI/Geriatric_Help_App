@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Creation d'un quiz">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/recherche-quiz-display/recherche-quiz-display.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/recherche-quiz-display/recherche-quiz-display.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/gestion-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/gestion-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/gestion-quiz.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/gestion-quiz.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutoriel-display/tutoriel-display.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutoriel-display/tutoriel-display.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/gestion-quiz/recherche-quiz-display/recherche-quiz-display.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutoriel-display/tutoriel-display.component.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "D:/leo/Polytech/S6/PS6/2021-2022-ps6-web-symfony/front-end/src/app/end-quiz",
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end/database" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
+    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\leo\Polytech\S6\PS6\2021-2022-ps6-web-symfony\front-end\src\app\end-quiz" />
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\src\app\end-quiz" />
     </key>
@@ -114,6 +123,13 @@
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="4410000" />
+    </task>
+    <task id="LOCAL-00001" summary="Removing all">
+      <created>1647941758092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647941758092</updated>
     </task>
     <task id="LOCAL-00002" summary="Initial commit">
       <created>1647941923682</created>
@@ -451,14 +467,7 @@
       <option name="project" value="LOCAL" />
       <updated>1650899706712</updated>
     </task>
-    <task id="LOCAL-00050" summary="fix bug">
-      <created>1650902305615</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1650902305616</updated>
-    </task>
-    <option name="localTasksCounter" value="51" />
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +506,6 @@
     <MESSAGE value="answers" />
     <MESSAGE value="caracters limit" />
     <MESSAGE value="fix on add and create quiz" />
-    <MESSAGE value="fix bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix on add and create quiz" />
   </component>
 </project>

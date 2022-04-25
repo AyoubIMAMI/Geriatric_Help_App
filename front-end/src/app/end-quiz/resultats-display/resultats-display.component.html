@@ -8,14 +8,13 @@
   <br>
   <br>
 
-  <div class="fs-2 mb-3">Temps : (coming soon)</div>
-  <br>
-  <div *ngIf="quiz!=null"> <div class="fs-2 mb-3">Quiz : {{quiz.name}}</div> </div>
+  <h3 *ngIf="resident">
+    Bravo {{resident.prenom}},
+  </h3>
 
-  <br>
-
-  <div class="fs-2 mb-3">Score :</div>
-  <br>
+  <h4 *ngIf="quiz">
+    Vous avez terminé le quiz "{{quiz.name}}"!
+  </h4>
 
 </div>
 

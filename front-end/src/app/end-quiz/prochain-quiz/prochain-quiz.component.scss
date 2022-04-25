@@ -1,27 +1,14 @@
-.loadAnswer{
-  z-index: 1;
-  width: 0vw;
-  position: absolute;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-}
-
-.loadAnimation{
-  animation-name: fill;
-  animation-duration: 4s;
-  background-color: #bdbd22;
-}
-
-.textHandicap{
-  z-index: 2;
-}
-
-.handicap{
+.quiz-name-button{
   height: 14vh;
   width: 40vw;
   border: 1px solid #6c757d;
   border-radius: 0.25rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.quiz-name-button:hover{
+  cursor: pointer;
+  background-color: lightgray;
 }
