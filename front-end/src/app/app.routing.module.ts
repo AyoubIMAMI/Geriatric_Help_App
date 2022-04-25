@@ -31,6 +31,7 @@ const routes: Routes = [
   {path: 'end-quiz/:residentid/:id', component: EndQuizComponent},
   {path: 'tutorial', component: TutorialComponent},
   {path: 'quiz', component: GestionQuizComponent},
+  {path: 'tutoriel', component: TutorialComponent},
   {path: 'quiz/:residentid/:id', component: QuizComponent},
   {path: 'quizzes/:residentid', component: QuizzesComponent},
   {path: 'quizzes-display', component: QuizzesDisplayComponent},
