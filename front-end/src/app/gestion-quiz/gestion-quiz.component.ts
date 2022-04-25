@@ -14,18 +14,8 @@ export class GestionQuizComponent implements OnInit {
   public tutoList: Tutoriel[] = [];
 
   constructor(private router: Router, public quizService: QuizService) {
-    this.createTutoriel();
   }
 
   ngOnInit(): void {
   }
-
-  createTutoriel(): void {
-    this.tutoList[0]=new class implements Tutoriel {
-      question: "De quel couleur";
-      reponse: "oui c'est comme ca";
-    };
-    console.log(this.tutoList)
-  }
-
 }

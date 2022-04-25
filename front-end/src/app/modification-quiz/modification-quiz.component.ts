@@ -62,6 +62,10 @@ export class ModificationQuizComponent implements OnInit {
     }
 
   }
+  deleteAllQuiz(): void{
+    this.quizService.deleteAllQuiz(this.quiz)
+    this.router.navigate(['./quiz']);
+  }
   addQuestionToList(question: Question){
     this.listQuestion.push(question);
     console.log(this.listQuestion);
