@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="caracters limit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-new-question/create-new-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-new-question/create-new-question.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-new-question/create-new-question.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-new-question/create-new-question.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/create-new-question/create-new-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/create-new-question/create-new-question.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +114,7 @@
       <workItem from="1650528275915" duration="25298000" />
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
-      <workItem from="1650895772218" duration="1934000" />
+      <workItem from="1650895772218" duration="2608000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -429,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650886149711</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="caracters limit">
+      <created>1650898001081</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1650898001081</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
