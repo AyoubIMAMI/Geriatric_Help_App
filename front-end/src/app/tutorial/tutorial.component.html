@@ -1,2 +1,17 @@
-<div class="container">tutorial</div>
+<div class="container">
+  <div class="fs-2 mb-3 "><i class="bi bi-play-fill"></i> Tutoriel</div>
+  <div class="container">
 
+    <br>
+    <div class="quiz-list">
+      <div class="quiz" *ngFor="let tutoriel of tutoList">
+        <li class="list-group-item">
+          <div class="col fs-4 mb-3">{{tutoriel.question}}</div>
+          <div class="col fs-4 mb-3">{{tutoriel.reponse}}</div>
+        </li>
+      </div>
+    </div>
+
+  </div>
+
+</div>
