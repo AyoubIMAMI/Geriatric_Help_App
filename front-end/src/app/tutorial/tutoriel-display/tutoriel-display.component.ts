@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import {Quiz} from "../../../models/quiz.model";
 import {Router} from "@angular/router";
 import {QuizService} from "../../../services/quiz.service";
+
 @Component({
-  selector: 'app-recherche-quiz-display',
-  templateUrl: './recherche-quiz-display.component.html',
-  styleUrls: ['./recherche-quiz-display.component.scss']
+  selector: 'app-tutoriel-display',
+  templateUrl: './tutoriel-display.component.html',
+  styleUrls: ['./tutoriel-display.component.scss']
 })
+export class TutorielDisplayComponent implements OnInit {
 
-export class RechercheQuizDisplayComponent implements OnInit {
-
-  public quizList: Quiz[] = [];
+  public tutolist: Quiz[] = [];
 
   constructor(private router: Router, public quizService: QuizService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
-      this.quizList = quizzes;
+      this.tutolist = quizzes;
     });
   }
 
