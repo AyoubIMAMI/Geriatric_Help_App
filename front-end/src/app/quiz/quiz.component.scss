@@ -16,3 +16,21 @@
   align-items: center;
   font-size: xx-large;
 }
+
+.loadAnswer{
+  z-index: 1;
+  width: 0vw;
+  position: absolute;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.loadAnimation{
+  animation-name: fill;
+  animation-duration: 4s;
+  background-color: #bdbd22;
+}
+
+.textHandicap{
+  z-index: 2;
+}

@@ -60,10 +60,12 @@ export class HandicapMode {
     setupToLoad(element: HTMLElement){
       let firstChild = element.firstChild as HTMLElement;
       if(!firstChild.classList.contains("loadAnswer")){
-        firstChild.style.zIndex="1";
+        //firstChild.style.zIndex="1";
         var loadDiv = document.createElement("div");
         element.insertBefore(loadDiv, firstChild);
         loadDiv.classList.add("loadAnswer");
+        //let parentHeight: number = +element.offsetHeight;
+        //loadDiv.style.height = element.offsetHeight.toString()+"px";
       }
     }
 
