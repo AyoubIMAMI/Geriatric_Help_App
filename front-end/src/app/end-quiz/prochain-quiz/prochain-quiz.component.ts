@@ -24,11 +24,11 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
 
 
   constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService) {
-    this.residentService.residentSelected$.subscribe((resident) =>
-    {
+    this.residentService.residentSelected$.subscribe((resident) =>{
       this.resident = resident
+      console.log(this.resident)
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-      this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer());
+      this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer())
     });
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
@@ -41,6 +41,7 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+
     this.residentid = this.route.snapshot.paramMap.get('residentid');
     this.residentService.setSelectedResident(this.residentid);
     const id = this.route.snapshot.paramMap.get('id');
@@ -48,6 +49,7 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void{
+
   }
 
   private getMapAnswersrevealAnswer() {
@@ -64,6 +66,7 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   }
   defineSelectedQuiz(quiz: Quiz): void{
     this.quizService.setCurrentQuiz(quiz);
+    this.router.navigate(['./quiz/'+this.resident.id+'/'+this.quiz.id]);
   }
 
 }
