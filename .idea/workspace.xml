@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Creation d'un quiz">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="all modes work well no lag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/create-quiz/create-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/modification-quiz/modification-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +44,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
@@ -113,8 +111,8 @@
       <workItem from="1650526841929" duration="1319000" />
       <workItem from="1650528275915" duration="25298000" />
       <workItem from="1650611292559" duration="3814000" />
-      <workItem from="1650716115118" duration="20556000" />
-      <workItem from="1650884040771" duration="2477000" />
+      <workItem from="1650716115118" duration="23248000" />
+      <workItem from="1650884191212" duration="437000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -403,12 +401,12 @@
       <option name="project" value="LOCAL" />
       <updated>1650733373800</updated>
     </task>
-    <task id="LOCAL-00042" summary="Creation d'un quiz">
-      <created>1650793869773</created>
+    <task id="LOCAL-00042" summary="all modes work well no lag">
+      <created>1650739972567</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1650793869773</updated>
+      <updated>1650739972567</updated>
     </task>
     <option name="localTasksCounter" value="43" />
     <servers />
@@ -450,7 +448,7 @@
     <MESSAGE value="add css" />
     <MESSAGE value="loading mod work but lag" />
     <MESSAGE value="all modes work" />
-    <MESSAGE value="Creation d'un quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation d'un quiz" />
+    <MESSAGE value="all modes work well no lag" />
+    <option name="LAST_COMMIT_MESSAGE" value="all modes work well no lag" />
   </component>
 </project>
