@@ -105,14 +105,16 @@ export class HandicapMode {
   }
 
   clickWithkeyBoard(){
-    if(this.mouseControlModeActivated){
+    let handicapePage = document.getElementsByClassName("handicapePage").length;
+    if(this.mouseControlModeActivated || handicapePage>1){
       const element = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
       const callback = this.listOfAllElementToNavigateIn.get(element);
       callback(element);
     }
   }
   moveInPageWithMouse(event: MouseEvent){
-    if(this.mouseControlModeActivated){
+    let handicapePage = document.getElementsByClassName("handicapePage").length;
+    if(this.mouseControlModeActivated || handicapePage>1){
       event.preventDefault();
       this.incrementeCurrentElement()
       this.updateSelected();
