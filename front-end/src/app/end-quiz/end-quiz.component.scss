@@ -25,3 +25,29 @@
   justify-content: center;
   align-items: center;
 }
+
+.selected {
+  border: 2.5px dashed #cdbf03;
+  animation: spin 1s alternate infinite;
+  background-color: #ecec4a!important;
+  color: black;
+}
+
+.missClickRange {
+  height: fit-content;
+  width: fit-content;
+  margin: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missClickMode {
+  min-width: 15vw;
+  min-height: 15vh;
+  margin: 1.6vw;
+}
+
+.missClickModeVisible {
+  background-color: yellowgreen;
+}
