@@ -121,6 +121,16 @@ export class createNewQuestionComponent implements OnInit {
     return -1
   }
 
+  checkRadio(checkedId) : void {
+    let radioButtons = document.querySelectorAll('input[name="isCorrect"]');
+    // @ts-ignore
+    for (let radioButton of radioButtons) {
+      if (radioButton.id != checkedId) {
+        radioButton.checked = false;
+      }
+    }
+  }
+
 }
 
 

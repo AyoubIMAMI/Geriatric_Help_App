@@ -20,6 +20,8 @@ export class createNewQuestionComponent implements OnInit {
   public answersForm1:FormGroup;
   public answersForm2:FormGroup;
   public answersForm3:FormGroup;
+
+  public answersForm:FormGroup;
   //public listName: string[] = ['answersForm0', 'answersForm1', 'answersForm2', 'answersForm3'];
   //public answersForms: FormGroup[] = new Array(4);
 
@@ -121,6 +123,15 @@ export class createNewQuestionComponent implements OnInit {
     return -1
   }
 
+  checkRadio(checkedId) : void {
+    let radioButtons = document.querySelectorAll('input[name="isCorrect"]');
+    // @ts-ignore
+    for (let radioButton of radioButtons) {
+      if (radioButton.id != checkedId) {
+        radioButton.checked = false;
+      }
+    }
+  }
 }
 
 
