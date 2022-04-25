@@ -4,14 +4,13 @@
 
     <br>
     <div class="tutoList" *ngIf="tutoList">
-      <div class="question " *ngFor="let tutoriel of tutoList  ; let id=index">
-        <li class="list-group-item">
-          <div class="fs-4 mb-3 " (click)="display(id)">{{tutoriel.question}}</div>
-          <div class="fs-4 mb-3" id="{{id}}" style="display: none">{{tutoriel.reponse}}</div>
-        </li>
+      <div *ngFor="let tutoriel of tutoList  ; let id=index">
+        <div class="question-container">
+          <div class="fs-4 question" (click)="display(id)">{{tutoriel.question}}</div>
+          <div class="fs-6 reponses" id="{{id}}" style="display: none">{{tutoriel.reponse}}</div>
+        </div>
       </div>
     </div>
 
   </div>
-
 </div>
