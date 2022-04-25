@@ -1,5 +1,5 @@
 <div class="container" xmlns="http://www.w3.org/1999/html">
-  <div class="row">
+  <div class="my-container">
 
     <div class="col container">
       <div class="card">
@@ -7,11 +7,11 @@
           <h3>Mon quiz</h3>
           <div class="form-input">
             <label for="name">Nom</label>
-            <input class="input-custom" type="text" id="name" placeholder="Nom du quiz" [formControlName]="'name'" required>
+            <input class="input-custom" type="text" id="name" placeholder="Nom du quiz" [formControlName]="'name'" required maxlength="20">
           </div>
           <div class="form-input">
             <label for="theme">Thème</label>
-            <input class="input-custom" type="text" id="theme" placeholder="Thème du quiz" [formControlName]="'theme'" required>
+            <input class="input-custom" type="text" id="theme" placeholder="Thème du quiz" [formControlName]="'theme'" required maxlength="20">
           </div>
         </form>
         <div class="card-body">

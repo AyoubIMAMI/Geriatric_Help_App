@@ -2,6 +2,7 @@
     font-size: 1.6vw;
     width: 85vw;
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .handicap{
@@ -21,6 +22,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 #quiz {

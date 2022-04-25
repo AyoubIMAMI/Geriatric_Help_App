@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Creation d'un quiz" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix on add and create quiz">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,8 +13,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="SCSS File" />
         <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -39,7 +41,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end/database" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
+    <property name="ts.external.directory.path" value="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -99,10 +111,9 @@
       <workItem from="1650355847420" duration="5863000" />
       <workItem from="1650526841929" duration="1319000" />
       <workItem from="1650528275915" duration="25298000" />
-      <workItem from="1650611292559" duration="3814000" />
-      <workItem from="1650716115118" duration="23248000" />
-      <workItem from="1650884191212" duration="2470000" />
-      <workItem from="1650893006670" duration="3012000" />
+      <workItem from="1650611292559" duration="9976000" />
+      <workItem from="1650884401540" duration="2187000" />
+      <workItem from="1650895772218" duration="4410000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -356,63 +367,98 @@
       <option name="project" value="LOCAL" />
       <updated>1650611361728</updated>
     </task>
-    <task id="LOCAL-00037" summary="fix quiz size">
-      <created>1650615950877</created>
+    <task id="LOCAL-00037" summary="answers">
+      <created>1650615188495</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1650615950877</updated>
+      <updated>1650615188495</updated>
     </task>
-    <task id="LOCAL-00038" summary="add css">
-      <created>1650618845268</created>
+    <task id="LOCAL-00038" summary="answers">
+      <created>1650615985094</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1650618845268</updated>
+      <updated>1650615985094</updated>
     </task>
-    <task id="LOCAL-00039" summary="add css">
-      <created>1650621485326</created>
+    <task id="LOCAL-00039" summary="answers">
+      <created>1650616830715</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1650621485326</updated>
+      <updated>1650616830715</updated>
     </task>
-    <task id="LOCAL-00040" summary="loading mod work but lag">
-      <created>1650724176228</created>
+    <task id="LOCAL-00040" summary="answers">
+      <created>1650618495683</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1650724176228</updated>
+      <updated>1650618495683</updated>
     </task>
-    <task id="LOCAL-00041" summary="all modes work">
-      <created>1650733373799</created>
+    <task id="LOCAL-00041" summary="answers">
+      <created>1650618889234</created>
       <option name="number" value="00041" />
       <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1650733373800</updated>
+      <updated>1650618889234</updated>
     </task>
-    <task id="LOCAL-00042" summary="all modes work well no lag">
-      <created>1650739972567</created>
+    <task id="LOCAL-00042" summary="answers">
+      <created>1650619715262</created>
       <option name="number" value="00042" />
       <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1650739972567</updated>
+      <updated>1650619715262</updated>
     </task>
-    <task id="LOCAL-00043" summary="all modes work well no lag">
-      <created>1650884781752</created>
+    <task id="LOCAL-00043" summary="answers">
+      <created>1650884549106</created>
       <option name="number" value="00043" />
       <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1650884781752</updated>
+      <updated>1650884549106</updated>
     </task>
-    <task id="LOCAL-00044" summary="handicap">
-      <created>1650896520614</created>
+    <task id="LOCAL-00044" summary="caracters limit">
+      <created>1650886149711</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1650896520614</updated>
+      <updated>1650886149711</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="caracters limit">
+      <created>1650898001081</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1650898001081</updated>
+    </task>
+    <task id="LOCAL-00046" summary="caracters limit">
+      <created>1650898739472</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1650898739472</updated>
+    </task>
+    <task id="LOCAL-00047" summary="caracters limit">
+      <created>1650898749226</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1650898749226</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix on add and create quiz">
+      <created>1650899498269</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1650899498269</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fix on add and create quiz">
+      <created>1650899706712</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1650899706712</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,12 +494,9 @@
     <MESSAGE value="Removing nav link" />
     <MESSAGE value="End quiz page" />
     <MESSAGE value="home update" />
-    <MESSAGE value="fix quiz size" />
-    <MESSAGE value="add css" />
-    <MESSAGE value="loading mod work but lag" />
-    <MESSAGE value="all modes work" />
-    <MESSAGE value="all modes work well no lag" />
-    <MESSAGE value="handicap" />
-    <option name="LAST_COMMIT_MESSAGE" value="handicap" />
+    <MESSAGE value="answers" />
+    <MESSAGE value="caracters limit" />
+    <MESSAGE value="fix on add and create quiz" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix on add and create quiz" />
   </component>
 </project>
