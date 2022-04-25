@@ -45,6 +45,8 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   public mouseIn: Boolean;
   public mouseOut: Boolean;
 
+  public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
+  public indexOfThehashMap: number = 0;
 
 
   constructor(public router : Router) {
@@ -57,6 +59,8 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     this.mouseIn = false;
     this.mouseOut = false;
     this.currentQuestionIndex = this.indexOfQuestion;
+
+
   }
 
   ngOnInit() {
@@ -68,7 +72,11 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void{
     //this.defineModeByResident(this.currentResident);
+    this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
     this.handicapMode = new HandicapMode(this.currentResident, this.getMapAnswersrevealAnswer())
+    /*this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
+    this.defineModeByResident(this.currentResident);*/
+
   }
   nextQuiz(){
     if(this.indexOfQuestion >= this.quiz.questions.length-1)
@@ -76,6 +84,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     else{
       this.indexOfQuestion++;
       this.currentQuestion = this.quiz.questions[this.indexOfQuestion];
+      this.hideAnswer();
     }
   }
 
@@ -83,9 +92,9 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     let allAnswer = document.getElementsByClassName("answer");
     let map = new Map();
     let nextQuestionElement = document.getElementById("nextQuestion") as HTMLElement;
-    map.set(nextQuestionElement, this.nextQuestionFunction);
+    map.set(nextQuestionElement, ()=> this.nextQuiz());
     for(let i = 0 ; i < allAnswer.length ; i++ ){
-      map.set(allAnswer[i], this.revealAnswer);
+      map.set(allAnswer[i], ()=> this.revealAnswer(allAnswer[i]));
     }
     return map;
   }
