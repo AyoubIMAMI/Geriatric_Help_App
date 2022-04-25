@@ -60,9 +60,12 @@ export class HandicapMode {
     setupToLoad(element: HTMLElement){
       let firstChild = element.firstChild as HTMLElement;
       if(!firstChild.classList.contains("loadAnswer")){
+        //firstChild.style.zIndex="1";
         var loadDiv = document.createElement("div");
         element.insertBefore(loadDiv, firstChild);
         loadDiv.classList.add("loadAnswer");
+        //let parentHeight: number = +element.offsetHeight;
+        //loadDiv.style.height = element.offsetHeight.toString()+"px";
       }
     }
 
@@ -97,18 +100,19 @@ export class HandicapMode {
   }
 
   private setupListenerLeftAndRightClick(htmlElements: HTMLElement[]) {
-      document.body.addEventListener("click", e => {this.leftClick()});
-      document.body.addEventListener("contextmenu", e => {this.rightClick(e)});
+    document.body.addEventListener("keydown", e => {this.clickWithkeyBoard()});
+    document.body.addEventListener("click", e => {this.moveInPageWithMouse(e)});
+      document.body.addEventListener("contextmenu", e => {this.moveInPageWithMouse(e)});
   }
 
-  leftClick(){
+  clickWithkeyBoard(){
     if(this.mouseControlModeActivated){
       const element = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
       const callback = this.listOfAllElementToNavigateIn.get(element);
       callback(element);
     }
   }
-  rightClick(event: MouseEvent){
+  moveInPageWithMouse(event: MouseEvent){
     if(this.mouseControlModeActivated){
       event.preventDefault();
       this.incrementeCurrentElement()

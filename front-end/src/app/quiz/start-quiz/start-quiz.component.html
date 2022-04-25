@@ -1,5 +1,5 @@
 
-<div (click)="leftClick()" (contextmenu)="rightClick($event)" id="quiz">
+<div id="quiz">
     <div id="question" class="zoomText">
       {{currentQuestion.label}}
     </div>
@@ -7,14 +7,14 @@
     <div class="row ">
 
         <div class="missClickRange" (click)="chooseAnswer($event)">
-          <div class="answerContainer answer hide {{currentQuestion.answers[0].isCorrect}}">
-            <div class="textAnswer">{{currentQuestion.answers[0].value}}</div>
+          <div class="handicap answerContainer answer hide {{currentQuestion.answers[0].isCorrect}}">
+            <div class="textHandicap">{{currentQuestion.answers[0].value}}</div>
           </div>
         </div>
 
         <div class="missClickRange" (click)="chooseAnswer($event)">
-          <div class="answerContainer answer hide {{currentQuestion.answers[1].isCorrect}}">
-            <div class="textAnswer">{{currentQuestion.answers[1].value}}</div>
+          <div class="handicap handicap answerContainer answer hide {{currentQuestion.answers[1].isCorrect}}">
+            <div class="textHandicap">{{currentQuestion.answers[1].value}}</div>
           </div>
         </div>
 
@@ -23,14 +23,14 @@
     <div class="row ">
 
         <div class="missClickRange" (click)="chooseAnswer($event)">
-          <div class="answerContainer answer hide {{currentQuestion.answers[2].isCorrect}}">
-            <div class="textAnswer">{{currentQuestion.answers[2].value}}</div>
+          <div class="handicap answerContainer answer hide {{currentQuestion.answers[2].isCorrect}}">
+            <div class="textHandicap">{{currentQuestion.answers[2].value}}</div>
           </div>
         </div>
 
         <div class="missClickRange" (click)="chooseAnswer($event)">
-          <div class="answerContainer  answer hide {{currentQuestion.answers[3].isCorrect}}">
-                <div class="textAnswer">{{currentQuestion.answers[3].value}}</div>
+          <div class="handicap answerContainer  answer hide {{currentQuestion.answers[3].isCorrect}}">
+                <div class="textHandicap">{{currentQuestion.answers[3].value}}</div>
           </div>
         </div>
 
@@ -39,3 +39,8 @@
     <p id="resultAnswer" class="zoomText"></p>
 </div>
 
+<div class="card-body d-flex justify-content-center flex-wrap ">
+  <div (click)="nextQuiz()"  id="nextQuestion"  class="handicap">
+    <div class="textHandicap">Question suivante</div>
+  </div>
+</div>

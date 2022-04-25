@@ -55,4 +55,9 @@ export class CreateQuizComponent implements OnInit {
     console.log(this.listQuestion);
   }
 
+  deleteQuestion(question:Question){
+    this.listQuestion.forEach((element,index)=>{
+      if(element==question) this.listQuestion.splice(index,1);
+    });
+  }
 }

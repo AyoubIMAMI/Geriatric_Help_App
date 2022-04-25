@@ -4,12 +4,15 @@
   text-align: center;
 }
 
-.row {
+.handicap{
+  height: 14vh;
+  width: 40vw;
+  border: 1px solid #6c757d;
+  border-radius: 0.25rem;
   display: flex;
-  flex-direction: row;
-  width: fit-content!important;
-  height: min-content!important;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .answerContainer {
@@ -18,8 +21,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #6c757d;
-  border-radius: 0.25rem;
 }
 
 #quiz {
@@ -48,6 +49,8 @@
 .selected {
     border: 2.5px dashed #cdbf03;
     animation: spin 1s alternate infinite;
+    background-color: #ecec4a!important;
+    color: black;
 }
 
 .missClickRange {
@@ -80,14 +83,14 @@
 .loadAnimation{
   animation-name: fill;
   animation-duration: 4s;
-  background-color: yellow;
+  background-color: #bdbd22;
 }
 
 endLoadAnimation{
   animation: 0;
 }
 
-.textAnswer{
+.textHandicap{
   z-index: 2;
 }
 

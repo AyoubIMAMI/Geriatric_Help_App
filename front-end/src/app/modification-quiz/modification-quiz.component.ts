@@ -66,5 +66,8 @@ export class ModificationQuizComponent implements OnInit {
     this.listQuestion.push(question);
     console.log(this.listQuestion);
   }
+  deleteQuestion(question: Question){
+    this.quizService.deleteQuestion(this.quiz,question);
+  }
 
 }

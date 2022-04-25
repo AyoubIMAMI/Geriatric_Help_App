@@ -23,7 +23,7 @@ export class QuizComponent implements OnInit, AfterViewChecked {
  // public handicapMode = new HandicapMode();
 
 
-  constructor(private route:ActivatedRoute,private quizService: QuizService,private residentService: ResidentService,   public router : Router) {
+  constructor(private route:ActivatedRoute,private quizService: QuizService,private residentService: ResidentService, public router : Router) {
     this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
