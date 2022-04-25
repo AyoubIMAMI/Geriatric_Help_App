@@ -1,11 +1,11 @@
 <div *ngIf="questionList">
-  <app-start-quiz [currentQuestion]="getCurrentQuestion()" [indexOfQuestion]="currentQuizIndex" [currentResident]="resident"></app-start-quiz>
+  <app-start-quiz [currentQuestion]="getCurrentQuestion()" [indexOfQuestion]="currentQuizIndex" [nextQuestionFunction]="nextQuiz" [currentResident]="resident"></app-start-quiz>
 </div>
 <div id="navigation">
 
     <div class="card-body d-flex justify-content-center flex-wrap ">
         <div (click)="nextQuiz()"  id="nextQuestion" class="p-2 btn btn-secondary navButton">
-                Question suivante
+                <div>Question suivante<div>
         </div>
     </div>
 

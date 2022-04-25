@@ -48,6 +48,8 @@
 .selected {
     border: 2.5px dashed #cdbf03;
     animation: spin 1s alternate infinite;
+    background-color: #ecec4a!important;
+    color: black;
 }
 
 .missClickRange {
@@ -80,7 +82,7 @@
 .loadAnimation{
   animation-name: fill;
   animation-duration: 4s;
-  background-color: yellow;
+  background-color: #bdbd22;
 }
 
 endLoadAnimation{
