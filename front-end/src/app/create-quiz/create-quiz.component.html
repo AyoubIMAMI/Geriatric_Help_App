@@ -9,11 +9,11 @@
           <h3>Mon quiz</h3>
           <div class="form-input">
             <label for="name">Nom</label>
-            <input class="input-custom" type="text" id="name" placeholder="Nom du quiz" [formControlName]="'name'" required>
+            <input class="input-custom" type="text" id="name" placeholder="Nom du quiz" [formControlName]="'name'" maxlength="20" required>
           </div>
           <div class="form-input">
             <label for="theme">Thème</label>
-            <input class="input-custom" type="text" id="theme" placeholder="Thème du quiz" [formControlName]="'theme'" required>
+            <input class="input-custom" type="text" id="theme" placeholder="Thème du quiz" [formControlName]="'theme'" maxlength="20" required>
           </div>
         </form>
         <div class="card-body">

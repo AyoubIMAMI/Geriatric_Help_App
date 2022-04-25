@@ -12,11 +12,11 @@
         <div class="container">
           <div class="form-group">
             <label for="nom">Nom</label>
-            <input type="text" class="form-control" id="nom" placeholder="Nom" value="{{nom}}" [formControlName]="'nom'">
+            <input type="text" class="form-control" id="nom" placeholder="Nom" value="{{nom}}" [formControlName]="'nom'" maxlength="20">
           </div>
           <div class="form-group">
             <label for="prenom">Prénom</label>
-            <input type="text" class="form-control" id="prenom" placeholder="Prénom" value="{{prenom}}" [formControlName]="'prenom'">
+            <input type="text" class="form-control" id="prenom" placeholder="Prénom" value="{{prenom}}" [formControlName]="'prenom'" maxlength="20">
           </div>
         </div>
       </div>
