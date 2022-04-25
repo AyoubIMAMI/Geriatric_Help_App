@@ -82,4 +82,25 @@ router.delete('/:quizId', (req, res) => {
   }
 })
 
+router.delete('/:quizId/all', (req, res) => {
+  try {
+    questions=buildQuizz(req.params.quizId).questions
+    Quiz.delete(req.params.quizId)
+    console.log(questions)
+    if (questions && questions.length > 0) {
+      questions.map((question) => {
+        answers=question.answers
+        Question.delete(question.id)
+        if (answers && answers.length > 0) {
+          //console.log(question)
+          question.answers.map((answer) => Answer.delete(answer.id))
+        }
+      })
+    }
+    res.status(204).end()
+  } catch (err) {
+    manageAllErrors(res, err)
+  }
+})
+
 module.exports = router

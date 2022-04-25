@@ -15,7 +15,7 @@
           <input class="input-custom" type="text" id="answer0" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
-        <input id="isCorrect0" name="isCorrect" type="checkbox">
+        <input id="isCorrect0" name="isCorrect" type="radio" (click)="checkRadio('isCorrect0')">
         <label for="isCorrect0">Correcte</label>
       </form>
 
@@ -25,7 +25,7 @@
           <input class="input-custom" type="text" id="answer1" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
-        <input id="isCorrect1" name="isCorrect" type="checkbox">
+        <input id="isCorrect1" name="isCorrect" type="radio" (click)="checkRadio('isCorrect1')">
         <label for="isCorrect1">Correcte</label>
       </form>
 
@@ -38,7 +38,7 @@
           <input class="input-custom" type="text" id="answer2" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
-        <input id="isCorrect2" name="isCorrect" type="checkbox">
+        <input id="isCorrect2" name="isCorrect" type="radio" (click)="checkRadio('isCorrect2')">
         <label for="isCorrect2">Correcte</label>
       </form>
       <form class="quiz-form" [formGroup]="answersForm3">
@@ -47,7 +47,7 @@
           <input class="input-custom" type="text" id="answer3" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
-        <input id="isCorrect3" name="isCorrect" type="checkbox">
+        <input id="isCorrect3" name="isCorrect" type="radio" (click)="checkRadio('isCorrect3')">
         <label for="isCorrect3">Correcte</label>
       </form>
     </div>
