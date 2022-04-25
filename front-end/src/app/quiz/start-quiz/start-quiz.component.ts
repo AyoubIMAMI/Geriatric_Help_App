@@ -34,7 +34,6 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
 
 
 
-  public handicapMode: HandicapMode;
   public responseIndex: number;
   public label: string;
   public mouseControlModeActivated: Boolean;
@@ -45,6 +44,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   public mouseIn: Boolean;
   public mouseOut: Boolean;
 
+  public handicapMode: HandicapMode;
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
 
