@@ -5,16 +5,13 @@
   <div  class="d-flex justify-content-center">
     <div class="fs-2 mb-3"><i class="bi bi-question-circle-fill"></i> Que voulez-vous faire ?</div>
   </div>
-  <br>
-  <br>
 
-  <div class="quiz" *ngFor="let quiz of quizList ; let index=index">
-    <div class="card-body d-flex justify-content-center flex-wrap "*ngIf="index<3">
-      <button href="#" class="btn btn-secondary" (click)="defineSelectedQuiz(quiz)" routerLink="/quiz/{{residentid}}/{{quiz.id}}">
-      {{quiz.name}}
-      </button>
+  <div class="quiz" *ngFor="let quiz of quizList.slice(0,3) ; let index=index">
+    <div class="missClickRange" (click)="defineSelectedQuiz(quiz)" routerLink="/quiz/{{residentid}}/{{quiz.id}}">
+      <div class="quiz-name-button">
+        {{quiz.name}}
+      </div>
     </div>
-    <br>
   </div>
 
 
