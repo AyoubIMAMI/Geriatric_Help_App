@@ -1,3 +1,9 @@
 .tutoList {
   display: flex;
+  flex-direction: column;
+}
+
+.question:hover{
+  cursor: pointer;
+background-color: lightgray;
 }

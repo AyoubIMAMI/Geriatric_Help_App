@@ -71,11 +71,11 @@ export class TutorialComponent implements OnInit {
     console.log(this.tutoList)
   }
 
-  display(divName:string): void{
-    if (document.getElementById(divName).style.display!="none")
-      document.getElementById(divName).style.display="none";
+  display(divName:number): void{
+    if (document.getElementById(String(divName)).style.display!="none")
+      document.getElementById(String(divName)).style.display="none";
     else
-      document.getElementById(divName).style.display="block";
+      document.getElementById(String(divName)).style.display="block";
   }
 }
 
