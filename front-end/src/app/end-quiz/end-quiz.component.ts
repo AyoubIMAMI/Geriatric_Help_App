@@ -22,14 +22,17 @@ export class EndQuizComponent implements OnInit {
   public resident: Resident;
 
   constructor(private route: ActivatedRoute, private router: Router, public formBuilder: FormBuilder, public statService: StatService, private residentService: ResidentService) {
-    this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
     this.quizId = this.route.snapshot.paramMap.get('id');
-    this.residentId = this.route.snapshot.paramMap.get('residentid');
+    this.residentId = this.route.snapshot.paramMap.get('residentid')
+    console.log(this.stat);
   }
 
   ngOnInit(): void {
     this.addStat();
-    console.log(this.stat);
+    this.residentService.setSelectedResident(this.residentId);
+    this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+this.resident);
+
   }
 
 

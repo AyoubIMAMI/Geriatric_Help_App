@@ -51,13 +51,12 @@ export class ProchainQuizComponent implements OnInit,AfterViewInit {
   }
 
   private getMapAnswersrevealAnswer() {
-    let allAnswer = document.getElementsByClassName("answer");
+    let allButton = document.getElementsByClassName("handicap");
     let map = new Map();
-    let nextQuestionElement = document.getElementById("nextQuestion") as HTMLElement;
-    map.set(nextQuestionElement, ()=> this.nextQuiz());
-    for(let i = 0 ; i < allAnswer.length ; i++ ){
-      map.set(allAnswer[i], ()=> this.revealAnswer(allAnswer[i]));
+    for(let i = 0 ; i < allButton.length ; i++ ){
+      map.set(allButton[i], ()=> this.defineSelectedQuiz(this.quizList[i]));
     }
+    console.log(map);
     return map;
   }
 
