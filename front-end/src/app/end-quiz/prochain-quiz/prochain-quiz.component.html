@@ -7,10 +7,12 @@
   </div>
 
   <div class="quiz" *ngFor="let quiz of quizList.slice(0,3) ; let index=index">
-    <div class="missClickRange" (click)="defineSelectedQuiz(quiz)" routerLink="/quiz/{{residentid}}/{{quiz.id}}">
+    <div class="handicap" (click)="defineSelectedQuiz(quiz)" routerLink="/quiz/{{residentid}}/{{quiz.id}}">
       <div class="quiz-name-button">
         {{quiz.name}}
       </div>
+
+
     </div>
   </div>
 
