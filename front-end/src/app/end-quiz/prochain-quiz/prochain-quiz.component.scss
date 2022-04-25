@@ -12,3 +12,57 @@
   cursor: pointer;
   background-color: lightgray;
 }
+
+.loadAnswer{
+  z-index: 1;
+  width: 0vw;
+  position: absolute;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.loadAnimation{
+  animation-name: fill;
+  animation-duration: 4s;
+  background-color: #bdbd22;
+}
+
+.textHandicap{
+  z-index: 2;
+}
+
+.handicap{
+  height: 14vh;
+  width: 40vw;
+  border: 1px solid #6c757d;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  border: 2.5px dashed #cdbf03;
+  animation: spin 1s alternate infinite;
+  background-color: #ecec4a!important;
+  color: black;
+}
+
+.missClickRange {
+  height: fit-content;
+  width: fit-content;
+  margin: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missClickMode {
+  min-width: 15vw;
+  min-height: 15vh;
+  margin: 1.6vw;
+}
+
+.missClickModeVisible {
+  background-color: yellowgreen;
+}
