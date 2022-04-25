@@ -71,13 +71,10 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void{
-    //this.defineModeByResident(this.currentResident);
     this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
     this.handicapMode = new HandicapMode(this.currentResident, this.getMapAnswersrevealAnswer())
-    /*this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-    this.defineModeByResident(this.currentResident);*/
-
   }
+
   nextQuiz(){
     if(this.indexOfQuestion >= this.quiz.questions.length-1)
       this.router.navigate(['./end-quiz/'+this.currentResident.id+'/'+this.quiz.id]);
