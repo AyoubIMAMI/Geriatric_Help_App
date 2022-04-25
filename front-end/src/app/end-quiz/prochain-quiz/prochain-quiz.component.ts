@@ -18,6 +18,10 @@ export class ProchainQuizComponent implements OnInit {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
+      for (let i = this.quizList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [this.quizList[i], this.quizList[j]] = [this.quizList[j], this.quizList[i]];
+      }
     });
   }
 

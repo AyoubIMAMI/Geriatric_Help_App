@@ -8,8 +8,8 @@
   <br>
   <br>
 
-  <div class="quiz" *ngFor="let quiz of quizList">
-    <div class="card-body d-flex justify-content-center flex-wrap ">
+  <div class="quiz" *ngFor="let quiz of quizList ; let index=index">
+    <div class="card-body d-flex justify-content-center flex-wrap "*ngIf="index<3">
       <button href="#" class="btn btn-secondary" (click)="defineSelectedQuiz(quiz)" routerLink="/quiz/{{residentid}}/{{quiz.id}}">
       {{quiz.name}}
       </button>
