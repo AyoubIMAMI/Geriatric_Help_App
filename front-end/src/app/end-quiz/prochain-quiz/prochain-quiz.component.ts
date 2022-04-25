@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Quiz} from "../../../models/quiz.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {QuizService} from "../../../services/quiz.service";
+import {ResidentService} from "../../../services/resident.service";
+import {Resident} from "../../../models/resident.model";
 
 @Component({
   selector: 'app-prochain-quiz',
@@ -13,8 +15,14 @@ export class ProchainQuizComponent implements OnInit {
   public quizList: Quiz[] = [];
   public quiz:Quiz;
   public residentid:string;
+  public resident:Resident;
 
-  constructor(private route: ActivatedRoute,private router: Router, public quizService: QuizService) {
+
+  constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService) {
+    this.residentService.residentSelected$.subscribe((resident) =>
+    {this.resident = resident
+    console.log(this.resident)});
+
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
@@ -26,7 +34,9 @@ export class ProchainQuizComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.residentid = this.route.snapshot.paramMap.get('residentid');
+    this.residentService.setSelectedResident(this.residentid);
     const id = this.route.snapshot.paramMap.get('id');
     this.quizService.setSelectedQuiz(id);
   }
