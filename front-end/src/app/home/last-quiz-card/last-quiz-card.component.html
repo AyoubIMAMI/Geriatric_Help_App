@@ -13,8 +13,8 @@
 
           <div *ngIf="resident; else elseBlock2"><b>Prénom : </b> {{resident.prenom}}</div>
           <ng-template #elseBlock2><div><b>Prénom : </b> Aucun</div></ng-template>
-
-          <div *ngIf="quiz; else elseBlock3"><b>Quiz : </b> {{quiz.name}}</div>
+          <br>
+          <div *ngIf="quiz; else elseBlock3"><b>Quiz :  </b> {{quiz.name}}</div>
           <ng-template #elseBlock3><div><b>Quiz : </b> Aucun</div></ng-template>
         </div>
 

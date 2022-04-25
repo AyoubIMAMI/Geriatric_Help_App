@@ -9,6 +9,7 @@
 
 .card-header-container{
   height: 100%;
+  overflow-wrap: anywhere;
 }
 
 .card-body-container{
@@ -24,6 +25,11 @@
 
 .custom-button{
   width: 100%;
+}
+
+.my-container{
+  display: flex;
+  flex-direction: row;
 }
 
 .boxbox{

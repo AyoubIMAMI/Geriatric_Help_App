@@ -2,6 +2,7 @@
     font-size: 1.6vw;
     width: 85vw;
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .handicap{
@@ -21,6 +22,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 #quiz {
@@ -101,6 +104,16 @@ endLoadAnimation{
   100% {
     width: 39.8vw;
   }
+}
+
+.quiz-name-button{
+  height: 14vh;
+  width: 40vw;
+  border: 1px solid #6c757d;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
