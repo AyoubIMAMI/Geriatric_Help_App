@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix bug ngif resident">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix on add and create quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end/database" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
+    <property name="ts.external.directory.path" value="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
@@ -108,14 +114,7 @@
       <workItem from="1650528275915" duration="25298000" />
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
-      <workItem from="1650895772218" duration="4410000" />
-    </task>
-    <task id="LOCAL-00004" summary="Adding bootstrap library">
-      <created>1648245214895</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1648245214895</updated>
+      <workItem from="1650895772218" duration="8240000" />
     </task>
     <task id="LOCAL-00005" summary="Adding bootstrap">
       <created>1648247857902</created>
@@ -432,28 +431,35 @@
       <option name="project" value="LOCAL" />
       <updated>1650899706712</updated>
     </task>
-    <task id="LOCAL-00050" summary="Creation d'un quiz">
-      <created>1650903433148</created>
+    <task id="LOCAL-00050" summary="fix on add and create quiz">
+      <created>1650901109114</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1650903433149</updated>
+      <updated>1650901109114</updated>
     </task>
-    <task id="LOCAL-00051" summary="fix bug intentionel">
-      <created>1650905009268</created>
+    <task id="LOCAL-00051" summary="fix on add and create quiz">
+      <created>1650904133388</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1650905009268</updated>
+      <updated>1650904133388</updated>
     </task>
-    <task id="LOCAL-00052" summary="fix bug ngif resident">
-      <created>1650905633064</created>
+    <task id="LOCAL-00052" summary="fix on add and create quiz">
+      <created>1650905282150</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1650905633064</updated>
+      <updated>1650905282150</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix on add and create quiz">
+      <created>1650905527978</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1650905527978</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,9 +498,6 @@
     <MESSAGE value="answers" />
     <MESSAGE value="caracters limit" />
     <MESSAGE value="fix on add and create quiz" />
-    <MESSAGE value="Creation d'un quiz" />
-    <MESSAGE value="fix bug intentionel" />
-    <MESSAGE value="fix bug ngif resident" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug ngif resident" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix on add and create quiz" />
   </component>
 </project>
