@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {QuizService} from "../../services/quiz.service";
 import {ResidentService} from "../../services/resident.service";
 import {Resident} from "../../models/resident.model";
+import {StartQuizComponent} from "./start-quiz/start-quiz.component";
 
 export class HandicapMode {
   public loadingModeActivated: Boolean = false;
@@ -13,8 +14,6 @@ export class HandicapMode {
 
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
-
-
 
 
   constructor(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
