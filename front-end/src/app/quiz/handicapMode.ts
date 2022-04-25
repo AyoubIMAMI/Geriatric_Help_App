@@ -106,7 +106,7 @@ export class HandicapMode {
 
   clickWithkeyBoard(){
     let handicapePage = document.getElementsByClassName("handicapePage").length;
-    if(this.mouseControlModeActivated || handicapePage>1){
+    if(this.mouseControlModeActivated || handicapePage>=1){
       const element = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
       const callback = this.listOfAllElementToNavigateIn.get(element);
       callback(element);
@@ -114,7 +114,7 @@ export class HandicapMode {
   }
   moveInPageWithMouse(event: MouseEvent){
     let handicapePage = document.getElementsByClassName("handicapePage").length;
-    if(this.mouseControlModeActivated || handicapePage>1){
+    if(this.mouseControlModeActivated || handicapePage>=1){
       event.preventDefault();
       this.incrementeCurrentElement()
       this.updateSelected();
@@ -122,10 +122,13 @@ export class HandicapMode {
   }
 
   updateSelected(){
-    const lastSelected = document.getElementsByClassName("selected")[0];
-    lastSelected.classList.remove('selected');
-    const answerSelected = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
-    answerSelected.classList.add('selected');
+    let handicapePage = document.getElementsByClassName("handicapePage").length;
+    if(handicapePage>=1) {
+      const lastSelected = document.getElementsByClassName("selected")[0];
+      lastSelected.classList.remove('selected');
+      const answerSelected = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
+      answerSelected.classList.add('selected');
+    }
   }
 
   incrementeCurrentElement(){
