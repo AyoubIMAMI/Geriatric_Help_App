@@ -119,7 +119,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     if(isAnswer)
       resultAnswer.innerHTML = "Félicitation! Tu as trouvé la bonne réponse !";
     else
-      resultAnswer.innerHTML = "Dommage! Ce n'étais pas la bonne réponse ! "
+      resultAnswer.innerHTML = "Dommage! Ce n'était pas la bonne réponse ! "
   }
 
   showAnswer(){
