@@ -99,9 +99,21 @@ export class HandicapMode {
   }
 
   private setupListenerLeftAndRightClick(htmlElements: HTMLElement[]) {
-    document.body.addEventListener("keydown", e => {this.clickWithkeyBoard()});
-    document.body.addEventListener("click", e => {this.moveInPageWithMouse(e)});
-      document.body.addEventListener("contextmenu", e => {this.moveInPageWithMouse(e)});
+    document.body.addEventListener("keydown", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.clickWithkeyBoard()
+    });
+    document.body.addEventListener("click", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.moveInPageWithMouse(e)
+    });
+      document.body.addEventListener("contextmenu", e => {
+        let handicapePage = document.getElementsByClassName("handicapePage").length;
+        if(handicapePage>=1)
+          this.moveInPageWithMouse(e)
+      });
   }
 
   clickWithkeyBoard(){
@@ -124,7 +136,11 @@ export class HandicapMode {
   updateSelected(){
     let handicapePage = document.getElementsByClassName("handicapePage").length;
     if(handicapePage>=1) {
-      const lastSelected = document.getElementsByClassName("selected")[0];
+      let lastSelected = document.getElementsByClassName("selected")[0];
+      if(lastSelected == undefined){
+        const firstElement: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
+        firstElement.classList.add("selected");
+      }
       lastSelected.classList.remove('selected');
       const answerSelected = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
       answerSelected.classList.add('selected');

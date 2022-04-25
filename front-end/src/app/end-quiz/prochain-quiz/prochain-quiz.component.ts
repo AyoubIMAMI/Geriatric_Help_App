@@ -41,7 +41,6 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
     this.residentid = this.route.snapshot.paramMap.get('residentid');
     this.residentService.setSelectedResident(this.residentid);
     const id = this.route.snapshot.paramMap.get('id');
@@ -67,6 +66,7 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   defineSelectedQuiz(quiz: Quiz): void{
     this.quizService.setCurrentQuiz(quiz);
     //this.router.navigate(['./quiz/' + this.resident.id + '/' + this.quiz.id]);
+    window.location.href = '/quiz/' + this.resident.id + '/' + this.quiz.id;
   }
 
 }

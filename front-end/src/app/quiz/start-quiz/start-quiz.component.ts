@@ -13,7 +13,8 @@ import { Question } from 'src/models/question.model';
 import {Resident} from "../../../models/resident.model";
 import { HandicapMode } from "../handicapMode";
 import {Quiz} from "../../../models/quiz.model";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ResidentService} from "../../../services/resident.service";
 
 
 @Component({
@@ -48,8 +49,11 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
 
+  public resident: Resident;
+  public residentId: string;
 
-  constructor(public router : Router) {
+
+  constructor(private route: ActivatedRoute, public router : Router, private residentService: ResidentService) {
     this.responseIndex = 0;
     this.mouseControlModeActivated = false;
     this.missClickModeActivated = false;
@@ -60,19 +64,27 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     this.mouseOut = false;
     this.currentQuestionIndex = this.indexOfQuestion;
 
+    this.residentService.residentSelected$.subscribe((resident) =>{
+      this.resident = resident
+      console.log(this.resident)
+      this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
+      this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer())
+    });
+
 
   }
 
   ngOnInit() {
-
+    this.residentId = this.route.snapshot.paramMap.get('residentid');
+    this.residentService.setSelectedResident(this.residentId);
   }
   ngOnChanges(): void{
     if(this.indexOfQuestion != this.responseIndex) this.hideAnswer();
   }
 
   ngAfterViewInit(): void{
-    this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-    this.handicapMode = new HandicapMode(this.currentResident, this.getMapAnswersrevealAnswer())
+    //this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
+    //this.handicapMode = new HandicapMode(this.currentResident, this.getMapAnswersrevealAnswer())
   }
 
   nextQuiz(){
