@@ -1,11 +1,13 @@
 <div class="quiz-list">
-  <div class="quiz" *ngFor="let quiz of tutolist">
+  <div class="quiz" *ngFor="let quiz of quizList">
     <li class="list-group-item">
       <div class="row justify-content-start">
         <div class="col fs-4 mb-3 "><i class="bi bi-journal"></i> {{quiz.name}} </div>
+        <div class="col fs-4 mb-3">{{quiz.theme}}</div>
         <a class="stretched-link" [routerLink]="['/quizzes/'+quiz.id+'/modification']"></a>
       </div>
 
     </li>
   </div>
 </div>
+
