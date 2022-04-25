@@ -27,4 +27,12 @@ export class TutorialComponent implements OnInit {
     }
     console.log(this.tutoList)
   }
+
+  display(divName:string): void{
+    if (document.getElementById(divName).style.display!="none")
+      document.getElementById(divName).style.display="none";
+    else
+      document.getElementById(divName).style.display="block";
+  }
 }
+
