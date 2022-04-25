@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="all modes work well no lag">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="handicap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/quiz.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +111,7 @@
       <workItem from="1650611292559" duration="3814000" />
       <workItem from="1650716115118" duration="23248000" />
       <workItem from="1650884191212" duration="2470000" />
-      <workItem from="1650893006670" duration="2649000" />
+      <workItem from="1650893006670" duration="3012000" />
     </task>
     <task id="LOCAL-00001" summary="Removing all">
       <created>1647941758092</created>
@@ -419,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650884781752</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="handicap">
+      <created>1650896520614</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1650896520614</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,6 +462,7 @@
     <MESSAGE value="loading mod work but lag" />
     <MESSAGE value="all modes work" />
     <MESSAGE value="all modes work well no lag" />
-    <option name="LAST_COMMIT_MESSAGE" value="all modes work well no lag" />
+    <MESSAGE value="handicap" />
+    <option name="LAST_COMMIT_MESSAGE" value="handicap" />
   </component>
 </project>
