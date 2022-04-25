@@ -1,3 +1,25 @@
 .tutoList {
   display: flex;
+  flex-direction: column;
+}
+
+.question {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.reponses{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.question-container{
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.question:hover{
+  background-color: lightgray;
+  cursor: pointer;
 }
