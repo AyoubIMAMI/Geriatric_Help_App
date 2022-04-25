@@ -3,7 +3,7 @@
 
   <form class="question-input" [formGroup]="questionForm">
     <label for="label">Question</label>
-    <input class="input-custom-2" type="text" id="label" placeholder="Votre question" [formControlName]="'label'" maxlength="180">
+    <input class="input-custom-2" type="text" id="label" placeholder="Votre question" [formControlName]="'label'" maxlength="140">
   </form>
 
   <div class="answers-4">
@@ -11,7 +11,7 @@
       <form class="quiz-form" [formGroup]="answersForm0">
         <label for="answer0">
           Réponse 1
-          <input class="input-custom" type="text" id="answer0" placeholder="Votre réponse" [formControlName]="'value'" maxlength="100">
+          <input class="input-custom" type="text" id="answer0" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
         <input id="isCorrect0" name="isCorrect" type="checkbox">
@@ -21,7 +21,7 @@
       <form class="quiz-form" [formGroup]="answersForm1">
         <label for="answer1">
           Réponse 2
-          <input class="input-custom" type="text" id="answer1" placeholder="Votre réponse" [formControlName]="'value'" maxlength="100">
+          <input class="input-custom" type="text" id="answer1" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
         <input id="isCorrect1" name="isCorrect" type="checkbox">
@@ -34,7 +34,7 @@
       <form class="quiz-form" [formGroup]="answersForm2">
         <label for="answer2">
           Réponse 3
-          <input class="input-custom" type="text" id="answer2" placeholder="Votre réponse" [formControlName]="'value'" maxlength="100">
+          <input class="input-custom" type="text" id="answer2" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
         <input id="isCorrect2" name="isCorrect" type="checkbox">
@@ -43,7 +43,7 @@
       <form class="quiz-form" [formGroup]="answersForm3">
         <label for="answer3">
           Réponse 4
-          <input class="input-custom" type="text" id="answer3" placeholder="Votre réponse" [formControlName]="'value'" maxlength="100">
+          <input class="input-custom" type="text" id="answer3" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
         </label>
         <br>
         <input id="isCorrect3" name="isCorrect" type="checkbox">
