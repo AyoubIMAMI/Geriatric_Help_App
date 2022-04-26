@@ -17,7 +17,7 @@ export class HandicapMode {
 
 
   constructor(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
-    this.removeListener();
+    //this.removeListener();
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.defineModeByResident(resident);
   }
