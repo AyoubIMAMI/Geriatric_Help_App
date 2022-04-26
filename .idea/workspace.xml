@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="update missclick">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +42,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
