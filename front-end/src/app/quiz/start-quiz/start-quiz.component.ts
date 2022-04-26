@@ -78,9 +78,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     this.residentId = this.route.snapshot.paramMap.get('residentid');
     this.residentService.setSelectedResident(this.residentId);
   }
-  ngOnChanges(): void{
-    if(this.indexOfQuestion != this.responseIndex) this.hideAnswer();
-  }
+
 
   ngAfterViewInit(): void{
     //this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
@@ -95,11 +93,15 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   }
 
   nextQuiz(){
-    if(this.indexOfQuestion >= this.quiz.questions.length-1)
-      this.router.navigate(['./end-quiz/'+this.currentResident.id+'/'+this.quiz.id]);
-    else{
-      this.indexOfQuestion++;
-      this.currentQuestion = this.quiz.questions[this.indexOfQuestion];
+    if(document.getElementsByClassName("hide").length==0){
+      if(this.indexOfQuestion >= this.quiz.questions.length-1){
+        this.handicapMode.removeAllEventListener();
+        this.router.navigate(['./end-quiz/'+this.currentResident.id+'/'+this.quiz.id]);
+      }
+      else{
+        this.indexOfQuestion++;
+        this.currentQuestion = this.quiz.questions[this.indexOfQuestion];
+      }
       this.hideAnswer();
     }
   }
