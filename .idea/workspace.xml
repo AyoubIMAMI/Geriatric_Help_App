@@ -111,14 +111,7 @@
       <workItem from="1650528275915" duration="25298000" />
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
-      <workItem from="1650895772218" duration="15067000" />
-    </task>
-    <task id="LOCAL-00013" summary="Ajout des routerLink sur résidents">
-      <created>1648379967337</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1648379967338</updated>
+      <workItem from="1650895772218" duration="15422000" />
     </task>
     <task id="LOCAL-00014" summary="Début de la modification des handicaps">
       <created>1648381556552</created>
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650958149445</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Header">
+      <created>1650958192828</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1650958192828</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
