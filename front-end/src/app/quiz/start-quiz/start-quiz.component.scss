@@ -58,17 +58,16 @@
 .missClickRange {
   height: fit-content;
   width: fit-content;
-  padding: 3vw;
+  margin: 4vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: blue;
+  background-color: rebeccapurple;
 }
 
 .missClickMode {
-    min-width: 15vw;
-    min-height: 15vh;
-    margin: 1.6vw;
+  margin: 1vw;
+  padding: 3vw;
 }
 
 .missClickModeVisible {
