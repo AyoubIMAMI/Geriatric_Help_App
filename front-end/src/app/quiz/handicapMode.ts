@@ -29,6 +29,18 @@ export class HandicapMode {
     else if(residentHandicap == "Tremblement d'attitude") this.startMissClick();
   }
 
+  removeAllEventListener(){
+    //Loading Mode
+    for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size; i++){
+      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[i];
+      let callBack = this.listOfAllElementToNavigateIn.get(element);
+      this.removeElementToLoadingMode(element, callBack)
+    }
+    //mouseControl
+    this.removeListener();
+
+  }
+
   //Loading Mode
   //----------------------------------------
   startLoadingMode(){
@@ -56,6 +68,24 @@ export class HandicapMode {
         }
       });
     }
+
+  removeElementToLoadingMode(element: HTMLElement, callback: Function){
+    this.loadingModeActivated = true;
+
+    element.removeEventListener("mouseenter", event => {
+      console.log("mouseenter");
+      if(!this.answerisCurrentlyLoading){
+        this.load(element, callback);
+      }
+
+    });
+    element.removeEventListener("mouseleave", event => {
+      console.log("mouseleave");
+      if(this.answerisCurrentlyLoading) {
+        this.unload(element);
+      }
+    });
+  }
 
     setupToLoad(element: HTMLElement){
       let firstChild = element.firstChild as HTMLElement;
