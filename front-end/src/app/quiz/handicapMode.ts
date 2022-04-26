@@ -25,7 +25,7 @@ export class HandicapMode {
     let residentHandicap = resident.handicap;
     if(residentHandicap == "Tremblement essentiel") this.startLoadingMode()
     else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
-    else if(residentHandicap == "Tremblement attitude") this.startMissClick();
+    else if(residentHandicap == "Tremblement d'attitude") this.startMissClick();
   }
 
   //Loading Mode
@@ -154,8 +154,11 @@ export class HandicapMode {
   startMissClick(){
     this.missClickModeActivated = true;
     for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size; i++) {
-      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
-      element.classList.add("missClickMode");
+      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[i];
+      if(element.classList.contains("missClickRange"))
+          element.classList.add("missClickMode");
+      else
+        element.parentElement.classList.add("missClickMode");
     }
   }
 
