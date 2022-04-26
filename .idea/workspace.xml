@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="update missclick">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,14 +109,7 @@
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="9682000" />
-      <workItem from="1650953764235" duration="2468000" />
-    </task>
-    <task id="LOCAL-00011" summary="Gerstion des résidents + route">
-      <created>1648315409466</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1648315409466</updated>
+      <workItem from="1650953764235" duration="2712000" />
     </task>
     <task id="LOCAL-00012" summary="Résident et route">
       <created>1648317398727</created>
@@ -454,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650955337984</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="update missclick">
+      <created>1650956289195</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1650956289195</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
