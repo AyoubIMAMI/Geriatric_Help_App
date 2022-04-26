@@ -17,6 +17,7 @@ export class HandicapMode {
 
 
   constructor(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
+    this.removeListener();
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.defineModeByResident(resident);
   }
@@ -88,6 +89,8 @@ export class HandicapMode {
 
   //Mouse control Mode
   //----------------------------------------
+
+
   startMouseControlMode(){
     this.mouseControlModeActivated = true;
     this.setupListenerLeftAndRightClick(Array.from(this.listOfAllElementToNavigateIn.keys()));
@@ -96,6 +99,24 @@ export class HandicapMode {
       const firstElement: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
       firstElement.classList.add("selected");
     }
+  }
+
+  private removeListener(){
+    document.body.removeEventListener("keydown", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.clickWithkeyBoard()
+    });
+    document.body.removeEventListener("click", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.moveInPageWithMouse(e)
+    });
+    document.body.removeEventListener("contextmenu", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.moveInPageWithMouse(e)
+    });
   }
 
   private setupListenerLeftAndRightClick(htmlElements: HTMLElement[]) {
