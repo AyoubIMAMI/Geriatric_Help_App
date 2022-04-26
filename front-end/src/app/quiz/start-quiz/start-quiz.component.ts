@@ -96,7 +96,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     if(document.getElementsByClassName("hide").length==0){
       if(this.indexOfQuestion >= this.quiz.questions.length-1){
         this.handicapMode.removeAllEventListener();
-        this.router.navigate(['./end-quiz/'+this.currentResident.id+'/'+this.quiz.id]);
+        window.location.href = "/end-quiz/"+this.currentResident.id+"/"+this.quiz.id
       }
       else{
         this.indexOfQuestion++;
