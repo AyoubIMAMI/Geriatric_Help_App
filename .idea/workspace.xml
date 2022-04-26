@@ -111,14 +111,7 @@
       <workItem from="1650528275915" duration="25298000" />
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
-      <workItem from="1650895772218" duration="12597000" />
-    </task>
-    <task id="LOCAL-00009" summary="Adding button card component on home page">
-      <created>1648301601873</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1648301601873</updated>
+      <workItem from="1650895772218" duration="13226000" />
     </task>
     <task id="LOCAL-00010" summary="Removing unused css import">
       <created>1648303097815</created>
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650954075413</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Header">
+      <created>1650956280920</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1650956280920</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
