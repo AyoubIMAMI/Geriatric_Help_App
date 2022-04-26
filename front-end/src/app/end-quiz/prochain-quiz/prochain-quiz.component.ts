@@ -66,7 +66,7 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   defineSelectedQuiz(quiz: Quiz): void{
     this.quizService.setCurrentQuiz(quiz);
     //this.router.navigate(['./quiz/' + this.resident.id + '/' + this.quiz.id]);
-    window.location.href = '/quiz/' + this.resident.id + '/' + this.quiz.id;
+    window.location.href = '/quiz/' + this.resident.id + '/' + quiz.id;
   }
 
 }
