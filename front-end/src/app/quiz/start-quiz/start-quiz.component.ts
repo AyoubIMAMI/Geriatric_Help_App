@@ -64,12 +64,12 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     this.mouseOut = false;
     this.currentQuestionIndex = this.indexOfQuestion;
 
-    this.residentService.residentSelected$.subscribe((resident) =>{
+    /*this.residentService.residentSelected$.subscribe((resident) =>{
       this.resident = resident
       console.log(this.resident)
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
       this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer())
-    });
+    });*/
 
 
   }
@@ -85,6 +85,13 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void{
     //this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
     //this.handicapMode = new HandicapMode(this.currentResident, this.getMapAnswersrevealAnswer())
+    this.residentService.residentSelected$.subscribe((resident) =>{
+      this.resident = resident
+      console.log(this.resident)
+      this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
+      this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer())
+    });
+
   }
 
   nextQuiz(){

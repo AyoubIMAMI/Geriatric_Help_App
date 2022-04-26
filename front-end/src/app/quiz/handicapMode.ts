@@ -137,10 +137,6 @@ export class HandicapMode {
     let handicapePage = document.getElementsByClassName("handicapePage").length;
     if(handicapePage>=1) {
       let lastSelected = document.getElementsByClassName("selected")[0];
-      if(lastSelected == undefined){
-        const firstElement: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
-        firstElement.classList.add("selected");
-      }
       lastSelected.classList.remove('selected');
       const answerSelected = Array.from(this.listOfAllElementToNavigateIn.keys())[this.indexOfThehashMap] as HTMLElement;
       answerSelected.classList.add('selected');
