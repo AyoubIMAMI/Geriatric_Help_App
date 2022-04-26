@@ -42,14 +42,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
