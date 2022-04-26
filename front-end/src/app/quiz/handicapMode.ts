@@ -17,6 +17,7 @@ export class HandicapMode {
 
 
   constructor(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
+    this.removeListener();
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.defineModeByResident(resident);
   }
@@ -25,7 +26,7 @@ export class HandicapMode {
     let residentHandicap = resident.handicap;
     if(residentHandicap == "Tremblement essentiel") this.startLoadingMode()
     else if(residentHandicap == "Tremblement intentionnel")this.startMouseControlMode()
-    else if(residentHandicap == "Tremblement attitude") this.startMissClick();
+    else if(residentHandicap == "Tremblement d'attitude") this.startMissClick();
   }
 
   //Loading Mode
@@ -88,6 +89,8 @@ export class HandicapMode {
 
   //Mouse control Mode
   //----------------------------------------
+
+
   startMouseControlMode(){
     this.mouseControlModeActivated = true;
     this.setupListenerLeftAndRightClick(Array.from(this.listOfAllElementToNavigateIn.keys()));
@@ -96,6 +99,24 @@ export class HandicapMode {
       const firstElement: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
       firstElement.classList.add("selected");
     }
+  }
+
+  private removeListener(){
+    document.body.removeEventListener("keydown", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.clickWithkeyBoard()
+    });
+    document.body.removeEventListener("click", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.moveInPageWithMouse(e)
+    });
+    document.body.removeEventListener("contextmenu", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.moveInPageWithMouse(e)
+    });
   }
 
   private setupListenerLeftAndRightClick(htmlElements: HTMLElement[]) {
@@ -154,8 +175,11 @@ export class HandicapMode {
   startMissClick(){
     this.missClickModeActivated = true;
     for(let i = 0 ; i < this.listOfAllElementToNavigateIn.size; i++) {
-      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[0];
-      element.classList.add("missClickMode");
+      const element: HTMLElement = Array.from(this.listOfAllElementToNavigateIn.keys())[i];
+      if(element.classList.contains("missClickRange"))
+          element.classList.add("missClickMode");
+      else
+        element.parentElement.classList.add("missClickMode");
     }
   }
 
