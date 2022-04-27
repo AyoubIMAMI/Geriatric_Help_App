@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix on add and create quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/tutorial/tutorial.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -116,6 +114,9 @@
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="9682000" />
+      <workItem from="1650922618769" duration="2221000" />
+      <workItem from="1650953798159" duration="3668000" />
+      <workItem from="1650961575075" duration="2504000" />
     </task>
     <task id="LOCAL-00007" summary="Adding last-quiz-card component">
       <created>1648298288988</created>
