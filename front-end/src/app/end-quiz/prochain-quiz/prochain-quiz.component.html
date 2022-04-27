@@ -3,12 +3,12 @@
   <br>
   <br>
   <div  class="d-flex justify-content-center">
-    <div class="fs-2 mb-3"><i class="bi bi-question-circle-fill"></i> Que voulez-vous faire ?</div>
+    <div class="fs-2"><i class="bi bi-question-circle-fill"></i> Que voulez-vous faire ?</div>
   </div>
 
-  <div class="quiz" *ngFor="let quiz of quizList.slice(0,3) ; let index=index">
-    <div class="handicap" (click)="defineSelectedQuiz(quiz)" routerLink="/quiz/{{residentid}}/{{quiz.id}}">
-      <div class="quiz-name-button">
+  <div class="quiz missClickRange" (click)="defineSelectedQuiz(quiz)" *ngFor="let quiz of quizList.slice(0,3) ; let index=index">
+    <div class="handicap"  routerLink="/quiz/{{residentid}}/{{quiz.id}}">
+      <div class="textHandicap">
         {{quiz.name}}
       </div>
 
@@ -18,3 +18,5 @@
 
 
 </div>
+
+

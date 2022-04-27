@@ -35,7 +35,8 @@ export class QuizzesDisplayComponent implements OnInit {
     this.quizService.deleteQuiz(quiz);
   }
 
-  defineSelectedQuiz(quiz: Quiz): void{
+  defineSelectedQuiz(quiz: Quiz,id :string, quizId : string): void{
     this.quizService.setCurrentQuiz(quiz);
+    window.location.href = "/quiz/"+ id +"/" + quizId;
   }
 }

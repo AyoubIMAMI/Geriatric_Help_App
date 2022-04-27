@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix on add and create quiz">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="update missclick">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +41,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end/database" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\moura\WebstormProjects\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
@@ -114,58 +107,7 @@
       <workItem from="1650611292559" duration="9976000" />
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="9682000" />
-      <workItem from="1650922618769" duration="2221000" />
-      <workItem from="1650953798159" duration="3668000" />
-      <workItem from="1650961575075" duration="2504000" />
-    </task>
-    <task id="LOCAL-00007" summary="Adding last-quiz-card component">
-      <created>1648298288988</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1648298288988</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Changing rooting default redirection and header aspect">
-      <created>1648298843953</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1648298843953</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Adding button card component on home page">
-      <created>1648301601873</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1648301601873</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Removing unused css import">
-      <created>1648303097815</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1648303097815</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Gerstion des résidents + route">
-      <created>1648315409466</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1648315409466</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Résident et route">
-      <created>1648317398727</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1648317398727</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Ajout des routerLink sur résidents">
-      <created>1648379967337</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1648379967338</updated>
+      <workItem from="1650953764235" duration="4777000" />
     </task>
     <task id="LOCAL-00014" summary="Début de la modification des handicaps">
       <created>1648381556552</created>
@@ -461,7 +403,56 @@
       <option name="project" value="LOCAL" />
       <updated>1650906932476</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="go tester">
+      <created>1650924197829</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1650924197829</updated>
+    </task>
+    <task id="LOCAL-00057" summary="go tester">
+      <created>1650925182847</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1650925182847</updated>
+    </task>
+    <task id="LOCAL-00058" summary="update missclick">
+      <created>1650954739905</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1650954739909</updated>
+    </task>
+    <task id="LOCAL-00059" summary="update missclick">
+      <created>1650955337984</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1650955337984</updated>
+    </task>
+    <task id="LOCAL-00060" summary="update missclick">
+      <created>1650956289195</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1650956289195</updated>
+    </task>
+    <task id="LOCAL-00061" summary="update missclick">
+      <created>1650956557741</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1650956557741</updated>
+    </task>
+    <task id="LOCAL-00062" summary="update missclick">
+      <created>1650958134089</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1650958134089</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +491,8 @@
     <MESSAGE value="answers" />
     <MESSAGE value="caracters limit" />
     <MESSAGE value="fix on add and create quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix on add and create quiz" />
+    <MESSAGE value="go tester" />
+    <MESSAGE value="update missclick" />
+    <option name="LAST_COMMIT_MESSAGE" value="update missclick" />
   </component>
 </project>
