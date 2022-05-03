@@ -1,11 +1,10 @@
-import {element} from "protractor";
-import {ActivatedRoute, Router} from "@angular/router";
-import {QuizService} from "../../services/quiz.service";
-import {ResidentService} from "../../services/resident.service";
-import {Resident} from "../../models/resident.model";
-import {StartQuizComponent} from "./start-quiz/start-quiz.component";
+import { Resident } from 'src/models/resident.model';
+import {Injectable} from "@angular/core";
 
-export class HandicapMode {
+@Injectable({
+  providedIn: 'root'
+})
+export class HandicapService {
   public loadingModeActivated: Boolean = false;
   public missClickModeActivated: Boolean = false;
   public mouseControlModeActivated: Boolean = false;
@@ -16,8 +15,7 @@ export class HandicapMode {
   public indexOfThehashMap: number = 0;
 
 
-  constructor(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
-    //this.removeListener();
+  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.defineModeByResident(resident);
     this.getCursorPosition();
