@@ -1,17 +1,12 @@
 import {
   Component,
-  ViewChild,
-  ElementRef,
   OnInit,
   Input,
-  AfterContentInit,
   AfterViewInit,
-  AfterViewChecked,
   ViewEncapsulation
 } from '@angular/core';
 import { Question } from 'src/models/question.model';
 import {Resident} from "../../../models/resident.model";
-import { HandicapMode } from "../handicapModeA";
 import {Quiz} from "../../../models/quiz.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ResidentService} from "../../../services/resident.service";

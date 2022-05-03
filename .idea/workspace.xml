@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fix end missclick bug">
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/quiz/handicapModeA.ts" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="handicap is now a service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/end-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/end-quiz/prochain-quiz/prochain-quiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/handicapMode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,15 +59,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/leo/Polytech/S6/PS6/2021-2022-ps6-web-symfony/front-end/src/services",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/leo/Polytech/S6/PS6/2021-2022-ps6-web-symfony/front-end/src/services&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\leo\Polytech\S6\PS6\2021-2022-ps6-web-symfony\front-end\src\services" />
@@ -137,14 +133,7 @@
       <workItem from="1650953764235" duration="4994000" />
       <workItem from="1650961393563" duration="443000" />
       <workItem from="1651245825360" duration="2987000" />
-      <workItem from="1651558849568" duration="2146000" />
-    </task>
-    <task id="LOCAL-00016" summary="Removing nav link">
-      <created>1648534421990</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1648534421990</updated>
+      <workItem from="1651558849568" duration="2478000" />
     </task>
     <task id="LOCAL-00017" summary="End quiz page">
       <created>1648539626353</created>
@@ -482,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651248748903</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="handicap is now a service">
+      <created>1651561288775</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1651561288775</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,6 +521,7 @@
     <MESSAGE value="update missclick" />
     <MESSAGE value="fix end missclick redirect" />
     <MESSAGE value="fix end missclick bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix end missclick bug" />
+    <MESSAGE value="handicap is now a service" />
+    <option name="LAST_COMMIT_MESSAGE" value="handicap is now a service" />
   </component>
 </project>
