@@ -11,10 +11,11 @@ import {
 } from '@angular/core';
 import { Question } from 'src/models/question.model';
 import {Resident} from "../../../models/resident.model";
-import { HandicapMode } from "../handicapMode";
+import { HandicapMode } from "../handicapModeA";
 import {Quiz} from "../../../models/quiz.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ResidentService} from "../../../services/resident.service";
+import {HandicapService} from "../../../services/handicap.service";
 
 
 @Component({
@@ -29,12 +30,9 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   @Input() currentQuestion: Question;
   @Input() currentResident: Resident;
   @Input() nextQuestionFunction: Function;
-
   @Input() quiz: Quiz;
+
   public currentQuestionIndex: number;
-
-
-
   public responseIndex: number;
   public label: string;
   public mouseControlModeActivated: Boolean;
@@ -44,16 +42,12 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   public answerisCurrentlyLoading: Boolean;
   public mouseIn: Boolean;
   public mouseOut: Boolean;
-
-  public handicapMode: HandicapMode;
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
-  public indexOfThehashMap: number = 0;
-
   public resident: Resident;
   public residentId: string;
 
 
-  constructor(private route: ActivatedRoute, public router : Router, private residentService: ResidentService) {
+  constructor(private route: ActivatedRoute, public router : Router, private residentService: ResidentService, private handicapService: HandicapService) {
     this.responseIndex = 0;
     this.mouseControlModeActivated = false;
     this.missClickModeActivated = false;
@@ -87,7 +81,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
       this.resident = resident
       console.log(this.resident)
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-      this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer())
+      this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer());
     });
 
   }
@@ -95,7 +89,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   nextQuiz(){
     if(document.getElementsByClassName("hide").length==0){
       if(this.indexOfQuestion >= this.quiz.questions.length-1){
-        this.handicapMode.removeAllEventListener();
+        this.handicapService.removeAllEventListener();
         this.router.navigate(['./end-quiz/'+this.currentResident.id+'/'+this.quiz.id]);
       }
       else{
