@@ -1,0 +1,23 @@
+.heatmap-container {
+  width: 75%;
+  padding-top: 40%;
+
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  position:relative;
+}
+
+.circle {
+  position: absolute;
+
+  background-color: rgba(255, 165, 0, .4);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.noData {
+  position: absolute;
+  background-color: #495057;
+}
