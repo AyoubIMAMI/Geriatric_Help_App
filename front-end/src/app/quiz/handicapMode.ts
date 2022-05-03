@@ -20,6 +20,7 @@ export class HandicapMode {
     //this.removeListener();
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.defineModeByResident(resident);
+    this.getCursorPosition();
   }
 
   defineModeByResident(resident: Resident){
@@ -237,6 +238,15 @@ export class HandicapMode {
       const currentMissClickDiv = allMissClickDiv[i];
       currentMissClickDiv.classList.remove("missClickModeVisible");
     }
+  }
+
+  //get x and y from cursor position
+  getCursorPosition() {
+    document.addEventListener("click", (event) => {
+      let mousex = event.clientX; // Gets Mouse X
+      let mousey = event.clientY; // Gets Mouse Y
+      console.log([mousex, mousey]); // Prints data
+    });
   }
 
 
