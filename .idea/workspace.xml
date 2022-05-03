@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="handicap is now a service">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="stats service">
+      <change afterPath="$PROJECT_DIR$/front-end/src/services/stats.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -133,14 +133,7 @@
       <workItem from="1650953764235" duration="4994000" />
       <workItem from="1650961393563" duration="443000" />
       <workItem from="1651245825360" duration="2987000" />
-      <workItem from="1651558849568" duration="2478000" />
-    </task>
-    <task id="LOCAL-00017" summary="End quiz page">
-      <created>1648539626353</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1648539626353</updated>
+      <workItem from="1651558849568" duration="4310000" />
     </task>
     <task id="LOCAL-00018" summary="End quiz page">
       <created>1648541292572</created>
@@ -478,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651561288775</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="handicap is now a service">
+      <created>1651561398511</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1651561398511</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +497,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removing all" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Updating project" />
     <MESSAGE value="Adding bootstrap library" />
@@ -522,6 +521,7 @@
     <MESSAGE value="fix end missclick redirect" />
     <MESSAGE value="fix end missclick bug" />
     <MESSAGE value="handicap is now a service" />
-    <option name="LAST_COMMIT_MESSAGE" value="handicap is now a service" />
+    <MESSAGE value="stats service" />
+    <option name="LAST_COMMIT_MESSAGE" value="stats service" />
   </component>
 </project>
