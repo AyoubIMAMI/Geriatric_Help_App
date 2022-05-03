@@ -1,4 +1,8 @@
-import {AfterViewChecked, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewChecked, Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {ResidentService} from "../../../services/resident.service";
+import {StatsHandicapService} from "../../../services/statsHandicap.service";
+import {ClickData} from "../../../models/clickData.model";
 
 @Component({
   selector: 'app-heatmap',
@@ -7,10 +11,17 @@ import {AfterViewChecked, Component, OnInit, ViewEncapsulation} from '@angular/c
   encapsulation: ViewEncapsulation.None
 })
 export class HeatmapComponent implements OnInit, AfterViewChecked {
+  clickData : ClickData[];
+  @Input() residentID : string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private statHandicapService: StatsHandicapService) {
+    this.statHandicapService.clickData$.subscribe(
+      (clickDataList) => this.clickData = clickDataList
+    );
+  }
 
   ngOnInit(): void {
+    this.statHandicapService.retrieveClicks(this.residentID);
   }
 
   ngAfterViewChecked() {
