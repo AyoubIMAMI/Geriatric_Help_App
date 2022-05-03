@@ -5,9 +5,9 @@ const {filterClicksByResident} = require("./manager");
 
 const router = new Router()
 
-router.get('/:residentId', (req, res) => {
+router.get('/:residentId/:quizId', (req, res) => {
     try {
-        res.status(200).json(filterClicksByResident(req.params.residentId))
+        res.status(200).json(filterClicksByResident(req.params.residentId, req.params.quizId))
     } catch (err) {
         manageAllErrors(res, err)
     }

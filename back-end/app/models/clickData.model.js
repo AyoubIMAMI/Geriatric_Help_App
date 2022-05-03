@@ -5,5 +5,6 @@ module.exports = new BaseModel('ClickData', {
     x: Joi.number(),
     y: Joi.number(),
     residentId : Joi.number(),
+    quizId: Joi.number(),
     id:Joi.number()
 })

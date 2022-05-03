@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="stats service">
-      <change afterPath="$PROJECT_DIR$/front-end/src/services/stats.service.ts" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="stats handicap service">
+      <change afterPath="$PROJECT_DIR$/front-end/src/services/statsHandicap.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/api/clickData/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/clickData/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/api/clickData/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/clickData/manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/app/models/clickData.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/clickData.model.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,14 +136,7 @@
       <workItem from="1650953764235" duration="4994000" />
       <workItem from="1650961393563" duration="443000" />
       <workItem from="1651245825360" duration="2987000" />
-      <workItem from="1651558849568" duration="4310000" />
-    </task>
-    <task id="LOCAL-00018" summary="End quiz page">
-      <created>1648541292572</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1648541292572</updated>
+      <workItem from="1651558849568" duration="5693000" />
     </task>
     <task id="LOCAL-00019" summary="End quiz page">
       <created>1648542306048</created>
@@ -478,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651561398511</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="stats handicap service">
+      <created>1651563427171</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1651563427171</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +500,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Updating project" />
     <MESSAGE value="Adding bootstrap library" />
     <MESSAGE value="Adding bootstrap" />
@@ -522,6 +524,7 @@
     <MESSAGE value="fix end missclick bug" />
     <MESSAGE value="handicap is now a service" />
     <MESSAGE value="stats service" />
-    <option name="LAST_COMMIT_MESSAGE" value="stats service" />
+    <MESSAGE value="stats handicap service" />
+    <option name="LAST_COMMIT_MESSAGE" value="stats handicap service" />
   </component>
 </project>
