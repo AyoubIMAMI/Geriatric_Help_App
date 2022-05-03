@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {QuizService} from "../../../services/quiz.service";
 import {ResidentService} from "../../../services/resident.service";
 import {Resident} from "../../../models/resident.model";
-import {HandicapMode} from "../../quiz/handicapMode";
+import {HandicapService} from "../../../services/handicap.service";
 
 @Component({
   selector: 'app-prochain-quiz',
@@ -17,18 +17,15 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   public quiz:Quiz;
   public residentid:string;
   public resident:Resident;
-
-  public handicapMode: HandicapMode;
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
-  public indexOfThehashMap: number = 0;
 
 
-  constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService) {
+  constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService, private handicapService: HandicapService) {
     this.residentService.residentSelected$.subscribe((resident) =>{
       this.resident = resident
       console.log(this.resident)
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-      this.handicapMode = new HandicapMode(this.resident, this.getMapAnswersrevealAnswer())
+      this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer());
     });
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
@@ -66,7 +63,7 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   defineSelectedQuiz(quiz: Quiz): void{
     this.quizService.setCurrentQuiz(quiz);
     //this.router.navigate(['./quiz/' + this.resident.id + '/' + this.quiz.id]);
-    window.location.href = '/quiz/' + this.resident.id + '/' + quiz.id;
+    window.location.href = '/quiz/' + this.resident.id + '/' + this.quiz.id;
   }
 
 }

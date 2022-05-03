@@ -34,5 +34,5 @@ const getQuestionFromQuiz = (quizId, questionId) => {
 
 module.exports = {
   filterQuestionsFromQuizz,
-  getQuestionFromQuiz,
+  getQuestionFromQuiz
 }

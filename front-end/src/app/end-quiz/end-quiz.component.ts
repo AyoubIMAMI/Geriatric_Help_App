@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Stat} from "../../models/stat.model";
 import {StatService} from "../../services/stat.service";
-import {HandicapMode} from "../quiz/handicapMode";
 import {Resident} from "../../models/resident.model";
 import {ResidentService} from "../../services/resident.service";
 
@@ -18,7 +17,6 @@ export class EndQuizComponent implements OnInit {
   stat: Stat;
   quizId : string = '';
   residentId : string = '';
-  public handicapMode: HandicapMode;
   public resident: Resident;
 
   constructor(private route: ActivatedRoute, private router: Router, public formBuilder: FormBuilder, public statService: StatService, private residentService: ResidentService) {
