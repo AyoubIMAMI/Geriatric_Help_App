@@ -7,13 +7,15 @@ import {
 } from "./resident-modification-handicap/resident-modification-handicap.component";
 import { ResidentHandicapComponent } from './resident-handicap/resident-handicap.component';
 import { ResidentCreationHandicapComponent } from './resident-creation-handicap/resident-creation-handicap.component';
+import { HeatmapComponent } from './heatmap/heatmap.component';
 
 @NgModule({
   declarations: [
     ResidentComponent,
     ResidentModificationHandicapComponent,
     ResidentHandicapComponent,
-    ResidentCreationHandicapComponent
+    ResidentCreationHandicapComponent,
+    HeatmapComponent
   ],
     exports: [
         ResidentModificationHandicapComponent,
