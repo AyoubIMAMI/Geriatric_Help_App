@@ -241,8 +241,8 @@ export class HandicapService {
   //get x and y from cursor position
   getCursorPosition() {
     document.addEventListener("click", (event) => {
-      let mousex = event.clientX; // Gets Mouse X
-      let mousey = event.clientY; // Gets Mouse Y
+      let mousex = (event.clientX / window.innerWidth) * 100; // Gets Mouse X
+      let mousey = (event.clientY / window.innerHeight) * 100; // Gets Mouse Y
       console.log([mousex, mousey]); // Prints data
     });
   }
