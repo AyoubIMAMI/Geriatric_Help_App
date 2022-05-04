@@ -1,6 +1,6 @@
 export interface ClickData {
   id: string;
-  x: string;
-  y: string;
+  x: number;
+  y: number;
   residentId: string;
 }

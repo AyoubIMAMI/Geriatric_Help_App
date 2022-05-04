@@ -1,5 +1,7 @@
 import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
+import {StatsHandicapService} from "./statsHandicap.service";
+import {ClickData} from "../models/clickData.model";
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +12,17 @@ export class HandicapService {
   public mouseControlModeActivated: Boolean = false;
   public answerisCurrentlyLoading: Boolean = false;
 
-
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
 
+  statsHandicapService : StatsHandicapService;
 
-  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
+
+  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>, statsHandicapService : StatsHandicapService) {
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.defineModeByResident(resident);
-    this.getCursorPosition();
+    this.getCursorPosition(resident.id);
+    this.statsHandicapService = statsHandicapService;
   }
 
   defineModeByResident(resident: Resident){
@@ -239,11 +243,19 @@ export class HandicapService {
   }
 
   //get x and y from cursor position
-  getCursorPosition() {
+  getCursorPosition(residentId: string) {
     document.addEventListener("click", (event) => {
       let mousex = (event.clientX / window.innerWidth) * 100; // Gets Mouse X
       let mousey = (event.clientY / window.innerHeight) * 100; // Gets Mouse Y
       console.log([mousex, mousey]); // Prints data
+
+      const data : ClickData = {
+        x:mousex,
+        y:mousey,
+        residentId:residentId,
+        id:"0"
+      }
+      this.statsHandicapService.addData(data)
     });
   }
 

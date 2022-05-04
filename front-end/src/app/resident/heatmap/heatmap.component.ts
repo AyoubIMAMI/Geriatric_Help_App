@@ -12,29 +12,45 @@ import {ClickData} from "../../../models/clickData.model";
 })
 export class HeatmapComponent implements OnInit, AfterViewChecked {
   clickData : ClickData[];
-  @Input() residentID : string;
 
   constructor(private route: ActivatedRoute, private statHandicapService: StatsHandicapService) {
-    this.statHandicapService.clickData$.subscribe(
-      (clickDataList) => this.clickData = clickDataList
-    );
+
   }
 
   ngOnInit(): void {
-    this.statHandicapService.retrieveClicks(this.residentID);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.statHandicapService.retrieveClicks(id);
   }
 
   ngAfterViewChecked() {
-    // Heatmap container
-    const heatmap = document.getElementById("heatmap-container");
-
-    // Adding circle
-    const newCircle = document.createElement("div");
-    newCircle.classList.add("circle");
-    newCircle.style.left = "150px";
-    newCircle.style.bottom = "150px";
-
-    heatmap.appendChild(newCircle);
+    this.statHandicapService.clickData$.subscribe((clickDataList) =>{
+        console.log(clickDataList)
+        this.clickData = clickDataList;
+        this.addCircles();
+      }
+    );
   }
 
+  addCircles() : void {
+    // Heatmap container
+    const heatmap = document.getElementById("heatmap-container");
+    const heatmapHeight : number = heatmap.offsetHeight;
+    const heatmapWidth : number = heatmap.offsetWidth;
+
+    // Adding circle
+    for(const click of this.clickData){
+      const newCircle = document.createElement("div");
+      newCircle.classList.add("circle");
+      newCircle.style.left = (heatmapWidth * (click.x/100)).toString() + "px";
+      newCircle.style.top = (heatmapHeight * (click.y/100)).toString() + "px";
+
+      heatmap.appendChild(newCircle);
+    }
+  }
+
+  onResize() : void {
+    const elements = document.getElementsByClassName("circle");
+    while (elements.length > 0) elements[0].remove();
+    this.addCircles();
+  }
 }

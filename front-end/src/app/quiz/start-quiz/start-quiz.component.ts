@@ -11,6 +11,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ResidentService} from "../../../services/resident.service";
 import {HandicapService} from "../../../services/handicap.service";
+import {StatsHandicapService} from "../../../services/statsHandicap.service";
 
 
 @Component({
@@ -42,7 +43,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
   public residentId: string;
 
 
-  constructor(private route: ActivatedRoute, public router : Router, private residentService: ResidentService, private handicapService: HandicapService) {
+  constructor(private route: ActivatedRoute, public router : Router, private residentService: ResidentService, private handicapService: HandicapService, private statsHandicapService : StatsHandicapService) {
     this.responseIndex = 0;
     this.mouseControlModeActivated = false;
     this.missClickModeActivated = false;
@@ -76,7 +77,7 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
       this.resident = resident
       console.log(this.resident)
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-      this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer());
+      this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer(), this.statsHandicapService);
     });
 
   }

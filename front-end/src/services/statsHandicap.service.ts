@@ -41,6 +41,7 @@ export class StatsHandicapService {
     this.http.get<ClickData[]>(urlWithId).subscribe((clickDataList) => {
       this.clickData = clickDataList;
       this.clickData$.next(this.clickData);
+      console.log(urlWithId, clickDataList)
     });
   }
 
