@@ -27,7 +27,7 @@
         </div>
   </div>
   <br>
-  <app-resident-graph-stats-component></app-resident-graph-stats-component>
+  <app-resident-graph-stats-component [residentId]="resident.id"></app-resident-graph-stats-component>
   <app-heatmap *ngIf="resident.handicap == 'Tremblement d\'attitude'"></app-heatmap>
 
 </div>

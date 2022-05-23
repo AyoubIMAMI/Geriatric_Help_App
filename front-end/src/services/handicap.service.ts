@@ -16,7 +16,7 @@ export class HandicapService {
   public missClickModeActivated: Boolean = false;
   public mouseControlModeActivated: Boolean = false;
   public answerisCurrentlyLoading: Boolean = false;
-  public residentId: Number;
+  public residentId: string;
   public $arrayClick: Subject<StatsResident[]> = new Subject();
 
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
@@ -38,8 +38,9 @@ export class HandicapService {
 
   initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>, statsHandicapService : StatsHandicapService) {
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
+    this.residentId = resident.id
     this.defineModeByResident(resident);
-    this.getCursorPosition(resident.id);
+    this.getCursorPosition(this.residentId);
     this.statsHandicapService = statsHandicapService;
   }
 
@@ -79,8 +80,8 @@ export class HandicapService {
   }
 
 
-  getClickStatsForResident(ResidentId: number, dateA: Date, dateB: Date){
-    const clickurl=this.clickNumberUrl+"/"+this.residentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDay()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDay()
+  getClickStatsForResident(theResidentId: string, dateA: Date, dateB: Date){
+    const clickurl=this.clickNumberUrl+"/"+theResidentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDay()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDay()
     this.http.get<StatsResident[]>(clickurl).subscribe(
       (tabData)=>
         this.$arrayClick.next(tabData)
