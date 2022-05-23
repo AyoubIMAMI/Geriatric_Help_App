@@ -34,9 +34,9 @@ router.post('/:residentId', (req, res) => {
     }
 })
 
-router.get('/:residentId', (req, res) => {
-    date1=new Date(req.body.anneeA,req.body.moisA,req.body.jourA)
-    date2=new Date(req.body.anneeB,req.body.moisB,req.body.jourB)
+router.get('/:residentId/:anneeA/:moisA/:jourA/:anneeB/:moisB/:jourB/', (req, res) => {
+    date1=new Date(req.params.anneeA,req.params.moisA,req.params.jourA)
+    date2=new Date(req.params.anneeB,req.params.moisB,req.params.jourB)
     try {
         res.status(200).json(
             filterClickNumberByDate(req.params.residentId,date1,date2)
