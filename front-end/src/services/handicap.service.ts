@@ -2,10 +2,11 @@ import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
 import {StatsHandicapService} from "./statsHandicap.service";
 import {ClickData} from "../models/clickData.model";
-import {StatsResident} from "../models/statsResident.model";
 import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {Quiz} from "../models/quiz.model";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from "rxjs";
+import {StatsResident} from "../models/statsResident.model";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class HandicapService {
   public mouseControlModeActivated: Boolean = false;
   public answerisCurrentlyLoading: Boolean = false;
   public residentId: Number;
+  public $arrayClick: Subject<StatsResident[]> = new Subject();
 
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
@@ -71,17 +73,18 @@ export class HandicapService {
       "numberOfGoodResponses": this.nbGoodResponses,
       "numberOfBadResponses": this.nbBadResonses,
     }
-    const clickurl=this.clickNumberUrl+"/"+date.getFullYear()+"/"+date.getMonth()+"/"+date.getDate()
+    const clickurl=this.clickNumberUrl+"/"+this.residentId+"/"+date.getFullYear()+"/"+date.getMonth()+"/"+date.getDate()
     this.http.put<Quiz>(clickurl, jsonToPut, this.httpOptions).subscribe();
     this.nbclick = 0;
-    this.nbpages=0;
-    this.nbGoodResponses=0;
-    this.nbBadResonses=0;
   }
 
 
-  getClickStatsForResident(ResidentId: number, anneeA: Date, anneeB: Date):StatsResident{
-    return null;
+  getClickStatsForResident(ResidentId: number, dateA: Date, dateB: Date){
+    const clickurl=this.clickNumberUrl+"/"+this.residentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDay()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDay()
+    this.http.get<StatsResident[]>(clickurl).subscribe(
+      (tabData)=>
+        this.$arrayClick.next(tabData)
+  );
   }
 
   //Loading Mode
