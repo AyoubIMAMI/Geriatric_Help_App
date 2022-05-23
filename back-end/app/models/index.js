@@ -5,6 +5,7 @@ const User = require('./user.model.js')
 const Resident = require('./resident.model.js')
 const Stat = require('./stat.model.js')
 const ClickData = require('./clickData.model.js')
+const ClickNumber = require('./clickNumber.model.js')
 
 
 module.exports = {
@@ -14,5 +15,6 @@ module.exports = {
     User,
     Resident,
     Stat,
-    ClickData
+    ClickData,
+    ClickNumber
 }
