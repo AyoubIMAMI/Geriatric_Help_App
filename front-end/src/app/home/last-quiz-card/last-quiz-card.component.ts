@@ -41,4 +41,9 @@ export class LastQuizCardComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  getDate() : string {
+    const date =new Date()
+    return(date.getDay()+"/"+date.getMonth()+"/"+date.getFullYear())
+  }
+
 }
