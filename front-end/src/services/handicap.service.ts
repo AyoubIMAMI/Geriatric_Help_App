@@ -15,7 +15,12 @@ export class HandicapService {
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
 
+  public nbclick: number = 0;
+
+
   statsHandicapService : StatsHandicapService;
+
+
 
 
   initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>, statsHandicapService : StatsHandicapService) {
@@ -42,6 +47,21 @@ export class HandicapService {
     //mouseControl
     this.removeListener();
 
+    //missClick
+    this.removeListenerToCountClick();
+  }
+
+  sendNbClickForCurrentQuestion(){
+    //appelle au service
+    //nb click
+    //id résident
+    //date
+    //numberOfGoodResponses
+    //numberOfBadResponses
+    let date: Date = new Date();
+    console.log("Nbr de click: "+this.nbclick);
+    console.log(date);
+    this.nbclick = 0;
   }
 
   //Loading Mode
@@ -58,6 +78,7 @@ export class HandicapService {
     this.loadingModeActivated = true;
 
     element.addEventListener("mouseenter", event => {
+      this.nbclick++;
       console.log("mouseenter");
         if(!this.answerisCurrentlyLoading){
            this.load(element, callback);
@@ -76,6 +97,7 @@ export class HandicapService {
     this.loadingModeActivated = true;
 
     element.removeEventListener("mouseenter", event => {
+      this.nbclick++;
       console.log("mouseenter");
       if(!this.answerisCurrentlyLoading){
         this.load(element, callback);
@@ -137,8 +159,10 @@ export class HandicapService {
   private removeListener(){
     document.body.removeEventListener("keydown", e => {
       let handicapePage = document.getElementsByClassName("handicapePage").length;
-      if(handicapePage>=1)
+      if(handicapePage>=1){
+        this.nbclick++;
         this.clickWithkeyBoard()
+      }
     });
     document.body.removeEventListener("click", e => {
       let handicapePage = document.getElementsByClassName("handicapePage").length;
@@ -155,8 +179,10 @@ export class HandicapService {
   private setupListenerLeftAndRightClick(htmlElements: HTMLElement[]) {
     document.body.addEventListener("keydown", e => {
       let handicapePage = document.getElementsByClassName("handicapePage").length;
-      if(handicapePage>=1)
+      if(handicapePage>=1){
+        this.nbclick++;
         this.clickWithkeyBoard()
+      }
     });
     document.body.addEventListener("click", e => {
       let handicapePage = document.getElementsByClassName("handicapePage").length;
@@ -214,6 +240,7 @@ export class HandicapService {
       else
         element.parentElement.classList.add("missClickMode");
     }
+    this.addListenerToCountClick();
   }
 
   startMissClickVisible(){
@@ -242,12 +269,28 @@ export class HandicapService {
     }
   }
 
+  private addListenerToCountClick() {
+    document.body.addEventListener("click", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.nbclick++;
+    });
+  }
+
+  private removeListenerToCountClick() {
+    document.body.removeEventListener("click", e => {
+      let handicapePage = document.getElementsByClassName("handicapePage").length;
+      if(handicapePage>=1)
+        this.nbclick++;
+    });
+  }
+
   //get x and y from cursor position
   getCursorPosition(residentId: string) {
     document.addEventListener("click", (event) => {
       let mousex = (event.clientX / window.innerWidth) * 100; // Gets Mouse X
       let mousey = (event.clientY / window.innerHeight) * 100; // Gets Mouse Y
-      console.log([mousex, mousey]); // Prints data
+      //console.log([mousex, mousey]); // Prints data
 
       const data : ClickData = {
         x:mousex,

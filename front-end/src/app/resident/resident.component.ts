@@ -20,6 +20,7 @@ export class ResidentComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private residentService: ResidentService) {
     this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
+
   }
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');

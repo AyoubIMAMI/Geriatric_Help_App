@@ -24,7 +24,6 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService, private handicapService: HandicapService, statsHandicapService: StatsHandicapService) {
     this.residentService.residentSelected$.subscribe((resident) =>{
       this.resident = resident
-      console.log(this.resident)
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
       this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer(), statsHandicapService);
     });
