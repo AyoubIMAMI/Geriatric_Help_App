@@ -2,6 +2,7 @@ import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
 import {StatsHandicapService} from "./statsHandicap.service";
 import {ClickData} from "../models/clickData.model";
+import {StatsResident} from "../models/statsResident.model";
 import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {Quiz} from "../models/quiz.model";
 import {HttpClient} from "@angular/common/http";
@@ -76,6 +77,11 @@ export class HandicapService {
     this.nbpages=0;
     this.nbGoodResponses=0;
     this.nbBadResonses=0;
+  }
+
+
+  getClickStatsForResident(ResidentId: number, anneeA: Date, anneeB: Date):StatsResident{
+    return null;
   }
 
   //Loading Mode
