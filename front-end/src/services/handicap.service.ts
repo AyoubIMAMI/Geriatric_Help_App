@@ -77,6 +77,8 @@ export class HandicapService {
     const clickurl=this.clickNumberUrl+"/"+this.residentId+"/"+date.getFullYear()+"/"+date.getMonth()+"/"+date.getDate()
     this.http.put<Quiz>(clickurl, jsonToPut, this.httpOptions).subscribe();
     this.nbclick = 0;
+    this.nbBadResonses = 0;
+    this.nbGoodResponses = 0;
   }
 
 
@@ -84,7 +86,7 @@ export class HandicapService {
     console.log("dateA = "+dateA);
     console.log("dateB = "+dateB);
 
-    const clickurl=this.clickNumberUrl+"/"+theResidentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDate()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDay()
+    const clickurl=this.clickNumberUrl+"/"+theResidentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDate()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDate()
     console.log("clickurl = "+clickurl);
 
 
@@ -94,6 +96,14 @@ export class HandicapService {
         console.log("end get, tabData = "+tabData);
       }
   );
+  }
+
+  increaseGoodAnswer(){
+    this.nbGoodResponses++;
+  }
+
+  increaseBadAnswer(){
+    this.nbBadResonses++;
   }
 
   //Loading Mode

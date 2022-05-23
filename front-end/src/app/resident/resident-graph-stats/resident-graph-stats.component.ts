@@ -17,6 +17,8 @@ export class ResidentGraphStatsComponent implements OnInit {
   private nbClick: number;
   private nbQuestionRealized: number
   private nbGoodAnswer:number;
+  private nbBadAnswer:number;
+
   private aMonthInMilliseconde = 2629800000 as number;
 
   private startDateInput: HTMLInputElement;
@@ -33,16 +35,17 @@ export class ResidentGraphStatsComponent implements OnInit {
     this.nbClick = 0;
     this.nbQuestionRealized = 0;
     this.nbGoodAnswer = 0;
+    this.nbBadAnswer = 0;
+
 
     this.endDate = new Date();
-    this.startDate = new Date(this.convertDateToValideString(this.endDate));
+    this.startDate = new Date(this.convertDateToValideStringOneMonthAgo(this.endDate));
   }
 
   ngOnInit(){
-    console.log("date = "+new Date().toDateString());
 
     this.endDate = new Date();
-    this.startDate = new Date(this.convertDateToValideString(this.endDate));
+    this.startDate = new Date(this.convertDateToValideStringOneMonthAgo(this.endDate));
     this.startDateInput = document.getElementById("startDate") as HTMLInputElement;
     this.endDateInput = document.getElementById("endDate") as HTMLInputElement;
 
@@ -63,7 +66,7 @@ export class ResidentGraphStatsComponent implements OnInit {
     averageElement.innerText = ""+averageClickByQuestion;
 
     const nbrQuestionElement = document.getElementById("nbrQuestion") as HTMLElement;
-    nbrQuestionElement.innerText = ""+this.nbQuestionRealized;
+    nbrQuestionElement.innerText = ""+this.getTotalQuestion();
 
     const pourcentageElement = document.getElementById("pourcentageGoodAnswer") as HTMLElement;
     pourcentageElement.innerText = ""+pourcentageGoodAnswer+"%";
@@ -74,38 +77,38 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   computePourcentageGoodAnswer(){
-    return (this.nbGoodAnswer/this.nbQuestionRealized)*100;
+    return (this.nbGoodAnswer/this.getTotalQuestion())*100;
+  }
+
+  getTotalQuestion():number{
+    return this.nbGoodAnswer +this.nbBadAnswer;
   }
 
   searchByDate(){
     this.startDate = new Date(this.startDateInput.value);
     this.endDate = new Date(this.endDateInput.value);
-
-    console.log("startDate = "+this.convertDateToValideString(this.startDate));
-    console.log("endDate = "+this.convertDateToValideString(this.endDate));
-
-
-    if(this.startDate.toDateString() != "Invalid Date" && this.endDate.toDateString() != "Invalid Date"){
-      console.log("startDateValue: "+this.startDate);
-      console.log("endDateValue: "+this.endDate);
+        if(this.startDate.toDateString() != "Invalid Date" && this.endDate.toDateString() != "Invalid Date"){
       this.handicapService.getClickStatsForResident(this.residentId, this.startDate, this.endDate);
       this.setupStats();
     }
   }
 
   setupStats(){
-    console.log("this.allStatsResident = "+this.allStatsResident);
     for(let i = 0; i < this.allStatsResident.length ; i++){
       const currentStat =this.allStatsResident[i];
       this.nbGoodAnswer += currentStat.numberOfGoodResponses;
+      this.nbBadAnswer += currentStat.numberOfBadResponses;
       this.nbQuestionRealized = currentStat.numberOfPages;
       this.nbClick += currentStat.numberOfClicks;
     }
+    let averageClickByQuestion = this.computeAverageClickByQuestion();
+    let pourcentageGoodAnswer = this.computePourcentageGoodAnswer();
+    this.fillBlankStats(averageClickByQuestion, pourcentageGoodAnswer);
   }
 
   convertDateToValideString(date: Date):string{
     let year = "" + date.getFullYear()
-    let month = "" + date.getMonth();
+    let month = "" + (date.getMonth()+1);
     if(+month < 10)
       month= "0"+month;
     let day = ""+ date.getDate();
@@ -115,7 +118,7 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
   convertDateToValideStringOneMonthAgo(date: Date):string{
     let year = "" + date.getFullYear()
-    let month = "" + (date.getMonth()-1);
+    let month = "" + (date.getMonth());
     if(+month == 0)month = "12";
     if(+month < 10)
       month= "0"+month;

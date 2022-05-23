@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="fini">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="abelulbalela">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quiz/start-quiz/start-quiz.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" afterDir="false" />
     </list>
@@ -109,13 +110,6 @@
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="18686000" />
       <workItem from="1651558354327" duration="5109000" />
-    </task>
-    <task id="LOCAL-00023" summary="End quiz page">
-      <created>1649147472249</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1649147472249</updated>
     </task>
     <task id="LOCAL-00024" summary="End quiz page">
       <created>1649148668381</created>
@@ -453,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653336819730</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="abelulbalela">
+      <created>1653339301599</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1653339301599</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +473,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updating project" />
     <MESSAGE value="Adding bootstrap library" />
     <MESSAGE value="Adding bootstrap" />
     <MESSAGE value="Adding Home and Home rooting" />
@@ -497,6 +497,7 @@
     <MESSAGE value="add package for graph and create model" />
     <MESSAGE value="fix chart.js" />
     <MESSAGE value="fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="fini" />
+    <MESSAGE value="abelulbalela" />
+    <option name="LAST_COMMIT_MESSAGE" value="abelulbalela" />
   </component>
 </project>
