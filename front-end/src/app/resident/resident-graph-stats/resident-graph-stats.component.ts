@@ -63,13 +63,13 @@ export class ResidentGraphStatsComponent implements OnInit {
 
   fillBlankStats(averageClickByQuestion: number, pourcentageGoodAnswer: number){
     const averageElement = document.getElementById("clickParQuestion") as HTMLElement;
-    averageElement.innerText = ""+averageClickByQuestion;
+    averageElement.innerText = ""+averageClickByQuestion.toFixed(1);
 
     const nbrQuestionElement = document.getElementById("nbrQuestion") as HTMLElement;
     nbrQuestionElement.innerText = ""+this.getTotalQuestion();
 
     const pourcentageElement = document.getElementById("pourcentageGoodAnswer") as HTMLElement;
-    pourcentageElement.innerText = ""+pourcentageGoodAnswer+"%";
+    pourcentageElement.innerText = ""+pourcentageGoodAnswer.toFixed(1)+"%";
   }
 
   computeAverageClickByQuestion(){
