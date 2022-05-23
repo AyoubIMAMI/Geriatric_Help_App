@@ -20,17 +20,7 @@ router.put('/:residentId/:annee/:mois/:jour', (req, res) => {
             })
         )
     } catch (err) {
-        manageAllErrors(res, err)
-    }
-})
-
-router.post('/:residentId', (req, res) => {
-    try {
-        ClickNumber
-        const clickNumber = ClickNumber.create({ ...req.body})
-        res.status(201).json(clickNumber)
-    } catch (err) {
-        manageAllErrors(res, err)
+        res.status(200).json(ClickNumber.create({ ...req.body,"residentId":req.params.residentId,"annee":req.params.annee,"mois":req.params.mois,"jour":req.params.jour}));
     }
 })
 
