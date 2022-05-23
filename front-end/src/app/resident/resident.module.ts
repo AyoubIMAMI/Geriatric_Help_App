@@ -8,6 +8,7 @@ import {
 import { ResidentHandicapComponent } from './resident-handicap/resident-handicap.component';
 import { ResidentCreationHandicapComponent } from './resident-creation-handicap/resident-creation-handicap.component';
 import { HeatmapComponent } from './heatmap/heatmap.component';
+import {ResidentGraphStatsComponent} from "./resident-graph-stats/resident-graph-stats.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeatmapComponent } from './heatmap/heatmap.component';
     ResidentModificationHandicapComponent,
     ResidentHandicapComponent,
     ResidentCreationHandicapComponent,
-    HeatmapComponent
+    HeatmapComponent,
+    ResidentGraphStatsComponent
   ],
     exports: [
         ResidentModificationHandicapComponent,
