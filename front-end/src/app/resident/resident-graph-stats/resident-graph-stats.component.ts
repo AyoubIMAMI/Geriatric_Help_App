@@ -19,6 +19,12 @@ export class ResidentGraphStatsComponent implements OnInit {
   private nbGoodAnswer:number;
   private aMonthInMilliseconde = 2629800000 as number;
 
+  private startDateInput: HTMLInputElement;
+  private endDateInput: HTMLInputElement;
+
+  private startDate: Date;
+  private endDate: Date;
+
 
 
   constructor(private handicapService: HandicapService) {
@@ -27,19 +33,23 @@ export class ResidentGraphStatsComponent implements OnInit {
     this.nbClick = 0;
     this.nbQuestionRealized = 0;
     this.nbGoodAnswer = 0;
+
+    this.endDate = new Date();
+    this.startDate = new Date(this.convertDateToValideString(this.endDate));
   }
 
   ngOnInit(){
-    const startDateInput = document.getElementById("startDate")  as HTMLInputElement;
-    const endDateInput = document.getElementById("endDate")  as HTMLInputElement;
-
     console.log("date = "+new Date().toDateString());
-    let currentDate = new Date();
 
-    startDateInput.value = this.convertDateToValideStringOneMonthAgo(currentDate);
-    endDateInput.value = this.convertDateToValideString(currentDate);
+    this.endDate = new Date();
+    this.startDate = new Date(this.convertDateToValideString(this.endDate));
+    this.startDateInput = document.getElementById("startDate") as HTMLInputElement;
+    this.endDateInput = document.getElementById("endDate") as HTMLInputElement;
 
-    this.handicapService.getClickStatsForResident(this.residentId, new Date(-this.aMonthInMilliseconde), new Date());
+    this.startDateInput.value = this.convertDateToValideString(this.startDate);
+    this.endDateInput.value = this.convertDateToValideString(this.endDate);
+
+    this.handicapService.getClickStatsForResident(this.residentId, this.startDate, this.endDate);
     this.setupStats();
 
     let averageClickByQuestion = this.computeAverageClickByQuestion();
@@ -68,21 +78,23 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   searchByDate(){
-    const startDateInput = document.getElementById("startDate")  as HTMLInputElement;
-    const endDateInput = document.getElementById("endDate")  as HTMLInputElement;
+    this.startDate = new Date(this.startDateInput.value);
+    this.endDate = new Date(this.endDateInput.value);
 
-    const startDate = new Date(startDateInput.value);
-    const endDate = new Date(startDateInput.value);
+    console.log("startDate = "+this.convertDateToValideString(this.startDate));
+    console.log("endDate = "+this.convertDateToValideString(this.endDate));
 
-    if(startDate.toDateString() != "Invalid Date" && endDate.toDateString() != "Invalid Date"){
-      console.log("startDateValue: "+startDate);
-      console.log("endDateValue: "+endDate);
-      this.handicapService.getClickStatsForResident(this.residentId, startDate, endDate);
+
+    if(this.startDate.toDateString() != "Invalid Date" && this.endDate.toDateString() != "Invalid Date"){
+      console.log("startDateValue: "+this.startDate);
+      console.log("endDateValue: "+this.endDate);
+      this.handicapService.getClickStatsForResident(this.residentId, this.startDate, this.endDate);
       this.setupStats();
     }
   }
 
   setupStats(){
+    console.log("this.allStatsResident = "+this.allStatsResident);
     for(let i = 0; i < this.allStatsResident.length ; i++){
       const currentStat =this.allStatsResident[i];
       this.nbGoodAnswer += currentStat.numberOfGoodResponses;
@@ -96,7 +108,7 @@ export class ResidentGraphStatsComponent implements OnInit {
     let month = "" + date.getMonth();
     if(+month < 10)
       month= "0"+month;
-    let day = ""+ date.getDay();
+    let day = ""+ date.getDate();
     if(+day < 10)
       day= "0"+day;
     return year+"-"+month+"-"+day;
@@ -107,7 +119,7 @@ export class ResidentGraphStatsComponent implements OnInit {
     if(+month == 0)month = "12";
     if(+month < 10)
       month= "0"+month;
-    let day = ""+ date.getDay();
+    let day = ""+ date.getDate();
     if(+day < 10)
       day= "0"+day;
     return year+"-"+month+"-"+day;
