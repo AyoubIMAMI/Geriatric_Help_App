@@ -2,7 +2,7 @@
     <div class="resident" *ngFor="let resident of residentList">
         <li class="list-group-item">
             <img src="{{resident.picture}}" class="rounded residents-pic" alt="" /> {{resident.nom}} {{resident.prenom}}
-            <a class="stretched-link" routerLink="/resident/{{resident.id}}"></a>
+            <a class="stretched-link" href="/resident/{{resident.id}}"></a>
         </li>
     </div>
 </ul>
