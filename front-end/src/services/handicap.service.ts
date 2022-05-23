@@ -84,7 +84,7 @@ export class HandicapService {
     this.http.get<StatsResident[]>(clickurl).subscribe(
       (tabData)=>
         this.$arrayClick.next(tabData)
-  );
+   );
   }
 
   //Loading Mode

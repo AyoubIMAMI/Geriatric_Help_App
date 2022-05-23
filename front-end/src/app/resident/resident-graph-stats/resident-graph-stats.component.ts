@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import * as Chart from 'chart.js';
+//import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-resident-graph-stats-component',
