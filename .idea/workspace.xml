@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="add stats resident profil">
-      <change afterPath="$PROJECT_DIR$/front-end/src/models/statsResident.model.ts" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="add package for graph and create model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,13 +109,6 @@
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="18686000" />
       <workItem from="1651558354327" duration="5109000" />
-    </task>
-    <task id="LOCAL-00019" summary="End quiz page">
-      <created>1648542306048</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1648542306048</updated>
     </task>
     <task id="LOCAL-00020" summary="End quiz page">
       <created>1648543450352</created>
@@ -457,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653325172079</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="add package for graph and create model">
+      <created>1653326213221</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1653326213221</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,6 +496,7 @@
     <MESSAGE value="fix les problèmes des solutions de tremblements" />
     <MESSAGE value="Heatmap, get cursor position" />
     <MESSAGE value="add stats resident profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="add stats resident profil" />
+    <MESSAGE value="add package for graph and create model" />
+    <option name="LAST_COMMIT_MESSAGE" value="add package for graph and create model" />
   </component>
 </project>
