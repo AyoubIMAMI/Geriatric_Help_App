@@ -2,6 +2,7 @@ import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
 import {StatsHandicapService} from "./statsHandicap.service";
 import {ClickData} from "../models/clickData.model";
+import {StatsResident} from "../models/statsResident.model";
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,11 @@ export class HandicapService {
     console.log("Nbr de click: "+this.nbclick);
     console.log(date);
     this.nbclick = 0;
+  }
+
+
+  getClickStatsForResident(ResidentId: number, anneeA: Date, anneeB: Date):StatsResident{
+    return null;
   }
 
   //Loading Mode

@@ -1,4 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-resident-graph-stats-component',
@@ -7,12 +8,21 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class ResidentGraphStatsComponent implements OnInit {
+  @ViewChild('barCanvas') private barCanvas: ElementRef;
+  barChart: any;
+
   private nbClick: number[];
   private nbQuestionRealized: number
   private nbGoodAnswer:number;
+
+
   constructor() { }
 
   ngOnInit(){
+
+    //this.barChartMethod();
+
+
     this.nbClick = [10,45,1,23,47];
     this.nbQuestionRealized = 10;
     this.nbGoodAnswer = 4;
