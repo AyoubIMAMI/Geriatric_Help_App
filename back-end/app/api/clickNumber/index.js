@@ -26,6 +26,7 @@ router.put('/:residentId/:annee/:mois/:jour', (req, res) => {
 
 router.post('/:residentId', (req, res) => {
     try {
+        ClickNumber
         const clickNumber = ClickNumber.create({ ...req.body})
         res.status(201).json(clickNumber)
     } catch (err) {

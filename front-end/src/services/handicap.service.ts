@@ -2,6 +2,9 @@ import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
 import {StatsHandicapService} from "./statsHandicap.service";
 import {ClickData} from "../models/clickData.model";
+import {httpOptionsBase, serverUrl} from "../configs/server.config";
+import {Quiz} from "../models/quiz.model";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +14,24 @@ export class HandicapService {
   public missClickModeActivated: Boolean = false;
   public mouseControlModeActivated: Boolean = false;
   public answerisCurrentlyLoading: Boolean = false;
+  public residentId: Number;
 
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
   public indexOfThehashMap: number = 0;
 
   public nbclick: number = 0;
+  public nbpages: number = 0;
+  public nbGoodResponses: number = 0;
+  public nbBadResonses: number = 0;
+
+  private clickNumberUrl = serverUrl + '/clickNumber';
+
+  private httpOptions = httpOptionsBase;
 
 
   statsHandicapService : StatsHandicapService;
 
-
-
+  constructor(private http: HttpClient) {}
 
   initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>, statsHandicapService : StatsHandicapService) {
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
@@ -52,16 +62,20 @@ export class HandicapService {
   }
 
   sendNbClickForCurrentQuestion(){
-    //appelle au service
-    //nb click
-    //id résident
-    //date
-    //numberOfGoodResponses
-    //numberOfBadResponses
     let date: Date = new Date();
-    console.log("Nbr de click: "+this.nbclick);
-    console.log(date);
+    const jsonToPut:JSON = <JSON><unknown>{
+      "residentId": this.residentId,
+      "numberOfClicks": this.nbclick,
+      "numberOfPages": this.nbpages,
+      "numberOfGoodResponses": this.nbGoodResponses,
+      "numberOfBadResponses": this.nbBadResonses,
+    }
+    const clickurl=this.clickNumberUrl+"/"+date.getFullYear()+"/"+date.getMonth()+"/"+date.getDate()
+    this.http.put<Quiz>(clickurl, jsonToPut, this.httpOptions).subscribe();
     this.nbclick = 0;
+    this.nbpages=0;
+    this.nbGoodResponses=0;
+    this.nbBadResonses=0;
   }
 
   //Loading Mode
