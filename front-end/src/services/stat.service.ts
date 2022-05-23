@@ -35,7 +35,7 @@ export class StatService {
     this.http.get<Stat[]>(this.statUrl).subscribe((statList) => {
       this.stats = statList;
       this.stats$.next(this.stats);
-      console.log("service", this.stats);
+      //console.log("service", this.stats);
     });
   }
 
