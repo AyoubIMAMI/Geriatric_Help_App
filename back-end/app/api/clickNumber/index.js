@@ -20,7 +20,7 @@ router.put('/:residentId/:annee/:mois/:jour', (req, res) => {
             })
         )
     } catch (err) {
-        res.status(200).json(ClickNumber.create({ ...req.body,"residentId":req.params.residentId,"annee":req.params.annee,"mois":req.params.mois,"jour":req.params.jour}));
+        res.status(200).json(ClickNumber.create({ ...req.body,"residentId":req.params.residentId,"annee":req.params.annee,"mois":req.params.mois,"jour":req.params.jour,"numberOfPages":1}));
     }
 })
 
