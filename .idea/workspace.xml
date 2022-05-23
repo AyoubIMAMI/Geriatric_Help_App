@@ -115,13 +115,8 @@
       <workItem from="1650884401540" duration="2187000" />
       <workItem from="1650895772218" duration="18686000" />
       <workItem from="1651558354327" duration="5109000" />
-    </task>
-    <task id="LOCAL-00018" summary="End quiz page">
-      <created>1648541292572</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1648541292572</updated>
+      <workItem from="1653316673055" duration="1290000" />
+      <workItem from="1653319422694" duration="5000" />
     </task>
     <task id="LOCAL-00019" summary="End quiz page">
       <created>1648542306048</created>
@@ -459,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651566513415</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Heatmap, get cursor position">
+      <created>1653318314216</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1653318314216</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
