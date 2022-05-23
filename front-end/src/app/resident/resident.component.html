@@ -26,6 +26,6 @@
           <button class="btn btn-primary my-2" routerLink="/resident/{{resident.id}}/modification">Modifier</button>
         </div>
   </div>
-  <app-heatmap></app-heatmap>
+  <app-heatmap *ngIf="resident.handicap == 'Tremblement d\'attitude'"></app-heatmap>
 
 </div>
