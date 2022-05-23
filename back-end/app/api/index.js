@@ -3,6 +3,7 @@ const ResidentRouter = require('./residents')
 const QuizzesRouter = require('./quizzes')
 const UserRouter = require('./users')
 const ClickDataRouter = require('./clickData')
+const ClickNumberRouter = require('./clickNumber')
 const Stat = require("./stats");
 
 
@@ -13,6 +14,7 @@ router.use('/users', UserRouter)
 router.use('/residents', ResidentRouter)
 router.use('/stats', Stat)
 router.use('/clickData',ClickDataRouter)
+router.use('/clickNumber',ClickNumberRouter)
 
 
 module.exports = router

@@ -22,15 +22,12 @@ export class EndQuizComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, public formBuilder: FormBuilder, public statService: StatService, private residentService: ResidentService) {
     this.quizId = this.route.snapshot.paramMap.get('id');
     this.residentId = this.route.snapshot.paramMap.get('residentid')
-    console.log(this.stat);
   }
 
   ngOnInit(): void {
     this.addStat();
     this.residentService.setSelectedResident(this.residentId);
     this.residentService.residentSelected$.subscribe((resident) => this.resident = resident);
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+this.resident);
-
   }
 
 
@@ -40,7 +37,6 @@ export class EndQuizComponent implements OnInit {
       residentId: this.residentId,
       quizzId: this.quizId
     }
-    console.log("addStat", statToAdd)
     this.statService.addStat(statToAdd);
   }
 
