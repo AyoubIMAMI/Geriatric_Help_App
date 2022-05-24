@@ -6,6 +6,7 @@ import {Quiz} from "../models/quiz.model";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Subject} from "rxjs";
 import {StatsResident} from "../models/statsResident.model";
+import {Stat} from "../models/stat.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,17 +28,45 @@ export class HandicapService {
   public nbBadResonses: number = 0;
   private clickData: ClickData[] = [];
 
+  private stats: Stat[] = [];
+
+  /*
+   Observable which contains the list of the resident.
+   */
+  public stats$: BehaviorSubject<Stat[]>
+    = new BehaviorSubject(this.stats);
+
+
+
+  public statSelected$: Subject<Stat> = new Subject();
+
   private clickDataUrl = serverUrl + '/clickData';
 
   private clickNumberUrl = serverUrl + '/clickNumber';
 
+  private statUrl = serverUrl + '/stats';
+
   private httpOptions = httpOptionsBase;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.retrieveStat();
+  }
 
   public clickData$: BehaviorSubject<ClickData[]>
     = new BehaviorSubject([]);
+
+  retrieveStat(): void {
+    this.http.get<Stat[]>(this.statUrl).subscribe((statList) => {
+      this.stats = statList;
+      this.stats$.next(this.stats);
+      //console.log("service", this.stats);
+    });
+  }
+
+  addStat(stat: Stat): void {
+    this.http.post<Stat>(this.statUrl, stat, this.httpOptions).subscribe(() => this.retrieveStat());
+  }
 
 
   retrieveClicks(residentId : string): void {
