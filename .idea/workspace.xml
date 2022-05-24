@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Heatmap, get cursor position">
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" afterDir="false" />
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="a other day">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,13 +114,6 @@
       <workItem from="1653316673055" duration="1290000" />
       <workItem from="1653319422694" duration="5000" />
       <workItem from="1653329187765" duration="2810000" />
-    </task>
-    <task id="LOCAL-00021" summary="End quiz page">
-      <created>1648547410881</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1648547410881</updated>
     </task>
     <task id="LOCAL-00022" summary="End quiz page">
       <created>1649146627949</created>
@@ -464,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653339064420</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="a other day">
+      <created>1653381215292</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1653381215294</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,6 +500,7 @@
     <MESSAGE value="Header" />
     <MESSAGE value="fix les problèmes des solutions de tremblements" />
     <MESSAGE value="Heatmap, get cursor position" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heatmap, get cursor position" />
+    <MESSAGE value="a other day" />
+    <option name="LAST_COMMIT_MESSAGE" value="a other day" />
   </component>
 </project>

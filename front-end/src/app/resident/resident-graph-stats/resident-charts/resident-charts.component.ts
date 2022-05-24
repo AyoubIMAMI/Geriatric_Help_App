@@ -61,6 +61,7 @@ Chart.register(
 })
 export class ResidentChartsComponent implements OnInit {
   @Input() dailyStats: StatsResident[];
+
   private label: string[]
   private data: number[]
 

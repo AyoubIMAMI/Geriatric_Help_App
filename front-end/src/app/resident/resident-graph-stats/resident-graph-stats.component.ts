@@ -1,5 +1,4 @@
 import {Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import * as Chart from 'chart.js';
 import {HandicapService} from "../../../services/handicap.service";
 import {StatsResident} from "../../../models/statsResident.model";
 
