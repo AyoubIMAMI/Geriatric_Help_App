@@ -5,7 +5,7 @@
     <div>
       <span>De: </span><input id="startDate" type="date" />
       <span style="margin-left: 1vw">À: </span><input id="endDate" type="date" />
-      <input id="validation" style="margin-left: 1vw" type="button" value="valider" (click)="searchByDate()" (click) = "emitEventToChild()"/>
+      <input id="validation" style="margin-left: 1vw" type="button" value="valider" (click)="searchByDate()"/>
     </div>
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -23,7 +23,7 @@
     </ul>
   </div>
   <div id="space" class="spaceInBox"></div>
-  <app-resident-charts-component *ngIf="allStatsResident.length!=0" class="itemInBox" [dailyStats]="allStatsResident" [events]="eventsSubject.asObservable()"></app-resident-charts-component>
+  <app-resident-charts-component *ngIf="allStatsResident.length!=0" class="itemInBox" [events]="eventsSubject.asObservable()"></app-resident-charts-component>
 </div>
 
 
