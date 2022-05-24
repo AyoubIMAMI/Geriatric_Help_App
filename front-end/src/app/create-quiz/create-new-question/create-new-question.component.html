@@ -12,7 +12,7 @@
       <form class="quiz-form" [formGroup]="answersForm0">
         <label for="answer0">
           Réponse 1
-          <input class="input-custom" type="text" id="answer0" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70">
+          <input class="input-custom" type="text" id="answer0" placeholder="Votre réponse" [formControlName]="'value'" maxlength="70" required>
         </label>
         <br>
         <input id="isCorrect0" name="isCorrect" type="radio" (click)="checkRadio('isCorrect0')">
