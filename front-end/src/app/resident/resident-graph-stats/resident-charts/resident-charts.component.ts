@@ -86,6 +86,9 @@ export class ResidentChartsComponent implements OnInit {
   }
 
   fillLabel(){
+    this.label = [];
+    this.data = [];
+
     for (let i = 0; i < this.dailyStats.length; i++) {
       console.log("i = "+ i);
       let currentStats = this.dailyStats[i] as StatsResident;
