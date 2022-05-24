@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Stat} from "../../../models/stat.model";
-import {StatService} from "../../../services/stat.service";
 import {Resident} from "../../../models/resident.model";
 import {Quiz} from "../../../models/quiz.model";
 import {QuizService} from "../../../services/quiz.service";
 import {ResidentService} from "../../../services/resident.service";
+import {HandicapService} from "../../../services/handicap.service";
 
 @Component({
   selector: 'app-last-quiz-card',
@@ -17,7 +17,7 @@ export class LastQuizCardComponent implements OnInit {
   public resident: Resident;
   public quiz: Quiz;
 
-  constructor(public statService: StatService, public residentService: ResidentService, public quizService: QuizService) {
+  constructor(public statService: HandicapService, public residentService: ResidentService, public quizService: QuizService) {
     this.statService.stats$.subscribe((stats: Stat[]) => {
       this.statList = stats;
 

@@ -1,12 +1,12 @@
 import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
-import {StatsHandicapService} from "./statsHandicap.service";
 import {ClickData} from "../models/clickData.model";
 import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {Quiz} from "../models/quiz.model";
 import {HttpClient} from "@angular/common/http";
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 import {StatsResident} from "../models/statsResident.model";
+import {Stat} from "../models/stat.model";
 
 @Injectable({
   providedIn: 'root'
@@ -26,22 +26,69 @@ export class HandicapService {
   public nbpages: number = 0;
   public nbGoodResponses: number = 0;
   public nbBadResonses: number = 0;
+  private clickData: ClickData[] = [];
+
+  private stats: Stat[] = [];
+
+  /*
+   Observable which contains the list of the resident.
+   */
+  public stats$: BehaviorSubject<Stat[]>
+    = new BehaviorSubject(this.stats);
+
+
+
+  public statSelected$: Subject<Stat> = new Subject();
+
+  private clickDataUrl = serverUrl + '/clickData';
 
   private clickNumberUrl = serverUrl + '/clickNumber';
+
+  private statUrl = serverUrl + '/stats';
 
   private httpOptions = httpOptionsBase;
 
 
-  statsHandicapService : StatsHandicapService;
+  constructor(private http: HttpClient) {
+    this.retrieveStat();
+  }
 
-  constructor(private http: HttpClient) {}
+  public clickData$: BehaviorSubject<ClickData[]>
+    = new BehaviorSubject([]);
 
-  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>, statsHandicapService : StatsHandicapService) {
+  retrieveStat(): void {
+    this.http.get<Stat[]>(this.statUrl).subscribe((statList) => {
+      this.stats = statList;
+      this.stats$.next(this.stats);
+      //console.log("service", this.stats);
+    });
+  }
+
+  addStat(stat: Stat): void {
+    this.http.post<Stat>(this.statUrl, stat, this.httpOptions).subscribe(() => this.retrieveStat());
+  }
+
+
+  retrieveClicks(residentId : string): void {
+    const urlWithId = this.clickDataUrl + '/' + residentId;
+    this.http.get<ClickData[]>(urlWithId).subscribe((clickDataList) => {
+      this.clickData = clickDataList;
+      this.clickData$.next(this.clickData);
+      //console.log(urlWithId, clickDataList)
+    });
+  }
+
+  addData(clickData: ClickData): void {
+    this.http.post<ClickData>(this.clickDataUrl, clickData, this.httpOptions).subscribe(
+      () => this.retrieveClicks(clickData.residentId)
+    );
+  }
+
+  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.residentId = resident.id
     this.defineModeByResident(resident);
     this.getCursorPosition(this.residentId);
-    this.statsHandicapService = statsHandicapService;
   }
 
   defineModeByResident(resident: Resident){
@@ -336,7 +383,7 @@ export class HandicapService {
         residentId:residentId,
         id:"0"
       }
-      this.statsHandicapService.addData(data)
+      this.addData(data)
     });
   }
 

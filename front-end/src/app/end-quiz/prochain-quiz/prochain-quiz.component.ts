@@ -5,7 +5,6 @@ import {QuizService} from "../../../services/quiz.service";
 import {ResidentService} from "../../../services/resident.service";
 import {Resident} from "../../../models/resident.model";
 import {HandicapService} from "../../../services/handicap.service";
-import {StatsHandicapService} from "../../../services/statsHandicap.service";
 
 @Component({
   selector: 'app-prochain-quiz',
@@ -21,11 +20,11 @@ export class ProchainQuizComponent implements OnInit, AfterViewInit {
   public listOfAllElementToNavigateIn:  Map<HTMLElement, Function>;
 
 
-  constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService, private handicapService: HandicapService, statsHandicapService: StatsHandicapService) {
+  constructor(private residentService: ResidentService,private route: ActivatedRoute,private router: Router, public quizService: QuizService, private handicapService: HandicapService) {
     this.residentService.residentSelected$.subscribe((resident) =>{
       this.resident = resident
       this.listOfAllElementToNavigateIn = this.getMapAnswersrevealAnswer();
-      this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer(), statsHandicapService);
+      this.handicapService.initHandicap(this.resident, this.getMapAnswersrevealAnswer());
     });
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
