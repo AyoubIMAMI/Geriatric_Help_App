@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {HandicapService} from "../../../services/handicap.service";
 import {StatsResident} from "../../../models/statsResident.model";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-resident-graph-stats-component',
@@ -25,6 +26,10 @@ export class ResidentGraphStatsComponent implements OnInit {
 
   private startDate: Date;
   private endDate: Date;
+
+
+  eventsSubject: Subject<void> = new Subject<void>();
+
 
 
 
@@ -59,6 +64,11 @@ export class ResidentGraphStatsComponent implements OnInit {
 
     this.fillBlankStats(averageClickByQuestion, pourcentageGoodAnswer);
   }
+
+  emitEventToChild() {
+    this.eventsSubject.next();
+  }
+
 
   fillBlankStats(averageClickByQuestion: number, pourcentageGoodAnswer: number){
     const averageElement = document.getElementById("clickParQuestion") as HTMLElement;

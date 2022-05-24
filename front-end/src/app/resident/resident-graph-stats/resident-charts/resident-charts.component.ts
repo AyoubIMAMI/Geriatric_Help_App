@@ -26,6 +26,7 @@ import {
   Tooltip
 } from './chart.js';
 import {StatsResident} from "../../../../models/statsResident.model";
+import {Observable, Subscription} from "rxjs";
 
 Chart.register(
   ArcElement,
@@ -65,11 +66,31 @@ export class ResidentChartsComponent implements OnInit {
   private label: string[]
   private data: number[]
 
-  constructor() {
+  constructor() {}
 
+  private eventsSubscription: Subscription;
+
+  @Input() events: Observable<void>;
+
+  ngOnDestroy() {
+    this.eventsSubscription.unsubscribe();
   }
 
   ngOnInit(){
+    this.eventsSubscription = this.events.subscribe(() => this.createchart());
+  }
+
+  fillLabel(){
+    for (let i = 0; i < this.dailyStats.length; i++) {
+      let currentStats = this.dailyStats[i] as StatsResident;
+      let date = currentStats.jour +"/"+ currentStats.mois +"/"+currentStats.annee;
+      this.label.push(date);
+      this.data.push(currentStats.numberOfClicks / currentStats.numberOfPages);
+    }
+
+  }
+
+  createchart(){
     this.fillLabel();
     const myChart = new Chart('myChart', {
       type: 'bar',
@@ -105,16 +126,6 @@ export class ResidentChartsComponent implements OnInit {
         }
       }
     });
-  }
-
-  fillLabel(){
-    for (let i = 0; i < this.dailyStats.length; i++) {
-      let currentStats = this.dailyStats[i] as StatsResident;
-      let date = currentStats.jour +"/"+ currentStats.mois +"/"+currentStats.annee;
-      this.label.push(date);
-      this.data.push(currentStats.numberOfClicks / currentStats.numberOfPages);
-    }
-
   }
 
 

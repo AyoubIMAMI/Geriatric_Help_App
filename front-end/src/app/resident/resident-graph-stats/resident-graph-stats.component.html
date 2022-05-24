@@ -6,7 +6,7 @@
       <div>
         <span>De: </span><input id="startDate" type="date" />
         <span style="margin-left: 1vw">À: </span><input id="endDate" type="date" />
-        <input id="validation" style="margin-left: 1vw" type="button" value="valider" (click)="searchByDate()"/>
+        <input id="validation" style="margin-left: 1vw" type="button" value="valider" (click)="searchByDate()" (click) = "emitEventToChild()"/>
       </div>
       <ul class="list-group">
         <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -27,4 +27,4 @@
 </div>
 
 <div>hello</div>
-<app-resident-charts-component [dailyStats]="allStatsResident"></app-resident-charts-component>
+<app-resident-charts-component [dailyStats]="allStatsResident" [events]="eventsSubject.asObservable()"></app-resident-charts-component>
