@@ -15,7 +15,7 @@ export class ResidentGraphStatsComponent implements OnInit {
 
   public allStatsResident: StatsResident[]
   private nbClick: number;
-  private nbQuestionRealized: number
+  private nbOfPages: number
   private nbGoodAnswer:number;
   private nbBadAnswer:number;
 
@@ -37,7 +37,7 @@ export class ResidentGraphStatsComponent implements OnInit {
     this.handicapService.$arrayClick.subscribe((resident) => this.allStatsResident = resident);
     this.allStatsResident = [];
     this.nbClick = 0;
-    this.nbQuestionRealized = 0;
+    this.nbOfPages = 0;
     this.nbGoodAnswer = 0;
     this.nbBadAnswer = 0;
 
@@ -82,7 +82,7 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   computeAverageClickByQuestion(){
-    return this.nbClick/this.nbQuestionRealized;
+    return this.nbClick/this.nbOfPages;
   }
 
   computePourcentageGoodAnswer(){
@@ -103,12 +103,15 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   setupStats(){
-    console.log("this.allStatsResident.length = "+ this.allStatsResident.length);
+    this.nbGoodAnswer = 0;
+    this.nbBadAnswer = 0;
+    this.nbOfPages = 0;
+    this.nbClick = 0;
     for(let i = 0; i < this.allStatsResident.length ; i++){
       const currentStat =this.allStatsResident[i];
       this.nbGoodAnswer += currentStat.numberOfGoodResponses;
       this.nbBadAnswer += currentStat.numberOfBadResponses;
-      this.nbQuestionRealized = currentStat.numberOfPages;
+      this.nbOfPages = currentStat.numberOfPages;
       this.nbClick += currentStat.numberOfClicks;
     }
     let averageClickByQuestion = this.computeAverageClickByQuestion();
