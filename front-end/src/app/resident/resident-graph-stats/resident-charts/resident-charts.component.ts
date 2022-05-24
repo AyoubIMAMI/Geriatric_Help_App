@@ -93,15 +93,11 @@ export class ResidentChartsComponent implements OnInit {
     this.data = [];
 
     for (let i = 0; i < this.dailyStats.length; i++) {
-      console.log("i = "+ i);
       let currentStats = this.dailyStats[i] as StatsResident;
       let date = currentStats.jour +"/"+ currentStats.mois +"/"+currentStats.annee;
       this.label.push(date);
       this.data.push(currentStats.numberOfClicks / currentStats.numberOfPages);
     }
-    console.log("this.label = "+ this.label);
-    console.log("this.data = "+ this.data);
-
   }
 
   createchart(){
@@ -113,7 +109,7 @@ export class ResidentChartsComponent implements OnInit {
       data: {
         labels: this.label,
         datasets: [{
-          label: '# Moyenne des clicks par page',
+          label: '# Moyenne de clicks par page',
           data: this.data,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
