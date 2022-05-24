@@ -1,8 +1,8 @@
 import {AfterViewChecked, Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ResidentService} from "../../../services/resident.service";
-import {StatsHandicapService} from "../../../services/statsHandicap.service";
 import {ClickData} from "../../../models/clickData.model";
+import {HandicapService} from "../../../services/handicap.service";
 
 @Component({
   selector: 'app-heatmap',
@@ -13,7 +13,7 @@ import {ClickData} from "../../../models/clickData.model";
 export class HeatmapComponent implements OnInit {
   clickData : ClickData[];
 
-  constructor(private route: ActivatedRoute, private statHandicapService: StatsHandicapService) {
+  constructor(private route: ActivatedRoute, private statHandicapService: HandicapService) {
 
   }
 

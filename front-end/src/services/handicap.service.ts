@@ -1,11 +1,10 @@
 import { Resident } from 'src/models/resident.model';
 import {Injectable} from "@angular/core";
-import {StatsHandicapService} from "./statsHandicap.service";
 import {ClickData} from "../models/clickData.model";
 import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {Quiz} from "../models/quiz.model";
 import {HttpClient} from "@angular/common/http";
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 import {StatsResident} from "../models/statsResident.model";
 
 @Injectable({
@@ -26,22 +25,41 @@ export class HandicapService {
   public nbpages: number = 0;
   public nbGoodResponses: number = 0;
   public nbBadResonses: number = 0;
+  private clickData: ClickData[] = [];
+
+  private clickDataUrl = serverUrl + '/clickData';
 
   private clickNumberUrl = serverUrl + '/clickNumber';
 
   private httpOptions = httpOptionsBase;
 
 
-  statsHandicapService : StatsHandicapService;
-
   constructor(private http: HttpClient) {}
 
-  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>, statsHandicapService : StatsHandicapService) {
+  public clickData$: BehaviorSubject<ClickData[]>
+    = new BehaviorSubject([]);
+
+
+  retrieveClicks(residentId : string): void {
+    const urlWithId = this.clickDataUrl + '/' + residentId;
+    this.http.get<ClickData[]>(urlWithId).subscribe((clickDataList) => {
+      this.clickData = clickDataList;
+      this.clickData$.next(this.clickData);
+      //console.log(urlWithId, clickDataList)
+    });
+  }
+
+  addData(clickData: ClickData): void {
+    this.http.post<ClickData>(this.clickDataUrl, clickData, this.httpOptions).subscribe(
+      () => this.retrieveClicks(clickData.residentId)
+    );
+  }
+
+  initHandicap(resident: Resident, listOfAllElementToNavigateIn: Map<HTMLElement, Function>) {
     this.listOfAllElementToNavigateIn = listOfAllElementToNavigateIn;
     this.residentId = resident.id
     this.defineModeByResident(resident);
     this.getCursorPosition(this.residentId);
-    this.statsHandicapService = statsHandicapService;
   }
 
   defineModeByResident(resident: Resident){
@@ -336,7 +354,7 @@ export class HandicapService {
         residentId:residentId,
         id:"0"
       }
-      this.statsHandicapService.addData(data)
+      this.addData(data)
     });
   }
 
