@@ -103,10 +103,18 @@ export class createNewQuestionComponent implements OnInit {
 
   resetForm(){
     let allInput = document.getElementsByTagName("input");
+    let radios = document.querySelectorAll('input[type="radio"]')
+
+    let question = document.getElementsByTagName("textarea")[0];
+    question.value="";
     for(let  i =0 ; i < allInput.length ; i++) {
       let input = allInput[i] as HTMLInputElement;
       if(input.id != "name" && input.id != "theme")
         input.value="";
+    }
+    for(let  i =0 ; i < radios.length ; i++) {
+      let input = radios[i] as HTMLInputElement;
+        input.checked = false;
     }
   }
 
