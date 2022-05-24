@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@ang
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from 'src/models/quiz.model';
 import { Answer, Question } from 'src/models/question.model';
+import {resetFakeAsyncZone} from "@angular/core/testing";
 
 @Component({
   selector: 'app-create-new-question',
@@ -96,8 +97,18 @@ export class createNewQuestionComponent implements OnInit {
       this.newQuestionEvent.emit(question);
       //this.quizService.addQuestion(this.quiz, question);
       console.log(question);
+      this.resetForm();
     }
   }
+
+  resetForm(){
+    let allInput = document.getElementsByTagName("input");
+    for(let  i =0 ; i < allInput.length ; i++) {
+      let input = allInput[i] as HTMLInputElement;
+      input.value="";
+    }
+  }
+
   allAnswerFormValid(): Boolean{
     if(this.answersForm0.invalid || this.answersForm1.invalid || this.answersForm2.invalid || this.answersForm3.invalid) return false;
     return true;
