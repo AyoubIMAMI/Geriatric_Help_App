@@ -115,10 +115,14 @@ export class StartQuizComponent implements OnInit, AfterViewInit {
     for(let i = 0 ; i < answerList.length ; i++){
       answerList[i].classList.remove("hide");
     }
-    if(isAnswer)
+    if(isAnswer){
+      this.handicapService.increaseGoodAnswer();
       resultAnswer.innerHTML = "Félicitation! Tu as trouvé la bonne réponse !";
-    else
+    }
+    else{
+      this.handicapService.increaseBadAnswer();
       resultAnswer.innerHTML = "Dommage! Ce n'était pas la bonne réponse ! "
+    }
   }
 
   showAnswer(){
