@@ -110,7 +110,7 @@ export class ResidentChartsComponent implements OnInit {
       data: {
         labels: this.label,
         datasets: [{
-          label: '# of Votes',
+          label: '# Moyenne des clicks par page',
           data: this.data,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

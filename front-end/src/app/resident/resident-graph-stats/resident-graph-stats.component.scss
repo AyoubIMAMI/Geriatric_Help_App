@@ -1,0 +1,16 @@
+#statsContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.itemInBox{
+  width: 100%;
+  flex-grow: 1;
+}
+
+.spaceInBox{
+  width: 10%;
+}
+
