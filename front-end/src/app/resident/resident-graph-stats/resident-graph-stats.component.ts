@@ -28,13 +28,22 @@ export class ResidentGraphStatsComponent implements OnInit {
   private endDate: Date;
 
 
-  eventsSubject: Subject<void> = new Subject<void>();
+  eventsSubject: Subject<StatsResident[]> = new Subject<StatsResident[]>();
 
 
 
 
   constructor(private handicapService: HandicapService) {
-    this.handicapService.$arrayClick.subscribe((resident) => this.allStatsResident = resident);
+    this.handicapService.$arrayClick.subscribe(
+      (resident) =>{ this.allStatsResident = resident
+    this.setupStats();
+
+    let averageClickByQuestion = this.computeAverageClickByQuestion();
+    let pourcentageGoodAnswer = this.computePourcentageGoodAnswer();
+
+    this.fillBlankStats(averageClickByQuestion, pourcentageGoodAnswer);
+        this.eventsSubject.next(this.allStatsResident);}
+    );
     this.allStatsResident = [];
     this.nbClick = 0;
     this.nbOfPages = 0;
@@ -47,6 +56,8 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.handicapService.getClickStatsForResident(this.residentId, this.startDate, this.endDate);
+
 
     this.endDate = new Date();
     this.startDate = new Date(this.convertDateToValideStringOneMonthAgo(this.endDate));
@@ -66,7 +77,8 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   emitEventToChild() {
-    this.eventsSubject.next();
+    console.log("allStatsResident"+this.allStatsResident)
+    this.eventsSubject.next(this.allStatsResident);
   }
 
 
@@ -111,7 +123,7 @@ export class ResidentGraphStatsComponent implements OnInit {
       const currentStat =this.allStatsResident[i];
       this.nbGoodAnswer += currentStat.numberOfGoodResponses;
       this.nbBadAnswer += currentStat.numberOfBadResponses;
-      this.nbOfPages = currentStat.numberOfPages;
+      this.nbOfPages += currentStat.numberOfPages;
       this.nbClick += currentStat.numberOfClicks;
     }
     let averageClickByQuestion = this.computeAverageClickByQuestion();

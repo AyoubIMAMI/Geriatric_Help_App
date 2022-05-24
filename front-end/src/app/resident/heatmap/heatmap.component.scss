@@ -4,6 +4,9 @@
 
   border: 1px solid rgba(0, 0, 0, 0.125);
   position:relative;
+  background-image: url("./quizImage.png");
+  background-position: 50% 50%;
+  background-size: contain;
 }
 
 .circle {

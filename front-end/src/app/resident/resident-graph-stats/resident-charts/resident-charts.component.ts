@@ -61,7 +61,7 @@ Chart.register(
   encapsulation: ViewEncapsulation.None
 })
 export class ResidentChartsComponent implements OnInit {
-  @Input() dailyStats: StatsResident[];
+  dailyStats: StatsResident[];
 
   private label: string[]
   private data: number[]
@@ -71,7 +71,7 @@ export class ResidentChartsComponent implements OnInit {
 
   private eventsSubscription: Subscription;
 
-  @Input() events: Observable<void>;
+  @Input() events: Observable<StatsResident[]>;
 
   ngOnDestroy() {
     this.eventsSubscription.unsubscribe();
@@ -81,7 +81,10 @@ export class ResidentChartsComponent implements OnInit {
     this.label = [];
     this.data = [];
 
-    this.eventsSubscription = this.events.subscribe(() => this.createchart());
+    this.eventsSubscription = this.events.subscribe((stat) =>
+    {this.dailyStats=stat
+      this.createchart();})
+
     this.createchart();
   }
 
@@ -90,15 +93,11 @@ export class ResidentChartsComponent implements OnInit {
     this.data = [];
 
     for (let i = 0; i < this.dailyStats.length; i++) {
-      console.log("i = "+ i);
       let currentStats = this.dailyStats[i] as StatsResident;
       let date = currentStats.jour +"/"+ currentStats.mois +"/"+currentStats.annee;
       this.label.push(date);
       this.data.push(currentStats.numberOfClicks / currentStats.numberOfPages);
     }
-    console.log("this.label = "+ this.label);
-    console.log("this.data = "+ this.data);
-
   }
 
   createchart(){
@@ -110,7 +109,7 @@ export class ResidentChartsComponent implements OnInit {
       data: {
         labels: this.label,
         datasets: [{
-          label: '# of Votes',
+          label: '# Moyenne de clicks par page',
           data: this.data,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

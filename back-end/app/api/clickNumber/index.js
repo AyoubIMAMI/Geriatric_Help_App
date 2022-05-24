@@ -10,7 +10,6 @@ const router = new Router()
 router.put('/:residentId/:annee/:mois/:jour', (req, res) => {
     try {
         let clickNumber=filterClickNumberByResident(req.params.residentId,req.params.annee,req.params.mois,req.params.jour)
-        console.log(clickNumber)
         res.status(200).json(
             ClickNumber.update(clickNumber.id,{
             numberOfClicks:clickNumber.numberOfClicks+req.body.numberOfClicks,

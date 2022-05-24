@@ -83,17 +83,13 @@ export class HandicapService {
 
 
   getClickStatsForResident(theResidentId: string, dateA: Date, dateB: Date){
-    console.log("dateA = "+dateA);
-    console.log("dateB = "+dateB);
 
     const clickurl=this.clickNumberUrl+"/"+theResidentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDate()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDate()
-    console.log("clickurl = "+clickurl);
 
 
     this.http.get<StatsResident[]>(clickurl).subscribe(
       (tabData)=>{
         this.$arrayClick.next(tabData);
-        console.log("end get, tabData = "+tabData);
       }
   );
   }
