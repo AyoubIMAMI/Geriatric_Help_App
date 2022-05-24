@@ -105,6 +105,7 @@ export class createNewQuestionComponent implements OnInit {
     let allInput = document.getElementsByTagName("input");
     for(let  i =0 ; i < allInput.length ; i++) {
       let input = allInput[i] as HTMLInputElement;
+      if(input.id != "name" && input.id != "theme")
       input.value="";
     }
   }
