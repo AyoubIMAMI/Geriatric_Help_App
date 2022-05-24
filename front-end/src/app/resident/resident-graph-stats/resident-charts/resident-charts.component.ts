@@ -87,6 +87,7 @@ export class ResidentChartsComponent implements OnInit {
 
   fillLabel(){
     for (let i = 0; i < this.dailyStats.length; i++) {
+      console.log("i = "+ i);
       let currentStats = this.dailyStats[i] as StatsResident;
       let date = currentStats.jour +"/"+ currentStats.mois +"/"+currentStats.annee;
       this.label.push(date);

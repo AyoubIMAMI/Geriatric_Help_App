@@ -103,6 +103,7 @@ export class ResidentGraphStatsComponent implements OnInit {
   }
 
   setupStats(){
+    console.log("this.allStatsResident.length = "+ this.allStatsResident.length);
     for(let i = 0; i < this.allStatsResident.length ; i++){
       const currentStat =this.allStatsResident[i];
       this.nbGoodAnswer += currentStat.numberOfGoodResponses;
