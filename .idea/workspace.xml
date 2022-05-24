@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="a other day">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="npm install">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,13 +113,6 @@
       <workItem from="1653316673055" duration="1290000" />
       <workItem from="1653319422694" duration="5000" />
       <workItem from="1653329187765" duration="2810000" />
-    </task>
-    <task id="LOCAL-00022" summary="End quiz page">
-      <created>1649146627949</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1649146627949</updated>
     </task>
     <task id="LOCAL-00023" summary="End quiz page">
       <created>1649147472249</created>
@@ -458,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653381215294</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="npm install">
+      <created>1653381709276</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1653381709276</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,6 +500,7 @@
     <MESSAGE value="fix les problèmes des solutions de tremblements" />
     <MESSAGE value="Heatmap, get cursor position" />
     <MESSAGE value="a other day" />
-    <option name="LAST_COMMIT_MESSAGE" value="a other day" />
+    <MESSAGE value="npm install" />
+    <option name="LAST_COMMIT_MESSAGE" value="npm install" />
   </component>
 </project>
