@@ -22,12 +22,10 @@
           <app-resident-handicap
             [handicap]="resident.handicap">
           </app-resident-handicap>
-
           <button class="btn btn-primary my-2" routerLink="/resident/{{resident.id}}/modification">Modifier</button>
         </div>
   </div>
   <br>
   <app-resident-graph-stats-component [residentId]="resident.id"></app-resident-graph-stats-component>
   <app-heatmap *ngIf="resident.handicap == 'Tremblement d\'attitude'"></app-heatmap>
-
 </div>
