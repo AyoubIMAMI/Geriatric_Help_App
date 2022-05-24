@@ -23,6 +23,7 @@
     </ul>
   </div>
   <div id="space" class="spaceInBox"></div>
+  <app-resident-charts-component *ngIf="allStatsResident.length!=0" class="itemInBox" [dailyStats]="allStatsResident" [events]="eventsSubject.asObservable()"></app-resident-charts-component>
 </div>
 
 
