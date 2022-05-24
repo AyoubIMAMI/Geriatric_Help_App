@@ -24,7 +24,7 @@ import {
   Legend,
   Title,
   Tooltip
-} from 'chart.js';
+} from './chart.js';
 import {StatsResident} from "../../../../models/statsResident.model";
 
 Chart.register(
