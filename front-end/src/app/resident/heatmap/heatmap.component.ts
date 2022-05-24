@@ -24,7 +24,7 @@ export class HeatmapComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked() {
     this.statHandicapService.clickData$.subscribe((clickDataList) =>{
-        console.log(clickDataList)
+        //console.log(clickDataList)
         this.clickData = clickDataList;
         this.addCircles();
       }
