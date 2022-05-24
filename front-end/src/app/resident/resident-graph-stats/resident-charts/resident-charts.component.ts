@@ -65,6 +65,7 @@ export class ResidentChartsComponent implements OnInit {
 
   private label: string[]
   private data: number[]
+  private myChart: Chart
 
   constructor() {}
 
@@ -77,7 +78,11 @@ export class ResidentChartsComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.label = [];
+    this.data = [];
+
     this.eventsSubscription = this.events.subscribe(() => this.createchart());
+    this.createchart();
   }
 
   fillLabel(){
@@ -87,12 +92,16 @@ export class ResidentChartsComponent implements OnInit {
       this.label.push(date);
       this.data.push(currentStats.numberOfClicks / currentStats.numberOfPages);
     }
+    console.log("this.label = "+ this.label);
+    console.log("this.data = "+ this.data);
 
   }
 
   createchart(){
+    if(this.myChart != undefined)
+      this.myChart.destroy()
     this.fillLabel();
-    const myChart = new Chart('myChart', {
+    this.myChart = new Chart('myChart', {
       type: 'bar',
       data: {
         labels: this.label,
