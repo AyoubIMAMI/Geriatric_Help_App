@@ -94,7 +94,8 @@ export class ResidentChartsComponent implements OnInit {
 
     for (let i = 0; i < this.dailyStats.length; i++) {
       let currentStats = this.dailyStats[i] as StatsResident;
-      let date = currentStats.jour +"/"+ currentStats.mois +"/"+currentStats.annee;
+      let mois = +currentStats.mois + 1 as number;
+      let date = currentStats.jour +"/"+ mois +"/"+currentStats.annee;
       this.label.push(date);
       this.data.push(currentStats.numberOfClicks / currentStats.numberOfPages);
     }
