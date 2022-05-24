@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Heatmap, get cursor position">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +19,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -42,6 +50,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "list.type.of.created.stylesheet": "CSS",
     "ts.external.directory.path": "D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib"
   }
 }]]></component>

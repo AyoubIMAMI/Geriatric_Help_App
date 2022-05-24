@@ -13,7 +13,7 @@ export class ResidentGraphStatsComponent implements OnInit {
   @ViewChild('barCanvas') private barCanvas: ElementRef;
   @Input() residentId: string;
 
-  private allStatsResident: StatsResident[]
+  public allStatsResident: StatsResident[]
   private nbClick: number;
   private nbQuestionRealized: number
   private nbGoodAnswer:number;
