@@ -122,7 +122,6 @@ export class ResidentGraphStatsComponent implements OnInit {
       this.nbOfPages += currentStat.numberOfPages;
       this.nbClick += currentStat.numberOfClicks;
     }
-    console.log(this.allStatsResident)
     let averageClickByQuestion = this.computeAverageClickByQuestion();
     let pourcentageGoodAnswer = this.computePourcentageGoodAnswer();
     this.fillBlankStats(averageClickByQuestion, pourcentageGoodAnswer);

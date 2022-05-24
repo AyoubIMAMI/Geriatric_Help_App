@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="Heatmap, get cursor position">
+    <list default="true" id="72e69dc6-0540-492b-b8f6-79e9cdc80411" name="Changes" comment="suuuuuuuuuu 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/heatmap/heatmap.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/heatmap/heatmap.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/heatmap/heatmap.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/heatmap/heatmap.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-charts/resident-charts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/resident/resident-graph-stats/resident-graph-stats.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/handicap.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +17,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -40,19 +46,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end/database" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
-    <property name="ts.external.directory.path" value="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\front-end\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\leo\\Polytech\\S6\\PS6\\2021-2022-ps6-web-symfony\\front-end\\node_modules\\typescript\\lib&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\youbi\Desktop\Cours\Semestre_6\PS6\web_symfony\2021-2022-ps6-web-symfony\back-end\database" />
@@ -117,92 +117,7 @@
       <workItem from="1651558354327" duration="5109000" />
       <workItem from="1653316673055" duration="1290000" />
       <workItem from="1653319422694" duration="5000" />
-      <workItem from="1653329187765" duration="4906000" />
-      <workItem from="1653381613334" duration="592000" />
-    </task>
-    <task id="LOCAL-00022" summary="End quiz page">
-      <created>1649146627949</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1649146627949</updated>
-    </task>
-    <task id="LOCAL-00023" summary="End quiz page">
-      <created>1649147472249</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1649147472249</updated>
-    </task>
-    <task id="LOCAL-00024" summary="End quiz page">
-      <created>1649148668381</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1649148668381</updated>
-    </task>
-    <task id="LOCAL-00025" summary="End quiz page">
-      <created>1649776330515</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1649776330515</updated>
-    </task>
-    <task id="LOCAL-00026" summary="End quiz page">
-      <created>1650348176821</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1650348176821</updated>
-    </task>
-    <task id="LOCAL-00027" summary="End quiz page">
-      <created>1650357118608</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1650357118608</updated>
-    </task>
-    <task id="LOCAL-00028" summary="End quiz page">
-      <created>1650527219658</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1650527219658</updated>
-    </task>
-    <task id="LOCAL-00029" summary="End quiz page">
-      <created>1650529204311</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1650529204311</updated>
-    </task>
-    <task id="LOCAL-00030" summary="End quiz page">
-      <created>1650537230843</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1650537230843</updated>
-    </task>
-    <task id="LOCAL-00031" summary="End quiz page">
-      <created>1650544470917</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1650544470917</updated>
-    </task>
-    <task id="LOCAL-00032" summary="home update">
-      <created>1650549163972</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1650549163972</updated>
-    </task>
-    <task id="LOCAL-00033" summary="home update">
-      <created>1650552893965</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1650552893965</updated>
+      <workItem from="1653329187765" duration="2810000" />
     </task>
     <task id="LOCAL-00034" summary="home update">
       <created>1650556144739</created>
@@ -456,14 +371,98 @@
       <option name="project" value="LOCAL" />
       <updated>1653339064420</updated>
     </task>
-    <task id="LOCAL-00070" summary="Heatmap, get cursor position">
-      <created>1653339318795</created>
+    <task id="LOCAL-00070" summary="a other day">
+      <created>1653381215292</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1653339318795</updated>
+      <updated>1653381215294</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="npm install">
+      <created>1653381709276</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1653381709276</updated>
+    </task>
+    <task id="LOCAL-00072" summary="npm install">
+      <created>1653382049429</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1653382049429</updated>
+    </task>
+    <task id="LOCAL-00073" summary="fix gitignore">
+      <created>1653382113165</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1653382113165</updated>
+    </task>
+    <task id="LOCAL-00074" summary="j'espère ca maaaaaarche">
+      <created>1653382333156</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1653382333156</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Hiroshima">
+      <created>1653382714329</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1653382714329</updated>
+    </task>
+    <task id="LOCAL-00076" summary="update chart">
+      <created>1653383579090</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1653383579091</updated>
+    </task>
+    <task id="LOCAL-00077" summary="fix push">
+      <created>1653383943451</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1653383943451</updated>
+    </task>
+    <task id="LOCAL-00078" summary="no stack">
+      <created>1653384273533</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1653384273533</updated>
+    </task>
+    <task id="LOCAL-00079" summary="bvngv">
+      <created>1653384577432</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1653384577432</updated>
+    </task>
+    <task id="LOCAL-00080" summary="bvngv">
+      <created>1653386867954</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1653386867954</updated>
+    </task>
+    <task id="LOCAL-00081" summary="suuuuuuuu">
+      <created>1653388198493</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1653388198493</updated>
+    </task>
+    <task id="LOCAL-00082" summary="suuuuuuuuuu 2.0">
+      <created>1653388249584</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1653388249584</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,15 +481,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removing all" />
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="Updating project" />
-    <MESSAGE value="Adding bootstrap library" />
-    <MESSAGE value="Adding bootstrap" />
-    <MESSAGE value="Adding Home and Home rooting" />
-    <MESSAGE value="Adding last-quiz-card component" />
-    <MESSAGE value="Changing rooting default redirection and header aspect" />
-    <MESSAGE value="Adding button card component on home page" />
     <MESSAGE value="Removing unused css import" />
     <MESSAGE value="Gerstion des résidents + route" />
     <MESSAGE value="Résident et route" />
@@ -505,6 +495,17 @@
     <MESSAGE value="Header" />
     <MESSAGE value="fix les problèmes des solutions de tremblements" />
     <MESSAGE value="Heatmap, get cursor position" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heatmap, get cursor position" />
+    <MESSAGE value="a other day" />
+    <MESSAGE value="npm install" />
+    <MESSAGE value="fix gitignore" />
+    <MESSAGE value="j'espère ca maaaaaarche" />
+    <MESSAGE value="Hiroshima" />
+    <MESSAGE value="update chart" />
+    <MESSAGE value="fix push" />
+    <MESSAGE value="no stack" />
+    <MESSAGE value="bvngv" />
+    <MESSAGE value="suuuuuuuu" />
+    <MESSAGE value="suuuuuuuuuu 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="suuuuuuuuuu 2.0" />
   </component>
 </project>

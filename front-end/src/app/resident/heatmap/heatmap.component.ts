@@ -10,7 +10,7 @@ import {ClickData} from "../../../models/clickData.model";
   styleUrls: ['./heatmap.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HeatmapComponent implements OnInit, AfterViewChecked {
+export class HeatmapComponent implements OnInit {
   clickData : ClickData[];
 
   constructor(private route: ActivatedRoute, private statHandicapService: StatsHandicapService) {
@@ -20,9 +20,6 @@ export class HeatmapComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.statHandicapService.retrieveClicks(id);
-  }
-
-  ngAfterViewChecked() {
     this.statHandicapService.clickData$.subscribe((clickDataList) =>{
         //console.log(clickDataList)
         this.clickData = clickDataList;
@@ -30,6 +27,7 @@ export class HeatmapComponent implements OnInit, AfterViewChecked {
       }
     );
   }
+
 
   addCircles() : void {
     // Heatmap container

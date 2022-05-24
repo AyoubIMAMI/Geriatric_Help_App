@@ -83,17 +83,10 @@ export class HandicapService {
 
 
   getClickStatsForResident(theResidentId: string, dateA: Date, dateB: Date){
-    console.log("dateA = "+dateA);
-    console.log("dateB = "+dateB);
-
     const clickurl=this.clickNumberUrl+"/"+theResidentId+"/"+dateA.getFullYear()+"/"+dateA.getMonth()+"/"+dateA.getDate()+"/"+dateB.getFullYear()+"/"+dateB.getMonth()+"/"+dateB.getDate()
-    console.log("clickurl = "+clickurl);
-
-
     this.http.get<StatsResident[]>(clickurl).subscribe(
       (tabData)=>{
         this.$arrayClick.next(tabData);
-        console.log("end get, tabData = "+tabData);
       }
   );
   }
@@ -121,14 +114,12 @@ export class HandicapService {
 
     element.addEventListener("mouseenter", event => {
       this.nbclick++;
-      console.log("mouseenter");
         if(!this.answerisCurrentlyLoading){
            this.load(element, callback);
         }
 
       });
     element.addEventListener("mouseleave", event => {
-      console.log("mouseleave");
       if(this.answerisCurrentlyLoading) {
             this.unload(element);
         }
@@ -140,14 +131,12 @@ export class HandicapService {
 
     element.removeEventListener("mouseenter", event => {
       this.nbclick++;
-      console.log("mouseenter");
       if(!this.answerisCurrentlyLoading){
         this.load(element, callback);
       }
 
     });
     element.removeEventListener("mouseleave", event => {
-      console.log("mouseleave");
       if(this.answerisCurrentlyLoading) {
         this.unload(element);
       }
@@ -332,7 +321,6 @@ export class HandicapService {
     document.addEventListener("click", (event) => {
       let mousex = (event.clientX / window.innerWidth) * 100; // Gets Mouse X
       let mousey = (event.clientY / window.innerHeight) * 100; // Gets Mouse Y
-      //console.log([mousex, mousey]); // Prints data
 
       const data : ClickData = {
         x:mousex,
